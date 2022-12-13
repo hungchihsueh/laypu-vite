@@ -302,3 +302,10 @@ main {
 } */
 
 /* main */
+@media all and (max-width:450px) and (max-height:1200px) {
+    #the-nav {
+        top: 7%;
+        left: 53%;
+        padding: 2%;
+    }
+}

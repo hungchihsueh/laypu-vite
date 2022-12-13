@@ -5,8 +5,8 @@ main {
   line-height: 150%;
   letter-spacing: 0.08em;
   color: #1E6E67;
-width: 80vw;
-max-width: 1800px;
+  width: 80vw;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 30px;
 }
@@ -282,6 +282,14 @@ h3 {
 
 .table.table-hover tbody tr:hover>td a:hover {
   color: #000 !important;
+}
+
+@media all and (max-width:450px) and (max-height:1200px) {
+  #the-nav {
+    top: 7%;
+    left: 53%;
+    padding: 2%;
+  }
 }
 
 /*# sourceMappingURL=sitemap.css.map */

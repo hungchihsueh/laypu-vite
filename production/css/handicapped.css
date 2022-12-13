@@ -342,14 +342,14 @@ main {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
-  padding: 6px 18px;
+  padding: 2.5% 10%;
   font-weight: bold;
   line-height: 150%;
   letter-spacing: 0.08em;
   color: #ffffff;
-  background-color: #79cbe8;
+  background-color: #1e6e67;
   border-radius: 9999px;
-  font-size: clamp(16px, 2.4vmin, 64px);
+  font-size: clamp(16px, 2.8vmin, 64px);
   white-space: nowrap;
 }
 
@@ -379,18 +379,19 @@ main {
   align-items: flex-start;
   width: -moz-fit-content;
   width: fit-content;
+  gap: 8px;
   z-index: 99;
   cursor: pointer;
 }
 
 
 
-.section-group>.pill {
+/* .section-group>.pill {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
   padding: 6px 18px;
-  font-size: 2vmin;
+  font-size: 3vmin;
   font-weight: bold;
   line-height: 150%;
   letter-spacing: 0.08em;
@@ -398,7 +399,7 @@ main {
   border-radius: 9999px;
   background-color: #1e6e67;
   margin-bottom: 3%;
-}
+} */
 
 #prepare {
   position: absolute;
@@ -2159,7 +2160,7 @@ main {
   border-radius: 30px;
   outline: 10px solid #F1EAA8;
   outline-offset: -5px;
-  
+
 }
 
 /* main-3 */
@@ -4923,9 +4924,10 @@ main {
     height: 40%;
     left: 25%;
   }
+
   .medical .sub-title {
     width: 30%;
-}
+  }
 }
 
 @media all and (max-width:1000px) and (orientation:portrait) {
@@ -5273,7 +5275,11 @@ main {
     right: 10%;
     bottom: 70%;
   }
-  #bag-1 .dialog{bottom: 100%;}
+
+  #bag-1 .dialog {
+    bottom: 100%;
+  }
+
   #bag-1>img {
     z-index: 50;
     height: 50%;
@@ -5707,9 +5713,11 @@ main {
   .main-4>div {
     margin-left: 25vw !important;
   }
-.main .sub-title{
-  width: 23%;
-}
+
+  .main .sub-title {
+    width: 23%;
+  }
+
   .button-group {
     bottom: 30px;
   }
@@ -5795,7 +5803,7 @@ main {
 
   #the-nav {
     top: 7%;
-    left: 55%;
+    left: 53%;
     padding: 2%;
   }
 
@@ -5916,12 +5924,15 @@ main {
     bottom: 83%;
     width: 35%;
   }
-  .medical .sub-title{
+
+  .medical .sub-title {
     width: 30%;
   }
-  .medical .g-3 .dialog{
+
+  .medical .g-3 .dialog {
     left: -5%;
   }
+
   .medical .download-btn.db-1 {
     left: 40%;
   }
@@ -5929,18 +5940,22 @@ main {
   .medical .download-btn.db-2 {
     left: 59%;
   }
+
   #medical-1>div.g-1 img {
     width: 20%;
     left: 59%;
     top: 25%;
-}
-#medical-1>div.g-2 img{
-  left: 63%;
-  width: 11%;
-}
-.main-1 .evacuate{
-  min-width: 1000px;
-}
+  }
+
+  #medical-1>div.g-2 img {
+    left: 63%;
+    width: 11%;
+  }
+
+  .main-1 .evacuate {
+    min-width: 1000px;
+  }
+
   .evacuate .group #evacuate-exit {
     z-index: 5;
     width: 50%;

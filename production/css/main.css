@@ -258,7 +258,7 @@ p {
 
 #the-nav ul {
   /* height: clamp(100px, 2vw, 800px); */
-  width: clamp(180px, 1.5vw, 800px);
+  width: clamp(150px, 20vw, 800px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
