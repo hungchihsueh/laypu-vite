@@ -1,0 +1,3660 @@
+:root {
+  --app-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  z-index: 9999;
+}
+
+body {
+  height: 100vh;
+  height: var(--app-height);
+  min-height: 100vh;
+  min-height: var(--app-height);
+  min-height: var(--app-height);
+  width: 100vw;
+  overflow: hidden;
+  background-color: #D9F4F1;
+}
+
+main {
+  height: 100vh;
+  height: var(--app-height);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  width: 100vw;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cursor {
+  color: #005671;
+}
+
+.cursor .icon {
+  border-color: #005671;
+}
+
+.cursor .icon .dot {
+  background-color: #005671;
+}
+
+#show-when-too-short {
+  transform: translate(-50%, -50%);
+  transition: all .3s;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0vw;
+  height: 0vh;
+  opacity:
+    0;
+  z-index: 99999999;
+  display: flex;
+}
+
+.logo {
+  filter: hue-rotate(25deg) saturate(143%) brightness(80%);
+}
+
+#the-nav {
+  border: 2px solid #005671;
+}
+
+#the-nav .text {
+  color: #005671;
+}
+
+#the-nav li:hover div.arrow-right:not(.active) {
+  border-left: 0.6vw solid #00577187
+}
+
+#the-nav div.arrow-right.active {
+  border-left: 0.6vw solid #005671;
+}
+
+#the-nav div.arrow-right {
+  margin-right: 5%;
+  width: 0;
+  height: 0;
+  border-top: 0.6vw solid transparent;
+  border-bottom: 0.6vw solid transparent;
+  border-left: 0.6vw solid #00577100;
+  transition: all .2s;
+}
+
+#sidebar {
+  /* min-height: 70vh; */
+  display: none;
+  width: 25%;
+  height: fit-content;
+  /* height: calc(var(--app-height) * 0.7);
+    min-height: 70vh;
+    min-height: -webkit-fill-available;
+    min-height: fill-available; */
+  z-index: 99999;
+  position: fixed;
+  left: -25%;
+  top: 0%;
+  background-color: #005671;
+  border-radius: 0 20px 0px 0;
+  transition: all .3s;
+}
+
+#sidebar.active {
+  left: 0% !important;
+
+}
+
+#sidebar.active>button img {
+  transform: scaleX(-1);
+}
+
+#sidebar>button {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 40%;
+  height: 8vh;
+  border-radius: 0 10px 10px 0;
+  background-color: #005671;
+  padding: 10px;
+}
+
+#sidebar .list {
+  padding: 10% 5%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+#sidebar .list button {
+  cursor: pointer;
+  margin-bottom: 7%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #FFF;
+  font-size: clamp(12px, 2.2vmin, 20px);
+  text-align: start;
+}
+
+#sidebar .list button .dot {
+  margin-right: 2%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#sidebar .list button .dot.active {
+  background-color: #FFF;
+}
+
+#main-content {
+  color: #005671;
+  text-decoration: none;
+  position: fixed;
+  top: 10vh;
+  left: 5vw;
+  z-index: 5;
+}
+
+.navbar {
+  /* border: 1px solid red; */
+  position: relative;
+  background-color: #B6E2F2;
+  z-index: 1000;
+}
+
+.nav_burger {
+  filter: hue-rotate(25deg) saturate(143%) brightness(80%);
+}
+
+.navbar .website-nav {
+  color: #005671;
+}
+
+/* tabs */
+.section-tabs,
+.burger {
+  position: absolute;
+  z-index: 1100;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46%;
+  /* min-width: 600px; */
+  max-width: 2000px;
+  height: 2px;
+  background-color: #005671;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+}
+
+.section-tabs.normal {
+  min-width: 600px;
+}
+
+.burger {
+  max-width: 100%;
+}
+
+.section-tabs>.tab,
+.section-tabs>.selector {
+  padding: 0.5% 3%;
+  color: #fff;
+  background-color: #F2F2F2;
+  border: 2px solid #005671;
+  border-radius: 9999px;
+  font-size: clamp(16px, 2vmin, 32px);
+  font-weight: bold;
+  line-height: 150%;
+  transition: all .3s;
+}
+
+.section-tabs>.tab:hover,
+.section-tabs>.selector:hover {
+  background-color: #005671 !important;
+  color: #FFF !important;
+}
+
+.section-tabs>.tab.active {
+  background-color: #005671;
+}
+
+.burger {
+  width: 100%;
+  top: -10%;
+}
+
+.burger>.tab,
+.burger>.selector {
+  border: 1px solid #005671;
+  color: #FFF;
+  min-height: 50px;
+  border-radius: 0;
+  width: 100vw;
+}
+
+.burger>.selector {
+  height: 50px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005671;
+}
+
+.burger>.selector .text {
+  width: auto;
+  max-width: 400px;
+  border-bottom: 2px solid #FFF;
+}
+
+.burger>.selector img {
+  transform: rotate(0deg);
+  transition: all .3s;
+}
+
+@media all and (max-width:1100px) {
+  .section-tabs:not(.burger) {
+    display: none !important;
+  }
+
+  .burger {
+    height: 50px;
+    overflow-y: hidden;
+    top: 65px;
+    /* display: flex; */
+    flex-direction: column;
+    width: 100%;
+    transition: all .3s;
+    background-color: transparent;
+    z-index: 1111;
+  }
+
+  .burger.active {
+    height: 300px;
+  }
+
+  /* .burger:focus-within {
+      height: 300px;
+    } */
+
+  .burger.active>.selector img {
+    transform: rotate(180deg)
+  }
+
+}
+
+/* tabs */
+.main-0 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #B6E2F2;
+  overflow: hidden;
+  width: 100vw;
+  height: 90vh;
+  height: calc(var(--app-height) *0.9);
+  min-height: 90vh;
+  min-height: calc(var(--app-height) *0.9);
+}
+
+
+.main-0 .title {
+  place-self: center;
+  text-align: center;
+  font-size: calc(1rem + 5vw);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #005671;
+}
+
+.main-0 .title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0%;
+  z-index: 80;
+}
+
+.main-0>button {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-transform-origin: center;
+  transform-origin: center center;
+  animation: dimond 3.5s linear 0s infinite;
+}
+
+.main-img.woman {
+  width: 25%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.main-img.circle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-transform-origin: center;
+  transform-origin: center center;
+  animation: rotation 10s linear 0s infinite;
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes dimond {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  25% {
+    transform: translate(5%, 5%);
+  }
+
+  50% {
+    transform: translate(0%, 10%);
+  }
+
+  75% {
+    transform: translate(-5%, 5%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+footer .copy-right {
+  color: #005671;
+}
+
+.main-0 .pill {
+  place-self: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  padding: 6px 18px;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: #005671;
+  background-color: #FFDB59;
+  border-radius: 9999px;
+  font-size: clamp(16px, 2.4vmin, 64px);
+  white-space: nowrap;
+}
+
+#dp {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 35%;
+  width: 40%;
+  min-width: 300px;
+  transform: translate(-50%, -30%);
+}
+
+/* #wheel-chair {
+  position: absolute;
+  z-index: 100;
+  left: 43%;
+  top: 45%;
+  width: 30vmin;
+  transform: translate(-50%, -50%);
+} */
+
+.section-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 99;
+  cursor: pointer;
+}
+
+
+
+.section-group>.pill {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  padding: 6px 18px;
+  font-size: 2vmin;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  border-radius: 9999px;
+  background-color: #005671;
+  margin-bottom: 3%;
+}
+
+#prepare {
+  position: absolute;
+  left: 11%;
+  top: 2%;
+  width: 25vmin;
+}
+
+
+#prepare img {
+  width: 70%;
+}
+
+#response {
+  position: absolute;
+  left: 6%;
+  top: 40%;
+  width: 30vmin;
+}
+
+#response img {
+  width: 75%;
+  color: #D9F4F1;
+}
+
+#response>.pill {
+  position: relative;
+  right: 5%;
+}
+
+#document {
+  position: absolute;
+  left: 72%;
+  top: 1%;
+  width: 18vmin;
+}
+
+#document img {
+  width: 100%;
+}
+
+
+#help {
+  position: absolute;
+  left: 80%;
+  top: 20%;
+  width: 20%;
+  align-items: center;
+}
+
+#help img {
+  width: 50%;
+  /* max-width: 150px; */
+}
+
+#recover {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  width: 30%;
+}
+
+#recover img {
+  width: 100%;
+}
+
+/* #recover>.pill {
+    position: absolute;
+    right: 2%;
+    top: -18%;
+  } */
+
+.main {
+  position: absolute;
+  z-index: 21;
+  left: 100%;
+  opacity: 0;
+  height: 92vh;
+  background-color: #D9F4F1;
+  width: 100%;
+  padding: 8% 0px 3% max(8%, 110px);
+  display: none;
+  justify-content: start;
+  align-items: center;
+  overflow-x: scroll;
+  /* overflow: overlay; */
+  overflow-y: hidden;
+}
+
+#progress {
+  height: 0vh;
+  position: absolute;
+  z-index: 20;
+  bottom: -100%;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+#progress-woman {
+  z-index: 4;
+  position: absolute;
+  left: -80%;
+  top: -135%;
+  transform: translateX(50%);
+  width: 8.8vw;
+  transition: all .3s;
+}
+
+
+.button-group {
+  min-width: 100px;
+  width: 7%;
+  /* max-width: 250px; */
+  /* width: 20%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 6;
+  bottom: 32px;
+  right: 0.8%;
+  /* transform: translate(50%, 50%); */
+}
+
+.button-group.top {
+  display: none;
+  width: fit-content;
+  position: fixed;
+  z-index: 5000;
+  left: 99%;
+  top: 150px;
+  transform: translateX(-100%);
+}
+
+.button-group button {
+  position: relative;
+  z-index: 50;
+  aspect-ratio: 1;
+  width: clamp(32px, 3vw, 120px);
+  height: clamp(32px, 3vw, 120px);
+  /* margin-right: 50px; */
+  padding: 3%;
+  border-radius: 9999px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(12, 33, 31, 0.25);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s;
+}
+
+.button-group button:last-of-type {
+  margin-right: 0%;
+}
+
+.button-group button.disable img {
+  filter: saturate(5%) brightness(150%);
+}
+
+.button-group button:not(.disable):hover {
+  background-color: #005671;
+}
+
+.button-group button:not(.disable):hover img {
+  filter: brightness(1000%);
+}
+
+.button-group button img {
+  filter: hue-rotate(25deg) saturate(143%) brightness(80%);
+  width: clamp(20px, 1vw, 81px);
+}
+
+.download-btn {
+  padding: 6px 24px;
+  position: absolute;
+  z-index: 9999;
+  left: max(50vw, 550px);
+  top: calc(100% + 2vh);
+  transform: translateX(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(12px, 1.5vmin, 36px);
+  line-height: 150%;
+  /* or 24px */
+  letter-spacing: 0.08em;
+  background: #005671;
+  border: none;
+  border-radius: 9999px;
+  transition: all .3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+.download-btn:hover,
+.download-btn:focus {
+  box-shadow: 4px 6px 0px #00577150;
+}
+
+.download-btn>div {
+  text-align: start;
+  white-space: nowrap;
+}
+
+#progress .bar {
+  position: relative;
+  z-index: 60;
+  height: 12px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 1;
+}
+
+#progress .bar .percent {
+  height: 100%;
+  width: 3%;
+  background-color: #005671;
+  transition: all .3s;
+}
+
+.main:nth-child(odd)>div::after {
+  border-top: 5px solid #005671;
+  position: absolute;
+  z-index: 40;
+  left: -10%;
+  top: 100%;
+  content: "";
+  /* width: -moz-fit-content; */
+  width: 120%;
+  height: 15vh;
+  background-color: #D9F1FA;
+}
+
+.main:nth-child(even)>div::after {
+  border-top: 5px solid #005671;
+  position: absolute;
+  z-index: 40;
+  left: -10%;
+  top: 100%;
+  content: "";
+  /* width: -moz-fit-content; */
+  width: 120%;
+  height: 15vh;
+  background-color: #F2F2F2;
+}
+
+.main-1 .earthquake-home::after,
+.main-2 .phone::after,
+.main-3 .help::after,
+.main-4 .talk::after {
+  width: 125%;
+}
+
+/* main-1 */
+
+.main-1>div,
+.main-2>div,
+.main-3>div,
+.main-4>div {
+  /* border: 1px solid red; */
+  /* margin-right: 350px; */
+  margin-left: 12vmin;
+  height: 90%;
+  /* max-height: 800px; */
+  min-width: 1100px;
+  max-width: 2560px;
+  /* width: -moz-fit-content; */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  bottom: 10%;
+  flex: 0 0 90vw;
+}
+
+.main>div:first-of-type,
+.main>div:first-of-type,
+.main>div:first-of-type,
+.main>div:first-of-type {
+  margin-left: 0 !important;
+}
+
+.main-1 .content,
+.main-2 .content,
+.main-3 .content,
+.main-4 .content {
+  /* border: 1px solid red; */
+  /* position: relative; */
+  height: 90%;
+  min-width: 1100px;
+  max-width: 2560px;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+}
+
+.main-1 .title,
+.main-2 .title,
+.main-3 .title,
+.main-4 .title,
+.main-5 .title {
+  /* margin-top: 5%; */
+  align-self: start;
+  margin-bottom: 1%;
+  padding: 0.5% 2%;
+  font-size: clamp(16px, 3vmin, 72px);
+  letter-spacing: 0.08em;
+  color: #005671;
+  background-color: #fff;
+  border: 3px solid #005671;
+  border-radius: 9999px;
+  opacity: 0;
+  font-weight: 900;
+}
+
+.main-1 .sub-title,
+.main-2 .sub-title,
+.main-3 .sub-title,
+.main-4 .sub-title,
+.main-5 .sub-title {
+  align-self: flex-start;
+  font-weight: 500;
+  font-size: clamp(12px, 2vmin, 48px);
+  /* font-size: 1.5vmin; */
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: #005671;
+  z-index: 50;
+  opacity: 0;
+}
+
+
+.main-1 .content .group {
+  position: relative;
+  min-width: -moz-fit-content;
+  min-width: -webkit-fill-available;
+  min-width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .main-1 .content::after {
+    border-top: 5px solid #005671;
+    position: absolute;
+    top: 100%;
+    content: "";
+    width: 155%;
+    height: 40px;
+    background-color: #F2F2F2;
+  } */
+
+.dialog {
+  padding: 15px;
+  position: absolute;
+  background: #FFFFFF;
+  border: 2px solid #005671;
+  font-weight: 500;
+  font-size: clamp(12px, 2vmin, 48px);
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: #005671;
+}
+
+.dialog .text {
+  display: block;
+}
+
+.dialog .num {
+  /* aspect-ratio: 1; */
+  width: clamp(36px, 5vmin, 45px);
+  height: clamp(36px, 5vmin, 45px);
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  /* padding: 3%; */
+  background: #005671;
+  border-radius: 9999px;
+  font-size: clamp(20px, 1.5vmin, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.contact-net {
+  margin-left: 0px !important;
+}
+
+.contact-net .content {
+  justify-content: center;
+  gap: 5%;
+}
+
+.main-1 .contact-net img {
+  height: 120%;
+}
+
+.main-1 .contact-net .dialog.d-1 {
+  bottom: 60%;
+  left: 5%;
+  width: 20%;
+}
+
+.main-1 .contact-net .dialog.d-2 {
+  bottom: 20%;
+  left: 5%;
+  width: 20%;
+}
+
+.main-1 .contact-net .dialog.d-3 {
+  bottom: 80%;
+  left: 75%;
+  width: 20%;
+}
+
+.main-1 .contact-net .dialog.d-4 {
+  bottom: 55%;
+  left: 75%;
+  width: 20%;
+}
+
+.main-1 .contact-net .dialog.d-5 {
+  bottom: 20%;
+  left: 75%;
+  width: 20%;
+}
+
+.main-1 .plan img {
+  height: 120%;
+}
+
+.main-1 .plan .dialog.d-1 {
+  bottom: 80%;
+  left: 5%;
+  width: 22%;
+}
+
+.main-1 .plan .dialog.d-2 {
+  bottom: 50%;
+  left: 5%;
+  width: 20%;
+}
+
+.main-1 .plan .dialog.d-3 {
+  bottom: 23%;
+  left: 5%;
+  width: 20%;
+}
+
+.main-1 .plan .dialog.d-4 {
+  bottom: 65%;
+  left: 75%;
+  width: 20%;
+}
+
+.main-1 .plan .dialog.d-5 {
+  bottom: 30%;
+  left: 75%;
+  width: 20%;
+}
+
+.main-1 .resource img {
+  z-index: -1;
+  height: 100%;
+
+}
+
+.main-1 .resource .dialog.d-1 {
+  left: 10%;
+  bottom: 50%;
+  width: 15%;
+}
+
+.main-1 .resource .dialog.d-2 {
+  left: 73%;
+  bottom: 65%;
+  width: 20%;
+}
+
+.main-1 .resource .dialog.d-3 {
+  left: 73%;
+  bottom: 25%;
+  width: 20%;
+}
+
+.main-1 .bag .sub-title {
+  width: 20%;
+}
+
+.main-1 .bag .dialog {
+  position: relative;
+}
+
+.main-1 .bag .content {
+
+  align-items: center;
+}
+
+.main-1 .bag .img-group-1 {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:
+    space-evenly;
+  align-items: center;
+}
+
+.main-1 .bag .img-group-1 .images {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-1 .bag .img-group-1 .images img {
+  width: 22%;
+}
+
+.main-1 .bag .img-group-2 {
+  width: 66%;
+  height: 150%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-1 .bag .img-group-2 .img-grid {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 1.3fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1%;
+}
+
+.main-1 .bag .img-group-2 .img-grid .check-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hearing-device,#help-card,#cable{
+  position: relative;
+  top: 10%;
+}
+.main-1 .bag .img-group-2 .img-grid .check-group>img{
+  width: 40%;
+}
+.main-1 .bag .img-group-2 .img-grid .check-group>div {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #005671;
+  font-weight: 500;
+  font-size: clamp(12px, 2.2vmin, 48px);
+  letter-spacing: 0.08em;
+}
+
+.main-1 .bag .img-group-2 .img-grid .check-group>div span:first-of-type {
+  display: inline-block;
+  aspect-ratio: 1;
+  margin-right: 5px;
+  width: clamp(12px, 2.2vmin, 48px);
+  height: clamp(12px, 2.2vmin, 48px);
+  appearance: none;
+  border: 2px #005671 solid;
+  border-radius: 15%;
+}
+
+
+
+.main-1 .bag .download-btn.db-1 {
+  left: 43%;
+}
+
+.main-1 .bag .download-btn.db-2 {
+  left: 57%;
+}
+
+.main-1 .medical .content {
+
+  gap: 2%;
+}
+
+.main-1 .medical .group {
+  min-width: 0%;
+  width: 20%;
+}
+
+.main-1 .medical .group img {
+  width: 70%;
+}
+
+.main-1 .medical .dialog {
+  position: relative;
+}
+
+.medical .download-btn.db-1 {
+  left: 43%;
+}
+
+.medical .download-btn.db-2 {
+  left: 57%;
+}
+
+.main-1 .animal .content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-1 .animal .img-group .check-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-1 .animal .img-group.g-2 .check-group:last-of-type{
+  height: 147%;
+}
+
+.main-1 .animal .img-group.g-1 {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  margin-bottom: 3%;
+}
+
+.main-1 .animal .img-group.g-2 {
+  /* transform: translateX(-10%); */
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.main-1 .animal .img-group .check-group>div {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #005671;
+  font-weight: 500;
+  font-size: clamp(12px, 2.2vmin, 48px);
+  letter-spacing: 0.08em;
+}
+
+.main-1 .animal .img-group>div span:first-of-type {
+  display: inline-block;
+  aspect-ratio: 1;
+  margin-right: 5px;
+  width: clamp(12px, 2.2vmin, 48px);
+  height: clamp(12px, 2.2vmin, 48px);
+  appearance: none;
+  border: 2px #005671 solid;
+  border-radius: 15%;
+}
+
+.main-1 .risk .content>img {
+  position: relative;
+  transform: translateX(-10%);
+  z-index: 0;
+}
+
+.main-1 .risk .dialog.d-1 {
+  z-index: 2;
+  width: 20%;
+  left: 2%;
+  bottom: 67%;
+}
+
+.main-1 .risk .dialog.d-2 {
+  width: 20%;
+  left: 60%;
+  bottom: 95%;
+}
+
+.main-1 .risk .dialog.d-3 {
+  width: 20%;
+  left: 60%;
+  bottom: 23%;
+}
+
+.main-1 .risk .dialog.d-4 {
+  z-index: 2;
+  width: 20%;
+  left: 70%;
+  bottom: 75%;
+}
+
+/* .main-1 .risk img {
+  width: 50%;
+} */
+
+.main-1 .earthquake .content {
+  z-index: 50;
+}
+
+.main-1 .earthquake .dialog.d-1 {
+  left: 10%;
+  bottom: 20%;
+  width: 16%;
+}
+
+.main-1 .earthquake .dialog.d-2 {
+  left: 70%;
+  bottom: 25%;
+  width: 16%;
+}
+
+.main-1 .earthquake .dialog.d-2 a:visited {
+  color: #005671;
+}
+
+.main-1 .earthquake .dialog.d-2 a {
+  font-weight: 900;
+}
+
+
+.main-1 .evacuate-plan .dialog {
+  z-index: 2;
+}
+
+.main-1 .evacuate-plan .dialog.d-1 {
+  left: 5%;
+  bottom: 60%;
+  width: 20%;
+}
+
+.main-1 .evacuate-plan .dialog.d-2 {
+  left: 15%;
+  bottom: 30%;
+  width: 20%;
+}
+
+.main-1 .evacuate-plan .dialog.d-3 {
+  left: 75%;
+  bottom: 60%;
+  width: 16%;
+}
+
+.main-1 .evacuate-plan .dialog.d-4 {
+  left: 65%;
+  bottom: 30%;
+  width: 20%;
+}
+
+.main-1 .shelter img {
+  position: relative;
+  bottom: -8%;
+}
+
+.main-1 .shelter .dialog.d-1 {
+  z-index: 5;
+  bottom: 59%;
+  left: 8%;
+  width: 13%;
+}
+
+.main-1 .shelter .dialog.d-2 {
+  bottom: 25%;
+  left: 12%;
+  width: 18%;
+}
+
+.main-1 .shelter .dialog.d-3 {
+  bottom: 20%;
+  left: 63%;
+  width: 25%;
+  z-index: 5;
+}
+
+.main-1 .shelter .download-btn.db-1 {
+  left: 41%;
+}
+
+.main-1 .shelter .download-btn.db-2 {
+  left: 59%;
+}
+
+.main-1 .typhoon .content {
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+
+.main-1 .typhoon .dialog {
+  position: relative;
+}
+
+.main-1 .typhoon .img-group {
+  width: 15%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-1 .typhoon .img-group .dialog {
+  width: 82%;
+}
+
+.main-1 .typhoon .img-group:nth-child(odd) {
+  transform: translateY(12%);
+}
+
+.main-1 .earthquake-home .sub-title {
+  width: 30%;
+}
+
+.main-1 .earthquake-home .content {
+  z-index: 50;
+}
+
+.main-1 .earthquake-home img {
+  position: relative;
+  height: 110%;
+  bottom: 15%;
+}
+
+.main-1 .earthquake-home .dialog.d-1 {
+  left: 15%;
+  bottom: 65%;
+  width: 20%;
+}
+
+.main-1 .earthquake-home .dialog.d-2 {
+  left: 10%;
+  bottom: 38%;
+  width: 20%;
+}
+
+.main-1 .earthquake-home .dialog.d-3 {
+  z-index: 5;
+  left: 45%;
+  bottom: 107%;
+  width: 18%;
+}
+
+.main-1 .earthquake-home .dialog.d-4 {
+  z-index: 5;
+  left: 70%;
+  bottom: 85%;
+  width: 16%;
+}
+
+.main-1 .earthquake-home .dialog.d-5 {
+  z-index: 5;
+  left: 70%;
+  bottom: 40%;
+  width: 16%;
+}
+
+/* main-1 */
+
+/* main-2 */
+
+.main-2 .info-1 .sub-title {
+  width: 20%;
+}
+
+.main-2 .info-1 .content {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+}
+
+.main-2 .info-1 .dialog:not(.d-2) {
+  position: relative;
+}
+
+.main-2 .info-1 .dialog.d-2 {
+  left: 30%;
+  width: 40%;
+  bottom: 105%;
+}
+
+.main-2 .info-1 .dialog.d-2 div:first-of-type {
+  font-weight: 900;
+}
+
+.main-2 .info-1 .content .qrcode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-2 .info-1 .qrcode .dialog {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.main-2 .info-1 .qrcode img {
+  width: 100%;
+}
+
+.main-2 .info-1 .steps {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2%;
+}
+
+.main-2 .info-1 .steps .step {
+  color: #005671;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 25%;
+}
+
+.main-2 .info-1 .content .steps h4 {
+  white-space: nowrap;
+  font-size: clamp(16px, 2vmin, 48px);
+  color: #005671;
+  margin-bottom: 3%;
+}
+
+.main-2 .info-1 .steps .step img {
+  width: 80%;
+}
+.main-2 .info-2 .content img{
+  height: 80%;
+}
+.main-2 .info-2 .dialog img {
+  position: absolute;
+}
+
+.main-2 .info-2 .dialog.d-1 {
+  left: 4%;
+  bottom: 67%;
+  width: 15%;
+}
+
+.main-2 .info-2 .dialog.d-1 img {
+  height: 90%;
+  z-index: 5;
+  left: 95%;
+  bottom: 2%;
+}
+
+.main-2 .info-2 .dialog.d-2 {
+  left: 4%;
+  bottom: 20%;
+  width: 20%;
+}
+
+.main-2 .info-2 .dialog.d-2 img {
+  height: 55%;
+  z-index: 5;
+  left: 105%;
+  bottom: 75%;
+}
+
+.main-2 .info-2 .dialog.d-3 {
+  left: 41%;
+  bottom: 95%;
+  width: 18%;
+}
+
+.main-2 .info-2 .dialog.d-3 img {
+  height: 110%;
+  z-index: 5;
+  right: 105%;
+  bottom: -20%;
+}
+
+.main-2 .info-2 .dialog.d-4 {
+  left: 75%;
+  bottom: 63%;
+  width: 15%;
+}
+
+.main-2 .info-2 .dialog.d-4 img {
+  height: 60%;
+  z-index: 5;
+  right: 120%;
+  bottom: 5%;
+}
+
+.main-2 .info-2 .dialog.d-5 {
+  left: 62%;
+  bottom: 30%;
+  width: 28%;
+}
+
+.main-2 .info-2 .dialog.d-5 .outside-text {
+  position: absolute;
+  top: 105%;
+  left: 0%;
+}
+
+.main-2 .while-earthquake .sub-title {
+  width: 34%;
+}
+
+.main-2 .while-earthquake .content {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-2 .while-earthquake .dialog {
+  position: relative;
+}
+
+.main-2 .while-earthquake .left {
+  position: relative;
+  left: 2%;
+  height: 80%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main-2 .while-earthquake .left .group {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-2 .while-earthquake .left .group:nth-child(1) {
+  margin-bottom: 20%;
+}
+
+.main-2 .while-earthquake .left .group img {
+  width: 150%;
+  left: 101%;
+  bottom: 0%;
+  position: absolute;
+}
+
+.main-2 .while-earthquake .right {
+  position: relative;
+  top: -12%;
+  width: 55%;
+  height: 120%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.main-2 .while-earthquake .right .group {
+  height: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-2 .while-earthquake .right .group img {
+  width: 40%;
+}
+
+.main-2 .while-earthquake .right .group img.sound {
+  width: 26%;
+}
+
+.main-2 .while-earthquake .right .group .dialog {
+  width: 90%;
+}
+
+.main-2 .no-power img {
+  height: 120%;
+}
+
+.main-2 .no-power .dialog.d-1 {
+  left: 10%;
+  bottom: 20%;
+  width: 25%;
+  z-index: 5;
+}
+
+.main-2 .no-power .dialog.d-2 {
+  left: 63%;
+  bottom: 45%;
+  width: 25%;
+  z-index: 5;
+}
+
+.main-2 .evacuate .sub-title {
+  width: 38%;
+}
+
+.main-2 .evacuate .content {
+  z-index: 50;
+}
+
+.main-2 .evacuate img {
+  height: 130%;
+  left: 1%;
+  top: 8%;
+  position: relative;
+}
+
+.main-2 .evacuate .dialog.d-1 {
+  left: 5%;
+  bottom: 70%;
+  width: 20%;
+}
+
+.main-2 .evacuate .dialog.d-2 {
+  left: 5%;
+  bottom: 25%;
+  width: 25%;
+}
+
+.main-2 .evacuate .dialog.d-3 {
+  left: 65%;
+  bottom: 90%;
+  width: 23%;
+}
+
+.main-2 .evacuate .dialog.d-4 {
+  left: 65%;
+  bottom: 65%;
+  width: 23%;
+}
+
+.main-2 .report img {
+  height: 90%;
+  bottom: 15%;
+  position: relative;
+  z-index: -1;
+}
+
+.main-2 .report .dialog.d-1 {
+  left: 13%;
+  bottom: 55%;
+  width: 20%;
+}
+
+.main-2 .report .dialog.d-2 {
+  left: 63%;
+  bottom: 41%;
+  width: 20.8%;
+  z-index: 5;
+}
+
+.main-2 .phone img {
+  height: 90%;
+  position: relative;
+  bottom: 15%;
+}
+
+.main-2 .phone .dialog.d-1 {
+  left: 20%;
+  bottom: 70%;
+  width: 20%;
+  z-index: 5;
+}
+
+
+.main-2 .phone .dialog.d-2 {
+  left: 57%;
+  bottom: 55%;
+  width: 20%;
+  z-index: 5;
+}
+
+.main-2 .phone .dialog.d-3 {
+  left: 35%;
+  bottom: 20%;
+  width: 20%;
+  z-index: 5;
+}
+
+/* main-2 */
+
+/* main-3 */
+.main-3 .check .content {
+  gap: 10%;
+  align-items: center;
+}
+
+.main-3 .check {
+  margin-left: 0 !important;
+}
+
+.main-3 .check .sub-title {
+  width: 35%;
+}
+
+.main-3 .check .dialog {
+  left: 50%;
+  bottom: 85%;
+  width: 25%;
+}
+
+.main-3 .check .left {
+  height: 100%;
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 10%;
+  font-size: clamp(14px, 2vmin, 22px);
+  color: #005671;
+}
+
+.main-3 .check .left>* {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-3 .check .left img {
+  width: 80%;
+}
+
+.main-3 .check .left img#crack {
+  width: 40%;
+}
+
+.main-3 .check .left .text {
+  /* width: 50%; */
+}
+
+.main-3 .check .left .text::before {
+  content: "";
+  position: relative;
+  /* top: 40%; */
+  bottom: 6%;
+  /* right: %; */
+  display: block;
+  aspect-ratio: 1;
+  margin-right: 5px;
+  width: clamp(15px, 2vmin, 30px);
+  height: clamp(15px, 2vmin, 30px);
+  appearance: none;
+  border: 2px #005671 solid;
+  border-radius: 15%;
+}
+
+.main-3 .check .right {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  /* flex-direction: ; */
+  justify-content: flex-end;
+  align-items: center;
+  font-size: clamp(14px, 2vmin, 22px);
+  color: #005671;
+}
+
+.main-3 .check .right img {
+  width: 40%;
+  margin-right: 5%;
+}
+
+.main-3 .check .right .group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1%;
+}
+
+.main-3 .check .right .group .checkbox {
+  display: block;
+  aspect-ratio: 1;
+  margin-right: 5px;
+  width: clamp(15px, 2.5vmin, 30px);
+  height: clamp(15px, 2.5vmin, 30px);
+  appearance: none;
+  border: 2px #005671 solid;
+  border-radius: 15%;
+}
+
+.main-3 .help .sub-title {
+  width: 30%;
+}
+
+.main-3 .help .content {
+  width: 100%;
+}
+
+.main-3 .help .content img {
+  height: 130%;
+  bottom: -5%;
+  position: absolute;
+  left: 40%;
+}
+
+.main-3 .help .dialog {
+  left: 20%;
+  bottom: 40%;
+  width: 20%;
+}
+
+/* main-3 */
+/* main-4 */
+.main-4 .care .sub-title {
+  width: 30%;
+}
+
+.main-4 .care img {
+  position: relative;
+  height: 120%;
+}
+
+.main-4 .care .dialog.d-1 {
+  left: 23%;
+  bottom: 45%;
+  width: 15%;
+  z-index: 5;
+}
+
+.main-4 .care .dialog.d-2 {
+  left: 62%;
+  bottom: 80%;
+  width: 20%;
+  z-index: 5;
+}
+
+.main-4 .communication .dialog {
+  position: relative;
+}
+
+.main-4 .communication .content {
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.main-4 .communication .group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-4 .dialog {
+  width: 70%;
+}
+
+.main-4 .communication .g-1 {
+  width: 40%;
+}
+
+.main-4 .communication .g-1 .dialog {
+  top: 5%;
+  width: 80%;
+}
+
+.main-4 .communication .g-1 img {
+  position: relative;
+  width: 60%;
+  top: 5%;
+}
+
+.main-4 .communication .g-2,
+.main-4 .communication .g-3 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-4 .communication .g-2 img,
+.main-4 .communication .g-3 img {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.main-4 .talk .content {
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+
+.main-4 .talk .dialog {
+  position: relative;
+}
+
+.main-4 .talk .left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5%;
+  gap: 5%;
+}
+
+.main-4 .talk .right {
+  position: relative;
+  bottom: 25%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-ROWS: repeat(2, 1fr);
+}
+
+.main-4 .talk .right>div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-4 .talk .right>div img {
+  width: 45%;
+}
+
+/* main-4 */
+/* main-5 */
+.main-5 {
+  overflow: hidden !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.main-5 .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main-5>a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+}
+
+.main-5>a {
+  width: 50%;
+  color: #005671;
+  font-weight: 900;
+}
+
+.main-5>a:visited {
+  color: #005671;
+}
+
+.main-5 .text {
+  width: 75%;
+  text-align: center;
+  font-weight: 900;
+  font-size: clamp(20px, 2vmin, 48px);
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  color: #005671;
+}
+
+.main-5 .img-group {
+  width: 40%;
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-5 .img-group img:first-of-type {
+  width: 100%;
+}
+
+.main-5 .img-group img:last-of-type {
+  width: 20%;
+  padding: 3%;
+  background-color: #005671;
+  border-radius: 9999px;
+  box-shadow: 0px 8px 12px rgba(14, 39, 37, 0.25);
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+}
+
+/* main-5 */
+
+
+
+/* @media */
+@media all and (max-width:2560px) {
+  .main-1 .plan img {
+    position: relative;
+    height: 125%;
+    bottom: -17%;
+  }
+
+  .main-1 .resource img {
+    position: relative;
+    height: 120%;
+    bottom: -15%;
+  }
+
+  .main-1 .bag .img-group-2 {
+    height: 100%;
+  }
+
+  .main-1 .risk .content>img {
+    position: relative;
+    height: 150%;
+    bottom: -33%;
+}
+
+.main-1 .risk .dialog.d-4 {
+  bottom: 67%;
+}
+
+  .main-1 .risk .dialog.d-3 {
+    z-index: 5;
+    bottom: 15%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    width: 19.3%;
+  }
+
+  .main-1 .earthquake .content>img {
+    position: relative;
+    height: 100%;
+    bottom: 1%;
+  }
+
+  .main-1 .evacuate-plan .content>img {
+    height: 110%;
+  }
+
+  .main-1 .shelter img {
+    height: 120%;
+  }
+
+  .main-2 .info-1 .content {
+    gap: 10%;
+  }
+  .main-2 .info-2 .dialog.d-1 {
+    left: 4%;
+    bottom: 67%;
+    width: 18%;
+}
+  .main-2 .info-2 .dialog.d-2 {
+    bottom: 10%;
+  }
+  .main-2 .info-2 .dialog.d-3 {
+    left: 41%;
+    bottom: 95%;
+    width: 21%;
+}
+  .main-2 .info-2 .dialog.d-5 {
+    bottom: 20%;
+    width: 31%;
+  }
+
+  .main-2 .report img {
+    height: 105%;
+    bottom: 5%;
+    position: relative;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 10%;
+  }
+
+  .main-2 .report .dialog.d-2 {
+    left: 65%;
+    bottom: 35%;
+  }
+
+  .main-2 .phone img {
+    height: 110%;
+    bottom: 1%;
+    left: -5%;
+  }
+
+  .main-2 .phone .dialog.d-1 {
+    left: 12%;
+  }
+
+  .main-2 .phone .dialog.d-3 {
+    left: 50%;
+    bottom: 9%;
+  }
+
+  .main-4 .talk .dialog {
+    width: 83%;
+  }
+
+  /* .main-4 .talk .right {
+    bottom: 10%;
+  } */
+  .main-2 .while-earthquake .left{
+    height: 90%;
+    justify-content: center;
+  }
+  .main-2 .while-earthquake .right{
+    top: 0%;
+  }
+  .main-2 .info-1 .dialog.d-2{
+    width: 44%;
+  }
+  .main-3 .check .left,.main-3 .check .right{
+    font-size: clamp(12px, 2vmin, 48px);
+  }
+  .main-4 .communication .g-2, .main-4 .communication .g-3{
+    justify-content: center;
+  }
+  .main-4 .talk .left{
+    padding-top: 0%;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width:2500px) {
+
+  .main-1>div,
+  .main-2>div,
+  .main-3>div,
+  .main-4>div {
+    margin-left: 10vw;
+  }
+
+  .main:nth-child(odd)>div:not(:last-of-type):after {
+    width: 160%;
+  }
+
+  .main:nth-child(even)>div:not(:last-of-type)::after {
+    width: 160%;
+  }
+
+  .main-1 .plan .dialog.d-1 {
+    bottom: 75%;
+  }
+
+  .main-1 .plan .dialog.d-2 {
+    bottom: 45%;
+    width: 21%;
+  }
+
+  .main-1 .plan .dialog.d-3 {
+    bottom: 15%;
+  }
+
+  .main-1 .plan .dialog.d-4 {
+    bottom: 55%;
+    width: 21%;
+  }
+
+  .main-1 .plan .dialog.d-5 {
+    bottom: 20%;
+    width: 21%;
+  }
+
+  .main-1 .resource img {
+    left: -5%;
+  }
+
+  .main-1 .resource .dialog.d-1 {
+    left: 5%;
+  }
+
+  .main-1 .bag .img-group-1 {
+    justify-content: center;
+  }
+
+  .main-1 .bag .img-group-1 .images {
+    margin-bottom: 10%;
+  }
+
+  .main-1 .bag .img-group-2 {
+    position: relative;
+    bottom: 10%;
+  }
+
+  .main-1 .bag .dialog {
+    width: 90%;
+  }
+
+  .main-1 .medical .group {
+    width: 22%;
+  }
+
+  .main-1 .risk .content>img {
+    left: 3%;
+  }
+
+  .main-1 .risk .dialog.d-1 {
+    bottom: 60%;
+  }
+
+  .main-1 .risk .dialog.d-2 {
+    bottom: 90%;
+  }
+
+  .main-1 .risk .dialog.d-3 {
+    z-index: 5;
+    left: 65%;
+    bottom: 10%;
+  }
+
+  .main-1 .risk .dialog.d-4 {
+    left: 75%;
+    bottom: 60%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    left: 5%;
+    bottom: 10%;
+  }
+
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 10%;
+    left: 10%;
+    width: 20%;
+  }
+
+  .main-1 .shelter img {
+    left: -5%;
+  }
+
+  .main-1 .shelter .dialog.d-1 {
+    bottom: 65%;
+  }
+
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 15%;
+  }
+
+  .main-1 .shelter .dialog.d-3 {
+    bottom: 11%;
+    left: 56%;
+  }
+
+  .main-1 .typhoon .img-group {
+    width: 20%;
+  }
+
+  .main-1 .typhoon .img-group img {
+    width: 80%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: 5%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-2 {
+    bottom: 30%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    left: 35%;
+    width: 45%;
+    bottom: 100%;
+  }
+
+  .info-2 img {
+    position: relative;
+    height: 110%;
+    bottom: -15%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    width: 19%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 {
+    width: 21%;
+  }
+
+  .main-2 .info-2 .dialog.d-4 {
+    width: 19%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    width: 32%;
+  }
+
+  .main-2 .report img {
+    height: 110%;
+    bottom: 5%;
+    left: -1%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: -5%;
+  }
+
+  .main-2 .evacuate .dialog.d-2 {
+    left: 5%;
+    bottom: 22%;
+    width: 27%;
+  }
+
+  .main-2 .evacuate img {
+    height: 125%;
+    left: 3%;
+    top: 11%;
+  }
+
+  .main-4 .communication .g-2,
+  .main-4 .communication .g-3 {
+    justify-content: center;
+  }
+
+  .main-4 .care .dialog.d-1 {
+    left: 22%;
+  }
+
+  .main-4 .talk .left {
+    width: 40%;
+    justify-content: center;
+  }
+
+  .main-4 .talk .right {
+    width: 50%;
+  }
+}
+
+@media all and (max-width:1730px) and (max-height:1200px) {
+  /* .main {
+    padding-left: 3%;
+  } */
+
+  .main-1 .contact-net img {
+    height: 110%;
+  }
+
+  .main-1 .plan img {
+    height: 101%;
+    bottom: -14%;
+  }
+
+  .main-1 .plan .dialog.d-2 {
+    bottom: 40%;
+  }
+
+  .main-1 .plan .dialog.d-5 {
+    bottom: 15%;
+  }
+
+  .main-1 .resource img {
+    position: relative;
+    height: 115%;
+    left: -5%;
+    bottom: -19%;
+  }
+
+  .main-1 .bag .img-group-1 {
+    justify-content: center;
+    gap: 10%;
+  }
+
+  .main-1 .animal .img-group.g-1 {
+    width: 90%;
+  }
+
+  .main-1 .animal .img-group.g-2 {
+    width: 70%;
+  }
+
+  .main-1 .risk .content>img {
+    position: relative;
+    height: 150%;
+    left: 0%;
+    bottom: -33%;
+  }
+
+  .main-1 .risk .dialog.d-2 {
+    bottom: 85%;
+  }
+
+  .main-1 .risk .dialog.d-4 {
+    width: 22%;
+    bottom: 55%;
+    left: 72%;
+  }
+
+  .main-1 .evacuate-plan .dialog.d-1,
+  .main-1 .evacuate-plan .dialog.d-2 {
+    width: 21%;
+  }
+
+  .main-1 .evacuate-plan .dialog.d-3 {
+    width: 19%;
+  }
+
+  .main-1 .evacuate-plan .dialog.d-4 {
+    width: 21%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    left: 5%;
+    bottom: 10%;
+  }
+
+  .main-1 .earthquake .dialog.d-2 {
+    bottom: 30%;
+  }
+
+  .main-1 .shelter .dialog.d-1 {
+    width: 14%;
+  }
+
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 5%;
+    left: 7%;
+  }
+
+  .main-1 .shelter .dialog.d-3 {
+    bottom: 25%;
+    left: 65%;
+  }
+
+  .main-1 .shelter .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .shelter .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-2 {
+    bottom: 28%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-4 {
+    width: 17%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: -3%;
+  }
+
+
+
+  .main-1 .earthquake-home .dialog.d-3 {
+    bottom: 97%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    left: 1%;
+    bottom: 67%;
+    width: 21%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    width: 21.5%;
+    bottom: 5%;
+    left: 1%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 img {
+    height: 45%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 {
+    left: 44%;
+    bottom: 90%;
+    width: 18%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 img {
+    height: 85%;
+    z-index: 5;
+    right: 105%;
+    bottom: -2%;
+  }
+
+  .main-2 .info-2 .dialog.d-4 {
+    left: 73%;
+    bottom: 63%;
+    width: 21%;
+  }
+
+  .main-2 .info-2 .dialog.d-4 img {
+    right: 110%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    left: 63%;
+    width: 36%;
+  }
+
+  .info-2 img {
+    height: 90%;
+    bottom: -5%;
+  }
+
+  .main-2 .while-earthquake .left {
+    height: 60%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: -5%;
+    left: 5%;
+  }
+
+  .main-2 .while-earthquake .right .group .dialog {
+    width: 93%;
+  }
+
+  .main-2 .evacuate img {
+    height: 125%;
+    left: 7%;
+    top: 17%;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 5%;
+  }
+
+  .main-2 .report .dialog.d-2 {
+    width: 21%;
+    left: 71%;
+    bottom: 30%;
+  }
+
+  .main-2 .phone .dialog.d-1 {
+    left: 9%;
+    bottom: 65%;
+  }
+
+  .main-3 .check .left .text::before {
+    bottom: 4%;
+  }
+
+  .main-3 .check .left .text {
+    width: 120%;
+  }
+
+  .main-3 .check .dialog {
+    left: 60%;
+    width: 30%;
+  }
+
+  .main-4 .dialog {
+    width: 90%;
+  }
+}
+
+@media all and (max-width:1440px) {
+
+  .main-1>div,
+  .main-2>div,
+  .main-3>div,
+  .main-4>div {
+    margin-left: 15vw;
+  }
+  .main-1 .contact-net .dialog.d-1,.main-1 .contact-net .dialog.d-2{
+    width: 21%;
+  }
+  .main-1 .plan .dialog.d-3 {
+    bottom: 20%;
+  }
+
+  .main-1 .plan .dialog.d-4 {
+    bottom: 65%;
+    z-index: 5;
+  }
+
+  .main-1 .plan .dialog.d-5 {
+    bottom: 20%;
+    z-index: 5;
+  }
+
+  .main-1 .risk .dialog.d-3 {
+    width: 20%;
+    left: 65%;
+    bottom: 19%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    bottom:15%;
+    width: 21%;
+  }
+  .main-1 .shelter .dialog.d-1{
+    width: 15%;
+  }
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 15%;
+  }
+
+  .main-1 .shelter .download-btn.db-1 {
+    left: 40%;
+  }
+
+  .main-1 .shelter .download-btn.db-2 {
+    left: 60%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: 17%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-3 {
+    z-index: 5;
+    left: 47%;
+    bottom: 115%;
+    width: 20%;
+  }
+
+  .main-1 .bag .img-group-2 {
+    bottom: 20%;
+  }
+
+  .main-1 .bag .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .bag .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-2 .info-1 .steps .step img {
+    width: 90%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    left: 35%;
+    bottom: 105%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    left: 1%;
+    bottom: 66%;
+    width: 19%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    bottom: 21%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 img {
+    bottom: 46%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    bottom: 30%;
+    left: 63%;
+    width: 33%;
+  }
+
+  .main-2 .while-earthquake .left {
+    height: 75%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: -10%;
+  }
+
+  .main-2 .report img {
+    height: 120%;
+    bottom: 5%;
+    left: 4%;
+    z-index: -1;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 15%;
+    bottom: 65%;
+    width: 20%;
+  }
+
+  .main-2 .report .dialog.d-2 {
+    left: 72%;
+    bottom: 44%;
+  }
+
+  .main-2 .phone img {
+    height: 100%;
+    bottom: 13%;
+    left: -5%;
+  }
+
+  .main-2 .phone .dialog.d-2 {
+    bottom: 60%;
+  }
+
+  .main-2 .phone .dialog.d-3 {
+    bottom: 15%;
+  }
+
+  .main-4 .talk .right {
+    bottom: 25%;
+  }
+}
+
+@media all and (max-width: 1400px)and (max-height:1200px) {}
+
+@media all and (max-width:1370px) and (max-height:1030px) {}
+
+@media all and (max-width:1300px) and (max-height:850px) {
+  .main-1 .contact-net .dialog.d-1 {
+    width: 21%;
+    bottom: 55%;
+    left: 3%;
+  }
+
+  .main-1 .contact-net .dialog.d-2 {
+    width: 21%;
+    bottom: 18%;
+    left: 3%;
+  }
+
+  .main-1 .contact-net .dialog.d-3 {
+    left: 80%;
+  }
+
+  .main-1 .contact-net .dialog.d-4 {
+    left: 80%;
+  }
+
+  .main-1 .contact-net .dialog.d-5 {
+    left: 80%;
+  }
+
+  .main-1 .plan .dialog.d-2 {
+    bottom: 43%;
+  }
+
+  .main-1 .resource .dialog.d-2 {
+    left: 76%;
+  }
+
+  .main-1 .resource .dialog.d-3 {
+    left: 76%;
+  }
+
+  .main-1 .bag .img-group-2 {
+    position: relative;
+    bottom: 15%;
+  }
+
+  .main-1 .risk .dialog.d-1 {
+    z-index: 2;
+    width: 21%;
+    left: 0%;
+    bottom: 57%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    bottom: 20%;
+    width: 20%;
+    left: 3%;
+  }
+
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 15%;
+    width: 20%;
+  }
+
+  .main-1 .shelter .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .shelter .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: 15%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-1 {
+    left: 5%;
+    bottom: 65%;
+    width: 21%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-2 {
+    left: 5%;
+    width: 21%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-3 {
+    bottom: 110%;
+    left: 47%;
+  }
+
+  .main-2 .info-1 .content {
+    gap: 5%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    width: 50%;
+  }
+
+  .main-2 .info-2 {
+    margin-left: 28vmin;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    width: 22%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    bottom: 20%;
+    width: 23%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    bottom: 26%;
+    width: 36%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: 0%;
+    left: 10%;
+  }
+
+  .main-2 .evacuate img {
+    height: 110%;
+    top: 4.5%;
+    left: 5%;
+  }
+
+  .main-2 .evacuate .dialog.d-1 {
+    left: 4.5%;
+  }
+
+  .main-2 .evacuate .dialog.d-2 {
+    left: 4.5%;
+  }
+
+  .main-2 .evacuate .dialog.d-3 {
+    left: 67%;
+    bottom: 80%;
+    width: 26%;
+  }
+
+  .main-2 .evacuate .dialog.d-4 {
+    left: 67%;
+    bottom: 60%;
+    width: 26%;
+  }
+
+  .main-2 .report img {
+    height: 90%;
+    bottom: 15%;
+  }
+
+  .main-2 .phone img {
+    height: 100%;
+    bottom: 12%;
+    left: -5%;
+  }
+
+  .main-2 .phone .dialog.d-3 {
+    bottom: 17%;
+  }
+
+  .main-3 .check .left {
+    width: 40%;
+    column-gap: 5%;
+  }
+
+  .main-3 .check .left>div:nth-child(even)::before {
+    bottom: 12.5%;
+  }
+
+  .main-3 .check .dialog {
+    left: 66%;
+    bottom: 90%;
+    width: 30%;
+  }
+
+  .main-4 .care .dialog.d-2 {
+    left: 66%;
+    bottom: 83%;
+    width: 23%;
+  }
+
+  .main-4 .care .dialog.d-1 {
+    left: 15%;
+    bottom: 57%;
+    width: 20%;
+  }
+
+  .main-4 .talk .dialog {
+    width: 90%;
+  }
+
+  .main-4 .talk .left {
+    padding-top: 0%;
+  }
+
+  .main-4 .talk .right {
+    bottom: 20%;
+  }
+}
+
+@media all and (max-width:1280px) {}
+
+@media all and (max-width:1200px) and (max-height:840px) {
+  #progress-woman {
+    left: -50%;
+  }
+
+  .main-1 .contact-net img {
+    height: 90%;
+  }
+
+  .main-1 .contact-net .dialog.d-1 {
+    width: 23%;
+  }
+
+  .main-1 .contact-net .dialog.d-2 {
+    width: 23%;
+  }
+
+  .main-1 .contact-net .dialog.d-3 {
+    left: 76%;
+    width: 22%;
+  }
+
+  .main-1 .contact-net .dialog.d-4 {
+    left: 76%;
+    width: 22%;
+  }
+
+  .main-1 .contact-net .dialog.d-5 {
+    left: 76%;
+    width: 22%;
+  }
+
+  .main-1 .plan .dialog.d-2 {
+    width: 22%;
+  }
+
+  .main-1 .plan .dialog.d-4 {
+    width: 22%;
+  }
+
+  .main-1 .plan .dialog.d-5 {
+    width: 22%;
+  }
+
+  .main-1 .resource .dialog.d-1 {
+    left: 0%;
+    width: 17.9%;
+  }
+
+  .main-1 .bag .img-group-1 {
+    gap: 5%;
+  }
+
+  .main-1 .bag .dialog {
+    width: 98%;
+  }
+
+  .main-1 .risk .dialog.d-4 {
+    bottom: 51%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    bottom: 15%;
+    width: 22%;
+    left: 0%;
+  }
+
+  .main-1 .earthquake .dialog.d-2 {
+    left: 75%;
+    width: 19%;
+  }
+  .main-1 .evacuate-plan .dialog.d-3{
+    left: 80%;
+  }
+  .main-1 .evacuate-plan .dialog.d-4 {
+    left: 70%;
+  }
+
+  .main-1 .shelter .dialog.d-1 {
+    width: 18%;
+    left: 0%;
+  }
+
+  .main-1 .shelter .dialog.d-2 {
+    bottom: 15%;
+    width: 22%;
+    left: 0%;
+  }
+
+  .main-1 .shelter .dialog.d-3 {
+    bottom: 15%;
+    width: 27%;
+  }
+
+  .main-1 .typhoon .img-group .dialog {
+    width: 85%;
+  }
+
+  .main-1 .typhoon .img-group {
+    height: 66%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    width: 55%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    width: 23%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    width: 25%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 img {
+    height: 35%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 {
+    left: 47%;
+    bottom: 90%;
+    width: 20%;
+  }
+
+  .main-2 .info-2 .dialog.d-4 {
+    left: 73%;
+    bottom: 57%;
+    width: 23%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    width: 39%;
+  }
+
+  .main-2 .while-earthquake .right {
+    height: 100%;
+    top: -5%;
+  }
+
+  .main-2 .evacuate img {
+    height: 100%;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 10%;
+    bottom: 59%;
+    width: 20%;
+  }
+
+  .main-2 .report .dialog.d-2 {
+    left: 75%;
+    bottom: 40%;
+  }
+
+  .main-2 .phone img {
+    bottom: 5%;
+  }
+
+  .main-2 .phone .dialog.d-2 {
+    bottom: 53%;
+  }
+
+  .main-2 .phone .dialog.d-3 {
+    left: 52%;
+  }
+  .main-3 .check .dialog{
+    width: 31%;
+  }
+}
+
+@media all and (max-width:1100px) and (max-height:1440px) {}
+
+@media all and (max-width:1100px) and (max-height:780px) {}
+
+@media all and (max-width:960px) and (max-height: 1400px) {}
+
+@media all and (max-width:960px) and (max-height:430px) {}
+
+@media all and (max-width:1000px) and (orientation:portrait) {
+  #progress .bar {
+    display: none;
+  }
+
+  #sidebar {
+    height: 100vh !important;
+    width: 100%;
+    left: -100%;
+    border-radius: 0;
+  }
+
+  #sidebar .list button {
+    /* margin-bottom: 5% !important; */
+    font-size: clamp(14px, 3vmin, 30px);
+  }
+
+  #sidebar.active .right-btn {
+
+    left: 90%;
+  }
+}
+
+@media all and (max-width:900px) and (max-height:400px) {}
+
+@media (max-width:900px) {
+  #progress-woman {
+    display: none;
+  }
+}
+
+@media (max-width:900px) and (max-height:500px) and (orientation: landscape) {
+  #show-when-too-short {
+    /* transform: translate(-50%, -50%); */
+    background-color: #FFF;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media all and (max-width:860px) and (max-height:1201px) {}
+
+@media all and (max-width:780px) and (max-height:1025px) {}
+
+@media all and (max-width:750px) and (max-height:460px) {}
+
+@media all and (max-width:450px) and (max-height:1200px) {
+  #the-nav {
+    left: 55%;
+    top: 6%;
+  }
+
+  #the-nav div.arrow-right {
+    margin-right: 10%;
+    width: 0;
+    height: 0;
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    border-left: 2.8vw solid #1e6e6700;
+    transition: all .2s;
+  }
+
+  #the-nav li:hover div.arrow-right:not(.active) {
+    border-left: 2.8vw solid #00577151;
+  }
+
+  #the-nav div.arrow-right.active {
+    border-left: 2.8vw solid #005671;
+  }
+
+  .burger {
+    top: 50px;
+  }
+
+  #dp {
+    top: 40%;
+  }
+
+  #prepare {
+    left: 9%;
+    top: 11%;
+    width: 30vmin;
+  }
+
+  #document {
+    left: 70%;
+    top: 15%;
+    width: 25vmin;
+  }
+
+  #help {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    width: 40%;
+    align-items: center;
+  }
+
+  #response {
+    position: absolute;
+    left: 6%;
+    top: 65%;
+    width: 40vmin;
+  }
+
+  #recover {
+    position: absolute;
+    right: -2%;
+    top: 70%;
+    width: 50%;
+  }
+
+  .main-img.circle {
+    width: 70%;
+    top: 57%;
+    left: 50%;
+  }
+
+  .main-img.woman {
+    width: 35%;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+
+  .main-1>div,
+  .main-2>div,
+  .main-3>div,
+  .main-4>div {
+    height: 72%;
+  }
+
+  .main-1 .contact-net img {
+    height: 95%;
+    position: relative;
+    bottom: -1%;
+  }
+
+  .main-1 .plan img {
+    height: 110%;
+  }
+
+  .main-1 .plan .dialog {
+    z-index: 5;
+  }
+
+  .main-1 .resource .dialog {
+    z-index: 5;
+  }
+
+  .main-1 .bag .img-group-2 {
+    bottom: -5%;
+  }
+
+  .main-1 .bag .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .bag .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-1 .bag .dialog {
+    margin-bottom: 5%;
+  }
+
+  .main-1 .risk .dialog.d-2 {
+    bottom: 85%;
+  }
+
+  .main-1 .risk .dialog.d-4 {
+    bottom: 33%;
+    left: 75%;
+  }
+
+  .main-1 .risk .dialog.d-3 {
+    bottom: 10%;
+    left: 65%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    bottom: 30%;
+    left: 3%;
+  }
+
+  .main-1 .earthquake .dialog.d-2 {
+    left: 73%;
+  }
+
+  .main-1 .shelter .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .shelter .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-1 {
+    left: 5%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-2 {
+    left: 5%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: 6%;
+    height: 100%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-3 {
+    bottom: 96%;
+  }
+
+  .main-2 .info-1 .content {
+    gap: 5%;
+  }
+
+  .main-2 .info-1 .steps {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    top: 10%;
+  }
+
+  .main-2 .info-1 .steps .step img {
+    height: 70%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    bottom: 95%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 {
+    width: 20%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    width: 18%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    bottom: 15%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: -5%;
+  }
+
+  .main-2 .no-power img {
+    height: 100%;
+  }
+
+  .main-2 .no-power .dialog.d-2 {
+    bottom: 35%;
+  }
+
+  .main-2 .evacuate img {
+    height: 120%;
+    top: 11.5%;
+    left: 3%;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 5%;
+  }
+
+  /* .main-2 .report .dialog.d-1 {
+    height: 90%;
+  } */
+
+  .main-2 .phone img {
+    height: 90%;
+  }
+
+  .main-2 .phone .dialog.d-1 {
+    left: 8%;
+  }
+
+  .main-3 .help .content img {
+    height: 110%;
+    bottom: -5%;
+    position: absolute;
+    left: 30%;
+  }
+
+  .main-3 .help .dialog {
+    left: 10%;
+  }
+
+  .main-4 .talk .dialog {
+    width: 80%;
+  }
+
+  .main-4 .care img {
+    height: 105%;
+  }
+
+  .main-4 .care .dialog.d-1 {
+    width: 17%;
+  }
+
+  .main-4 .talk .left {
+    padding-top: 10%;
+  }
+
+  .main-5>a {
+    white-space: nowrap;
+  }
+
+  .main-5 .img-group img:first-of-type {
+    width: 120%;
+  }
+
+  .main-5 .img-group img:last-of-type {
+    width: 50%;
+  }
+}
+
+@media all and (max-width:400px) and (max-height:860px) {
+  .burger {
+    top: 45px;
+  }
+
+  .main-1>div,
+  .main-2>div,
+  .main-3>div,
+  .main-4>div {
+    height: 72%;
+  }
+
+  .main-1 .contact-net img {
+    height: 95%;
+    position: relative;
+    bottom: -1%;
+  }
+
+  .main-1 .plan img {
+    height: 110%;
+  }
+
+  .main-1 .plan .dialog {
+    z-index: 5;
+  }
+
+  .main-1 .resource .dialog {
+    z-index: 5;
+  }
+
+  .main-1 .bag .img-group-2 {
+    bottom: 0.5%;
+  }
+
+  .main-1 .bag .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .bag .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-1 .bag .dialog {
+    margin-bottom: 0%;
+  }
+
+  .main-1 .risk .dialog.d-2 {
+    bottom: 85%;
+  }
+
+  .main-1 .risk .dialog.d-4 {
+    bottom: 33%;
+    left: 75%;
+  }
+
+  .main-1 .risk .dialog.d-3 {
+    bottom: 10%;
+    left: 65%;
+  }
+
+  .main-1 .earthquake .dialog.d-1 {
+    bottom: 30%;
+    left: 3%;
+  }
+
+  .main-1 .earthquake .dialog.d-2 {
+    left: 73%;
+  }
+
+  .main-1 .shelter .download-btn.db-1 {
+    left: 41%;
+  }
+
+  .main-1 .shelter .download-btn.db-2 {
+    left: 59%;
+  }
+
+  .main-2 .while-earthquake .left {
+    height: 60%;
+  }
+
+  .main-2 .while-earthquake .right {
+    top: 5%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-1 {
+    left: 5%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-2 {
+    left: 5%;
+  }
+
+  .main-1 .earthquake-home img {
+    bottom: 6%;
+    height: 100%;
+  }
+
+  .main-1 .earthquake-home .dialog.d-3 {
+    bottom: 96%;
+  }
+
+  .main-2 .info-1 .content {
+    gap: 5%;
+  }
+
+  .main-2 .info-1 .steps {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    top: 10%;
+  }
+
+  .main-2 .info-1 .steps .step img {
+    height: 70%;
+  }
+
+  .main-2 .info-1 .dialog.d-2 {
+    bottom: 95%;
+  }
+
+  .main-2 .info-2 .dialog.d-3 {
+    width: 20%;
+  }
+
+  .main-2 .info-2 .dialog.d-1 {
+    width: 18%;
+  }
+
+  .main-2 .info-2 .dialog.d-2 {
+    bottom: 15%;
+  }
+
+
+  .main-2 .no-power img {
+    height: 100%;
+  }
+
+  .main-2 .no-power .dialog.d-2 {
+    bottom: 35%;
+  }
+
+  .main-2 .evacuate img {
+    height: 120%;
+    top: 11.5%;
+    left: 3%;
+  }
+
+  .main-2 .report .dialog.d-1 {
+    left: 5%;
+  }
+
+
+
+  .main-2 .phone img {
+    height: 90%;
+  }
+
+  .main-2 .phone .dialog.d-1 {
+    left: 8%;
+  }
+
+  .main-3 .help .content img {
+    height: 110%;
+    bottom: -5%;
+    position: absolute;
+    left: 30%;
+  }
+
+  .main-3 .help .dialog {
+    left: 10%;
+  }
+
+  .main-4 .care img {
+    height: 105%;
+  }
+
+  .main-4 .care .dialog.d-1 {
+    width: 17%;
+  }
+
+  .main-4 .talk .left {
+    padding-top: 10%;
+  }
+
+  .main-5>a {
+    white-space: nowrap;
+  }
+
+  .main-5 .img-group img:first-of-type {
+    width: 120%;
+  }
+
+  .main-5 .img-group img:last-of-type {
+    width: 50%;
+  }
+}
+
+@media all and (max-width:400px) and (max-height:835px) {
+  .main-1 .bag .dialog
+}
+
+@media all and (max-width:350px) and (max-height:580px) {}
+
+/* @media */
+
+
+@keyframes swing {
+  0% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+
+@keyframes swing-sm {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+
+@keyframes updown {
+  0% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}

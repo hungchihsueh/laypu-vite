@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw" xml:lang="zh-hant-tw">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>防災無障礙｜肢體障礙者</title>
+  <link rel="prefetch" href="./hearing.html">
+  <link rel="prefetch" href="../index.html">
+  <link rel="prefetch" href="/static/main.mp4" as="video" type="video/mp4" />
+  <link rel="preload" as="font" href="/static/font/GenJyuuGothic-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/static/img/webp/wheelchair-person-loading.webp" as="image" />
+  <link rel="preload" href="/static/img/handicapped/prepare.webp" as="image" />
+  <link rel="preload" href="/static/img/handicapped/response.webp" as="image" />
+  <link rel="preload" href="/static/img/handicapped/recover.webp" as="image" />
+  <link rel="preload" href="/static/img/handicapped/document.webp" as="image" />
+  <link rel="preload" as="font" href="/static/font/GenJyuuGothic-Heavy.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/static/font/jf-openhuninn-1.1.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/loading-handicapped.css" />
+  <link rel="stylesheet" href="../css/handicapped.css" />
+  <script type="module" src="../js/gsap/gsap.min.js" defer></script>
+  <script type="module" src="../js/handicapped.js" defer></script>
+  <!-- <script src="./js/lazylize.js" async=""></script> -->
+  <style>
+    @font-face {
+      font-family: "default";
+      src: url("../public/static/font/GenJyuuGothic-Heavy.woff2");
+      font-weight: 900;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: "default";
+      src: url("/static/font/jf-openhuninn-1.1.woff2");
+      font-weight: 400;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: "default";
+      src: url("/static/font/jf-openhuninn-1.1.woff2");
+      font-weight: 500;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: "default";
+      src: url("/static/font/GenJyuuGothic-Bold.woff2");
+      font-weight: 700;
+      font-style: normal
+    }
+
+    /* fade image in after load */
+    /* .lazyload,
+    .lazyloading {
+      opacity: 0;
+    }
+
+    .lazyloaded {
+      opacity: 1;
+      transition: opacity 300ms;
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- loading -->
+  <div id="loading">
+    <img class="lazyload" data-expand="250" src="/static/img/wheelchair-person-loading.webp" alt="">
+    <div>
+      <span>Loading</span>
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+    </div>
+  </div>
+  <!-- loading -->
+  <header>
+    <a href="#main-content" class="sr-only sr-only-focusable" title="跳到主要內容區塊" id="go-to-main">跳到主要內容區塊</a>
+    <nav class="navbar">
+      <div class="left">
+        <button title="選單" type="button" class="nav_burger" id="main-nav"><img class="lazyload"
+            src="/static/img/navbar-burger.svg" alt="" /></button>
+        <!-- 選單 -->
+        <div id="the-nav">
+          <ul>
+            <li>
+              <div>
+                <div class="arrow-right "></div>
+                <div class="text">首頁</div>
+              </div>
+            </li>
+            <li>
+              <a href="./handicapped.html" title="防災無障礙｜肢體障礙者">
+                <div class="arrow-right active"></div>
+                <div class="text">肢體障礙者</div>
+              </a>
+            </li>
+            <li><a href="./hearing.html" title="防災無障礙｜聽覺障礙者">
+                <div class="arrow-right"></div>
+                <div class="text">聽覺障礙者</div>
+              </a></li>
+            <li><a href="./resource.html" title="防災無障礙｜相關資源">
+                <div class="arrow-right"></div>
+                <div class="text">相關資源</div>
+              </a></li>
+          </ul>
+        </div>
+        <h1>
+          <a title="防災無障礙首頁" href="./index.html" class="logo"><img class="lazyload" data-expand="250"
+              src="/static/img/logo.svg" alt="" />防災無障礙</a>
+        </h1>
+      </div>
+      <div class="right">
+        <a href="#;return false;" title="上方選單區" accesskey="U" class="website-nav">:::</a>
+        <a href="./sitemap.html" title="網站導覽" class="website-nav">網站導覽</a>
+      </div>
+      <!-- <a title="" href="#" class="website-nav">
+        <img  class="lazyload" src="/static/img/nav-dots.svg" class="dots" alt="" />
+        <span>網站導覽</span>
+      </a> -->
+    </nav>
+  </header>
+  <div id="show-when-too-short">
+    stop!!!
+  </div>
+  <main>
+    <!-- tab -->
+    <div class="section-tabs burger" role="tablist">
+      <div class="selector">
+        <div class="text"></div><img class="lazyload" data-expand="250" src="/static/img/dropdown.svg" alt="下拉選單箭頭"
+          class="dropdown">
+      </div>
+      <button type="button" class="tab" role="tab">災前準備</button>
+      <button type="button" class="tab" role="tab">災時應變</button>
+      <button type="button" class="tab" role="tab">災後復原</button>
+      <button type="button" class="tab" role="tab">協助肢障者</button>
+      <button type="button" class="tab" role="tab">文件下載</button>
+    </div>
+    <div class="section-tabs normal" role="tablist">
+      <button type="button" class="tab" role="tab">災前準備</button>
+      <button type="button" class="tab" role="tab">災時應變</button>
+      <button type="button" class="tab" role="tab">災後復原</button>
+      <button type="button" class="tab" role="tab">協助肢障者</button>
+      <button type="button" class="tab" role="tab">文件下載</button>
+    </div>
+    <!-- <div class="button-group top">
+      <button type="button" class="progress-prev" title="往前" id="">
+        <img  class="lazyload" src="/static/img/handicapped/arrow-left.svg" alt="" />
+      </button>
+      <button type="button" class="progress-next" title="往後" id="">
+        <img  class="lazyload" src="/static/img/handicapped/arrow-right.svg" alt="" />
+      </button>
+    </div> -->
+
+    <!-- sidebar -->
+    <div id="sidebar">
+      <button title="展開側邊欄" type="button" class="right-btn">
+        <img src="/static/img/sidebar-arrow.svg" alt="">
+      </button>
+      <div class="list">
+        <button type="button" tabindex="-1">
+          <div class="dot"></div>
+          <div>{title}</div>
+        </button>
+      </div>
+    </div>
+    </div>
+    <!-- sidebar -->
+    <a href="#;return false;" title="主要內容區" accesskey="C" id="main-content">:::</a>
+    <div class="main-0">
+      <div class="title-group">
+        <div class="title">肢體障礙者</div>
+        <!-- <div class="pill">身心障礙者第七類</div> -->
+      </div>
+      <!-- 防災大字 -->
+      <img class="lazyload" data-expand="250" src="/static/img/dp-white.svg" id="dp" alt="" />
+      <!-- 輪椅 -->
+      <img class="lazyload" data-expand="250" src="/static/img/wheelchair-person.svg" id="wheel-chair" alt="" />
+      <!-- 災前準備 -->
+      <button type="button" id="prepare" class="section-group" data-speed="0.08" tabindex="0">
+        <div class="pill">災前準備</div>
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/prepare.svg" alt="" />
+      </button>
+      <!--災時應變  -->
+      <button type="button" id="response" class="section-group" data-speed="0.02" tabindex="0">
+        <div class="pill">災時應變</div>
+        <img class="lazyload" src="/static/img/handicapped/response.svg" alt="" />
+      </button>
+      <!-- 文件下載 -->
+      <button type="button" id="document" class="section-group" data-speed="0.06" tabindex="0">
+        <div class="pill">文件下載</div>
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/document-download.svg" alt="" />
+      </button>
+      <!-- 協助肢障者 -->
+      <button type="button" tabindex="0" id="help" class="section-group" data-speed="0.06">
+        <div class="pill">協助肢障者</div>
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/help.svg" alt="" />
+      </button>
+      <!-- 災後復原 -->
+      <button type="button" tabindex="0" id="recover" class="section-group" data-speed="0.06">
+        <div class="pill">災後復原</div>
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/recover.svg" alt="" />
+      </button>
+    </div>
+    <div class="main main-1" id="prepare-page">
+      <div class="contact-net">
+        <!-- mouse -->
+        <div class="cursor">
+          <div class="icon">
+            <div class="dot"></div>
+          </div>
+          <div>Scroll</div>
+        </div>
+        <!-- mouse -->
+        <h2 class="title">建立個人緊急聯絡網</h2>
+        <h3 class="sub-title">防災準備的第一步，確保災時有人能幫助您。</h3>
+        <div class="content">
+          <div class="group" id="cn-1">
+            <div class="dialog">
+              <div class="num">1</div>
+              <p class="text">
+                在生活中每一個重要場所，包含住家、工作地點、學校等找尋信任的親友，或是詢問村里長，社區是否有防災志工，在緊急時可以來幫助您。
+              </p>
+            </div>
+            <img src="/static/img/webp/cn-1.webp" alt="" />
+          </div>
+          <div class="group" id="cn-2">
+            <div class="dialog">
+              <div class="num">2</div>
+              <p class="text">
+                找一位離您比較遠（如不同村里）的緊急聯絡人，避免鄰近的緊急聯絡人遭受同樣災害而無法前來幫助您。
+              </p>
+            </div>
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/cn-2.svg" alt="" />
+          </div>
+          <div class="group" id="cn-3">
+            <div class="dialog">
+              <div class="num">3</div>
+              <p class="text">
+                將您家裡的備份鑰匙交給其中一位緊急聯絡人。
+              </p>
+            </div>
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/cn-3.svg" alt="" />
+          </div>
+        </div>
+        <a href="/static/download/個人緊急聯絡網.pdf" download class="download-btn" title="個人緊急聯絡網.pdf">
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            個人緊急聯絡網<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="plan">
+        <h2 class="title">共同討論緊急應變計畫</h2>
+        <h3 class="sub-title">
+          根據您的需求，和您的緊急聯絡人共同討論緊急應變計畫並演練，例如：
+        </h3>
+        <div class="content">
+          <div class="group" id="pl-1">
+            <div class="dialog">
+              <div class="num">1</div>
+              <p class="text">
+                將您家裡的備份鑰匙交給其中一位緊急聯絡人。
+              </p>
+            </div>
+            <img src="/static/img/webp/pl-1.webp" alt="" />
+          </div>
+          <div class="group" id="pl-2">
+            <div class="dialog">
+              <div class="num">2</div>
+              <p class="text">
+                若您需要依靠生命維持設備或是仰賴照顧服務員，請您的緊急聯絡人在緊急時，務必主動確認您的狀況。
+              </p>
+            </div>
+            <img src="/static/img/webp/pl-2.webp" alt="" />
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/pl-2-1.svg" id="breath" alt="" />
+          </div>
+        </div>
+        <a href="/static/download/重要聯絡電話.pdf" download title="重要聯絡電話.pdf" class="download-btn">
+          <img class="lazyload" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            重要聯絡電話<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="storage">
+        <h2 class="title">儲備家中物資</h2>
+        <h3 class="sub-title">
+          天災時若不便外出，例如淹水不退，或聯外道路中斷，必須在家避難的狀況時：
+        </h3>
+        <div class="content">
+          <div class="group" id="material-1">
+            <div class="dialog d-1">
+              <div class="num">1</div>
+              <p class="text">準備３天份的物資。</p>
+            </div>
+            <div class="dialog d-2">
+              <div class="num">2</div>
+              <p class="text">
+                物資儲備項目因人而異，按照您的生活模式，思考少了哪些東西會讓生活陷入困境，那些東西就是您應該儲備的內容。
+              </p>
+            </div>
+            <div class="dialog d-3">
+              <div class="num">3</div>
+              <p class="text">
+                可以依據您的日常生活必需品多採購一點數量，其中食物盡量選擇不需加熱煮食或用冰箱保存的類型，如罐頭、乾糧。
+              </p>
+            </div>
+            <img src="/static/img/webp/material-1.webp" alt="" />
+            <img class="lazyload sheet" data-expand="250" src="/static/img/handicapped/material-2.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="backbag">
+        <h2 class="title">緊急避難包</h2>
+        <h3 class="sub-title">
+          災害使得您無法居住在自己家中，必須疏散撤離到其他地方避難收容時：
+        </h3>
+        <div class="content">
+          <div class="group" id="bag-1">
+            <div class="dialog">
+              <p class="text">
+                除了平常使用，放有現金、行動電源、重要證件（健保卡、身分證、身心障礙證明）、濕紙巾等衛生用品的隨身包包外，請再準備一個緊急避難包並放在容易取得的地方。緊急避難包內容物以維生必需品為主，控制在自己可以帶走的重量與大小，並半年檢查更新一次物品，建議物品：
+              </p>
+            </div>
+            <div class="img-group">
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/wallet.svg" alt="" />
+                <div>
+                  <span id="wallet"></span>
+                  <span>錢包</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/power-bank.svg" alt="" />
+                <div>
+                  <span id="power-bank"></span>
+                  <span>行動電源</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/tissue.svg" alt="" />
+                <div>
+                  <span id="tissue"></span>
+                  <span>衛生紙、濕紙巾</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/pills.svg" alt="" />
+                <div>
+                  <span id="pills"></span>
+                  <span>7-10天份藥物</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/food.svg" alt="" />
+                <div>
+                  <span id="food"></span>
+                  <span>1天份的水及食物</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/paper.svg" alt="" />
+                <div>
+                  <span id="paper"></span>
+                  <span>紙和筆</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/cable.svg" alt="" />
+                <div>
+                  <span id="cable"></span>
+                  <span>延長線(方便輔具充電)</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/hoody.svg" alt="" />
+                <div>
+                  <span id="hoody"></span>
+                  <span>(輪椅用)雨衣</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/clothes.svg" alt="" />
+                <div>
+                  <span id="clothes"></span>
+                  <span for="clothes">禦寒衣物</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/head-light.svg" alt="" />
+                <div>
+                  <span id="head-light"></span>
+                  <span for="head-light">頭燈或手電筒</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/whistle.svg" alt="" />
+                <div>
+                  <span id="whistle"></span>
+                  <span for="whistle">哨子或蜂鳴器</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/screw-driver.svg" alt="" />
+                <div>
+                  <span id="screw-driver"></span>
+                  <span for="screw-driver">萬用工具</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/glove.svg" alt="" />
+                <div>
+                  <span id="glove"></span>
+                  <span for="glove">厚手套</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/bag/face-mask.svg" alt="" />
+                <div>
+                  <span id="face-mask"></span>
+                  <span for="face-mask">衛生用品(口罩、尿布等)</span>
+                </div>
+              </div>
+            </div>
+            <img src="/static/img/webp/bag-1.webp" alt="" />
+          </div>
+        </div>
+        <a href="/static/download/緊急避難包.pdf" class="download-btn" title="緊急避難包.pdf">
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            緊急避難包<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="assistant-equipment">
+        <h2 class="title">輔助設備</h2>
+        <h3 class="sub-title">
+          平時使用電動輪椅者，請經常檢查輪椅胎壓與電池充電情況，並準備備用電池與充電器。可能的話，可以再準備較輕便的手動輪椅備用，方便他人協助撤離，而且電動輪椅在水災或火災時，也可能發生電池損壞而無法使用。
+        </h3>
+        <div class="content">
+          <div class="group" id="equip-1">
+            <p class="dialog d-1">
+              如果您的輪椅有座墊，當必須在沒有輪椅的情況下撤離，請隨身攜帶座墊。
+            </p>
+            <p class="dialog d-2">
+              在拐杖、輪椅、助行器上貼發光貼紙，以便在黑暗中仍可以找到它們。
+            </p>
+            <img src="/static/img/webp/equip-1.webp" alt="" />
+          </div>
+        </div>
+        <a href="/static/download/重要設備清單.pdf" download title="重要設備清單.pdf" class="download-btn" title="重要設備清單.pdf">
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            重要設備清單<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="medical">
+        <h2 class="title">醫療器材與藥物整備</h2>
+        <h3 class="sub-title">
+          平常在使用的醫療器材，應做好使用方式的說明（說明書影本可放在緊急避難包中），便於您的緊急聯絡人在災時可協助您使用，並注意緊急時要能順利搬出。
+        </h3>
+        <div class="content">
+          <div class="group" id="medical-main-img">
+            <img src="/static/img/webp/medical-1.webp" alt="" />
+          </div>
+          <div class="group" id="medical-1">
+            <div class="g-1">
+              <div class="dialog">
+                <div class="num">1</div>
+                <p class="text">
+                  若您需要仰賴生命維持設備，請做好停電的備援規劃。
+                </p>
+              </div>
+              <img src="/static/img/handicapped/medical-2.gif" alt="" />
+            </div>
+            <div class="g-2">
+              <div class="dialog">
+                <div class="num">2</div>
+                <p class="text">
+                  若您有使用呼吸器，可將呼吸卡影本放在緊急避難包中，以便需要使用其他呼吸器時，可立即調整到適合自己的模式。
+                </p>
+              </div>
+              <img src="/static/img/handicapped/medical-3.gif" alt="" />
+            </div>
+            <div class="g-3">
+              <div class="dialog">
+                <div class="num">3</div>
+                <p>
+                  有慢性病的人備妥處方箋影本、確認平時就診醫療機關的聯絡方式和常用藥物，並確認使用期限。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/static/download/醫療需求.pdf" title="醫療需求.pdf" class="download-btn db-1" download>
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt=""
+            title="醫療需求.pdf" />
+          <div>
+            醫療需求<br />
+            文件下載
+          </div>
+        </a>
+        <a href="/static/download/飲食及其他需求.pdf" download class="download-btn db-2" title="飲食及其他需求.pdf">
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            飲食及其他需求<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="animal">
+        <h2 class="title">輔助動物的緊急避難包</h2>
+        <h3 class="sub-title">
+          使用輔助動物服務者，需要幫牠準備下列物品：
+        </h3>
+        <div class="content">
+          <div class="group" id="animal-1">
+            <div class="img-group">
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/water.svg" alt="" />
+                <div>
+                  <span id="water"></span>
+                  <span>水和食物</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/meds.svg" alt="" />
+                <div>
+                  <span id="meds"></span>
+                  <span>常備藥品和維他命</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/vaccine.svg" alt="" />
+                <div>
+                  <span id="vaccine"></span>
+                  <span>疫苗注射紀錄</span>
+                </div>
+              </div>
+              <div id="pet-name">
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/tag.svg" alt="" />
+                <div>
+                  <span id="tag"></span>
+                  <span>您的電話/獸醫的電話/訓練動物中心的名字</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/toy.svg" alt="" />
+                <div>
+                  <span id="toy"></span>
+                  <span>毯子和玩具</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/leash.svg" alt="" />
+                <div>
+                  <span id="leash"></span>
+                  <span>動物牽繩</span>
+                </div>
+              </div>
+              <div>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/plastic-bag.svg" alt="" />
+                <div>
+                  <span id="plastic-bag"></span>
+                  <span>紙巾和塑膠袋</span>
+                </div>
+              </div>
+              <div id="pet-pic">
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/animal/picture.svg" alt="" />
+                <div>
+                  <span id="picture"></span>
+                  <span>最近照片(疏散撤離或收容過程和輔助動物失散，手邊有照片可利尋找輔助動物)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="risk">
+        <h2 class="title">住家災害風險檢視</h2>
+        <h3 class="sub-title">
+          可用下列方法檢視您的住家是否有地震、水災、坡地災害風險：
+        </h3>
+        <div class="content">
+          <div class="img-group">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/risk/mudslide.svg" alt="" />
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/risk/earthquake.svg" alt="" />
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/risk/tsunami.svg" alt="" />
+          </div>
+          <div class="group" id="risk-1">
+            <p class="dialog d-1">
+              1999年(含)以前取得建造執照的房屋（或是考量施工期程，2002年(含)以前完工的建物），會有較高的地震風險，若經濟許可，建議與全棟建築物所有權人共同找結構技師進行耐震評估。耐震評估補助資訊可查詢內政部營建署「老屋耐震安檢」相關內容。
+            </p>
+            <p class="dialog d-2">
+              請到國家災害防救科技中心<strong>「災害潛勢地圖網站」</strong>查看所在地是否有災害潛勢。
+            </p>
+            <p class="dialog d-3">
+              多數縣市會在颱風或豪雨災害之前，主動聯繫保全住戶，可向地方政府確認自己是否在災害保全戶名單內。
+            </p>
+            <p class="dialog d-4">
+              另外，可到<strong>「街屋耐震資訊網」</strong>評估你家是否耐震。
+            </p>
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/risk/risk-main.svg" alt="" />
+          </div>
+        </div>
+        <a href="/static/download/疏散撤離路線與收容處所.pdf" title="疏散撤離路線與收容處所.pdf" class="download-btn" download>
+          <img class="lazyload" data-expand="250" src="/static/img/handicapped/cloud-download.svg" alt="" />
+          <div>
+            疏散撤離路線與收容所<br />
+            文件下載
+          </div>
+        </a>
+      </div>
+      <div class="evacuate">
+        <h2 class="title">疏散撤離規劃</h2>
+        <h3 class="sub-title">
+          和您的家人討論災害發生後的聯絡方式與會合地點。養成每次到陌生場所，都要知道出口在哪裡的習慣。
+        </h3>
+        <div class="content">
+          <div class="group">
+            <p class="dialog">
+              規劃安全的疏散撤離路線與交通方式，由於災害時可能會遇到石塊、樹木倒塌等導致道路無法通行的狀況，建議多考慮幾條避難路線，並實際模擬疏散撤離以確認可行性。
+            </p>
+            <img class="lazyload" id="evacuate-main" data-expand="250" src="/static/img/handicapped/evacuate-main.gif"
+              alt="">
+            <img id="evacuate-exit" src="/static/img/webp/evacuate-exit.webp" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="shelter">
+        <h2 class="title">收容規劃</h2>
+        <h3 class="sub-title">
+          請思考您的優先收容處所，例如親友家，若不便到親友家，可到您所處的鄉鎮市區公所網站查詢防災地圖，或是直接與鄉鎮市區公所或村里長確認無障礙避難收容處所。
+        </h3>
+        <div class="content">
+          <div class="group">
+            <div class="dialog d-1">
+              <img src="/static/img/handicapped/shelter-important.gif" alt="" class="important">
+              <p>
+                如果您可能去的收容處所是醫院或其他禁帶寵物的地方，請事先安排寵物可能的去處。
+              </p>
+            </div>
+            <p class="dialog d-2">事先確認避難收容場所的環境是否適合自己，例如：觀察無障礙廁所環境是否適合您？是否有洗澡椅？收容所可否提供輪椅或維生器材充電需求？是否有冰箱可以保存藥物？</p>
+            <img src="/static/img/webp/shelter-main.webp" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="typhoon">
+        <h2 class="title">颱風豪雨居家準備</h2>
+        <h3 class="sub-title">
+          颱風豪雨之前，請緊急聯絡人協助您完成下列工作：
+        </h3>
+        <div class="content">
+          <div class="group" id="ty-1">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/typhoon/ty-1.svg" alt="">
+            <div class="dialog">
+              <div class="num">1</div>
+              <p class="text">檢查或補修屋頂及牆壁。</p>
+            </div>
+          </div>
+          <div class="group" id="ty-2">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/typhoon/ty-2.svg" alt="">
+            <div class="dialog">
+              <div class="num">2</div>
+              <p class="text">利用浴缸或是水桶儲水。</p>
+            </div>
+          </div>
+          <div class="group" id="ty-3">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/typhoon/ty-3.svg" alt="">
+            <div class="dialog">
+              <div class="num">3</div>
+              <p class="text">清理住家附近的排水溝，確保暢通、沒有阻塞。</p>
+            </div>
+          </div>
+          <div class="group" id="ty-4">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/typhoon/ty-4.svg" alt="">
+            <div class="dialog">
+              <div class="num">4</div>
+              <p class="text">將庭院、陽台的樹木以支柱固定或將盆栽搬進家中。</p>
+            </div>
+          </div>
+          <div class="group" id="ty-5">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/typhoon/ty-5.svg" alt="">
+            <div class="dialog">
+              <div class="num">5</div>
+              <p class="text">玻璃可以貼上膠帶、防碎膜，並拉上窗簾。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="earthquake">
+        <h2 class="title">地震居家準備</h2>
+        <h3 class="sub-title">
+          為減少地震造成的衝擊，於平時先固定好家具。為降低睡眠時受到地震的傷害，床鋪上方盡量不要有吊掛物。
+        </h3>
+        <div class="content">
+          <div class="dialog d-1">
+            <p class="text">窗戶玻璃可以貼上防碎膜或拉上窗簾，避免玻璃四濺。</p>
+          </div>
+          <div class="dialog d-2">
+            <!-- <img class="lazyload" src="/static/img/handicapped/earthquake/ea-arrow.gif" alt="" class="arrow"> -->
+            <p class="text">以L型角鐵將傢俱固定於牆面。</p>
+          </div>
+          <div class="dialog d-3">
+            <p class="text">讓櫥櫃門或抽屜的方向與床平行，即使東西傾覆也不會掉落到床上。</p>
+          </div>
+          <div class="dialog d-4">
+            <p class="text">若將輪椅、助行器等輔具放於床邊時，記得固定輪子或做相關固定措施。</p>
+          </div>
+          <div class="img-group">
+            <img class="lazyload main" data-expand="250" src="/static/img/handicapped/earthquake/ea-1.svg" alt="">
+            <img class="lazyload wheelchair" data-expand="250" src="/static/img/handicapped/earthquake/ea-2.svg" alt="">
+            <img class="lazyload closet" data-expand="250" src="/static/img/handicapped/earthquake/ea-3.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main main-2">
+      <div class="info">
+        <!-- mouse -->
+        <div class="cursor">
+          <div class="icon">
+            <div class="dot"></div>
+          </div>
+          <div>Scroll</div>
+        </div>
+        <!-- mouse -->
+        <h2 class="title">災害即時資訊取得</h2>
+        <h3 class="sub-title">加入國家災害防救科技中心官方Line，
+          提供您即時的災害訊息。</h3>
+        <div class="content">
+          <div class="qrcode">
+            <div class="dialog"><strong>加入方式（一）</strong><br>
+              掃描QR code</div>
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/qrcode.svg" alt="">
+          </div>
+          <div class="steps">
+            <div class="step">
+              <h4 class="text">加入好友</h4>
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-1.png" alt="">
+            </div>
+            <div class="arrow">
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-arrow.svg" alt="">
+            </div>
+            <div class="step">
+              <h4 class="text">點下訂閱示警</h4>
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-2.png" alt="">
+            </div>
+            <div class="arrow">
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-arrow.svg" alt="">
+            </div>
+
+            <div class="step">
+              <h4 class="text">選擇您的行政區域</h4>
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-3.png" alt="">
+            </div>
+            <div class="arrow">
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-arrow.svg" alt="">
+            </div>
+            <div class="step">
+              <h4 class="text">選擇您需要的示警</h4>
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/info/step-4.png" alt="">
+            </div>
+          </div>
+          <div class="dialog">
+            <div><strong>加入方式（二）</strong></div>
+            國家災害防救科技中心官方帳號（ID：@NCDR）<br>
+            使用者可至【設定】→【官方帳號】內搜尋帳號並加入好友完成訂閱。
+          </div>
+        </div>
+      </div>
+      <div class="earthquake">
+        <h2 class="title">地震發生時</h2>
+        <h3 class="sub-title">收到地震國家級警報後或地震發生時，第一時間不要急著往外跑，要穩住身體、保護頭頸部。
+          依據您的身體狀況記住口訣：</h3>
+        <div class="content">
+          <div class="steps">
+            <div class="table">
+              <div class="dialog">
+                <div class="num">1</div>
+                <p class="text">身體尚可趴下者：趴下、掩護、穩住。</p>
+
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/earthquake/table.svg"
+                  alt="">
+
+              </div>
+            </div>
+            <div class="chair">
+              <div class="dialog">
+                <div class="num">2</div>
+                <p class="text">無法趴下者：坐下、掩護、穩住。</p>
+
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/earthquake/chair.svg"
+                  alt="">
+
+              </div>
+            </div>
+            <div class="wheel-chair">
+              <div class="dialog">
+                <div class="num">3</div>
+                <p class="text">使用輪椅者：固定、掩護、穩住。</p>
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/earthquake/wheelchair.svg"
+                  alt="">
+              </div>
+              <div class="dialog d-2">
+                <img class="lazyload" data-expand="250" src="/static/img/handicapped/response/earthquake/line.svg"
+                  alt="">
+                <p class="text">使用輪椅者務必要鎖住或固定輪子，如果手部具有力氣，可以準備靠墊，在災時抽起保護頭部。</p>
+              </div>
+            </div>
+          </div>
+          <div class="cover-head">
+            <div class="dialog">
+              <div class="num">4</div>
+              <p class="text">雙手無法舉起保護頭部者：遠離可能的掉落物，請家人或身邊的人幫忙保護您的頭部。</p>
+            </div>
+            <div class="dialog">
+              <div class="num">5</div>
+              <p class="text">睡覺時的臨震行為：留在床上、側面捲曲身體、用枕頭保護頭頸部。</p>
+            </div>
+            <img src="/static/img/webp/cover-head.webp" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="no-power">
+        <h2 class="title">停電怎麼辦</h2>
+        <h3 class="sub-title">居家使用維生器材的身障者，遇到斷電可以聯繫縣市政府社會局或撥119。</h3>
+        <div class="content">
+          <p class="dialog d-1">停電時盡量不要使用蠟燭，避免不慎引起火災；家中可以準備太陽能露營燈使用。</p>
+          <p class="dialog d-2">停電時，想要了解氣象或地震資訊，可以撥打166、167，在中央氣象局發布颱風警報起，至解除颱風警報期間是免費服務喔！</p>
+          <p class="dialog d-3">地震過後停電時，不要隨便點燃任何火源，因為四周可能充滿瓦斯。</p>
+          <img class="lazyload" data-expand="250" src="/static/img/webp/no-power.webp" alt="">
+        </div>
+      </div>
+      <div class="evacuate">
+        <h2 class="title">疏散避難</h2>
+        <h3 class="sub-title">離開家前請關閉總電源。請穿舒適的衣服，以及有包覆性且堅固的鞋子。</h3>
+        <div class="content">
+          <p class="dialog d-1">主動告知協助您疏散避難的人，您被幫助時應該注意的事項，例如：盡量移動軀幹、不要只拉手。</p>
+          <p class="dialog d-2">疏散避難注意事項：<br>
+            颱風豪雨災害，若需要使用電梯疏散避難，請盡量提早撤離，避免遭遇電力中斷而受困。</p>
+          <p class="dialog d-3">疏散避難時機：<br>
+            颱風豪雨災害，使用國家災害防救科技中心官方line的訂閱示警服務，或是向村里長確認是否需做預防性疏散撤離；也可以利用網站確認水位（水利署防災資訊服務網）或土石流警戒（土石流防災資訊網）。
+
+            地震後，依據房屋受損情況判斷。</p>
+          <img src="/static/img/webp/evacuate.webp" alt="">
+        </div>
+      </div>
+      <div class="report">
+        <h2 class="title">平安通報</h2>
+        <h3 class="sub-title">大規模災害可能造成通訊不便，或是難以聯繫到家人，可以用「三角聯絡法」或是透過內政部消防署「災區親友現況查詢平台」確認安全。
+        </h3>
+        <div class="content">
+          <!-- <p class="dialog d-1">電話：撥打1991專線。
+            網路：到「1991報平安留言平台」留言。</p> -->
+          <p class="dialog d-2">「三角聯絡法」就是打給災區外電話較容易接通的親戚朋友，做為家人間的聯絡管道。</p>
+          <img src="/static/img/webp/family-1.webp" alt="">
+          <img src="/static/img/webp/dashed.webp" alt="">
+          <img src="/static/img/webp/family-2.webp" alt="">
+        </div>
+      </div>
+      <div class="phone">
+        <h2 class="title">災時電話使用</h2>
+        <h3 class="sub-title">盡量傳簡訊，因為災時通訊容易阻塞或中斷，且通話較易耗費手機電力。</h3>
+        <div class="content">
+          <p class="dialog d-1">為維持手機電力，可以調降螢幕亮度、關掉不需要用的應用程式。</p>
+          <p class="dialog d-2">就算電力充足也盡量不要看影片，讓網路阻塞程度降低。</p>
+          <img class="lazyload" data-expand="250" src="/static/img/webp/phone.webp" alt="">
+          <img src="/static/img/handicapped/response/phone/call.gif" alt="">
+
+        </div>
+      </div>
+    </div>
+    <div class="main main-3">
+      <div class="check">
+        <!-- mouse -->
+        <div class="cursor">
+          <div class="icon">
+            <div class="dot"></div>
+          </div>
+          <div>Scroll</div>
+        </div>
+        <!-- mouse -->
+        <h2 class="title">震後居家檢查</h2>
+        <h3 class="sub-title">發生大地震後，先將瓦斯與總電源關閉，再打開玄關、確保避難路徑。
+          如果有以下情況，建議撤離到屋外，並找結構技師評估：</h3>
+        <div class="content">
+          <div>
+            <div class="check-group">
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/recover/check/roll.svg" alt="">
+              <div>
+                <span id="roll"></span>
+                <span>彈珠或玻璃球放在地板上會滾動，表示房屋有傾斜的狀況。</span>
+              </div>
+            </div>
+            <div class="check-group">
+              <img class="lazyload" data-expand="250" src="/static/img/handicapped/recover/check/expose.svg" alt="">
+              <div>
+                <span id="expose"></span>
+                <span>梁、柱或牆面有混凝土剝裂或鋼筋外露的情形。 </span>
+              </div>
+            </div>
+          </div>
+          <div class="check-group">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/recover/check/crack.svg" alt="">
+            <div>
+              <span id="crack"></span>
+              <span>樓板開裂、管線損壞。 </span>
+            </div>
+          </div>
+          <div class="check-group building">
+            <img src="/static/img/handicapped/recover/check/building.webp" alt="">
+            <div>
+              <span type="checkbox" name="bulding-1" id="bulding-1"></span>
+              <span for="bulding-1">梁有明顯而連續的X形、斜向、或水平向、垂直向裂縫。 </span>
+            </div>
+            <div>
+              <span id="bulding-2"></span>
+              <span>柱子有X形、V形、倒V形、斜向或垂直向裂縫。 </span>
+            </div>
+            <div>
+              <span id="bulding-3"></span>
+              <span>牆面有長而連續的開裂。 </span>
+            </div>
+          </div>
+          <p class="dialog">更多細節可參考國家地震工程研究中心《安全耐震的家—認識地震工程》。</p>
+        </div>
+      </div>
+      <div class="help">
+        <h2 class="title">尋求協助</h2>
+        <h3 class="sub-title">如需心靈諮商、居住與照顧服務、物資提供、租借輔具、其他諮詢服務，可洽縣市社會局。</h3>
+        <div class="content">
+          <img class="lazyload" data-expand="250" src="/static/img/webp/help.webp" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="main main-4">
+      <div class="require">
+        <!-- mouse -->
+        <div class="cursor">
+          <div class="icon">
+            <div class="dot"></div>
+          </div>
+          <div>Scroll</div>
+        </div>
+        <!-- mouse -->
+        <h2 class="title">關懷並確認需求</h2>
+        <h3 class="sub-title">緊急聯絡人災時確認自己的安全後，請主動關心肢體障礙者。</h3>
+        <div class="content">
+          <p class="dialog d-1">提供幫助前，請先確認肢體障礙者需要的幫助，而非自行假設他的需求。</p>
+          <p class="dialog d-2">有些肢體障礙者因為神經麻痺，所以在語言表達上可能也會有些障礙，請仔細並有耐心聆聽他們的需求，溝通時避免講話急躁。</p>
+          <img class="lazyload" data-expand="250" src="/static/img/webp/require.webp" alt="">
+        </div>
+      </div>
+      <div class="help-other">
+        <h2 class="title">協助使用輪椅或拐杖者</h2>
+        <h3 class="sub-title">緊急聯絡人在協助使用輪椅或拐杖的肢體障礙者時，請注意下列事項：</h3>
+        <div class="content">
+          <p class="dialog d-1">無論啟動、停止移動或改變方向，都需要事先提醒肢體障礙者，並盡可能繫上安全帶。
+
+            在陡坡移動或下樓時，將輪椅轉向，並讓身體重心貼近輪椅，以倒退方式向後緩慢移動，並避免輪椅向後傾倒，降低危險亦減輕肢體障礙者之恐懼。
+
+            盡量避免抬起輪椅，如有需求，請由三、四個人共同合作較為安全。</p>
+          <p class="dialog d-2">先詢問如何支持肢體障礙者，配合他們的行走速度移動。盡可能挑選移動步數較少、避免凹凸不平或高低落差大的路線。</p>
+
+          <div class="text">行進方向</div>
+          <img src="/static/img/webp/push-wheelchair.webp" alt="">
+
+
+          <img src="/static/img/webp/crane.webp" alt="">
+        </div>
+      </div>
+      <div class="seperate">
+        <h2 class="title">避免肢體障礙者與輔具分開</h2>
+        <h3 class="sub-title">肢體障礙者非常仰賴輔具，因此請緊急聯絡人避免讓輔具與肢體障礙者分開。</h3>
+        <div class="content">
+          <p class="dialog">在無法使用輪椅的環境下，請先與肢體障礙者確認意願與具體幫助方式後，才讓他離開輪椅，改以擔架或其他方式移動。</p>
+          <img src="/static/img/webp/seperate.webp" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="main-5">
+      <div class="content">
+        <a href="/static/download/肢體障礙者防災萬年曆.pdf" id="calendar-download" title="肢體障礙者防災萬年曆.pdf" download>
+          <div class="img-group">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/calendar.svg" alt="">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/cloud-download.svg" alt="">
+          </div>
+          <p class="text">肢體障礙者防災萬年曆</p>
+        </a>
+        <a href="/static/download/居家肢障者防災計畫指引.pdf" id="guide-download" title="居家肢障者防災計畫指引.pdf" download>
+          <div class="img-group i2">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/guide1.svg" alt="">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/cloud-download.svg" alt="">
+          </div>
+          <p class="text">居家肢障者防災計畫指引</p>
+        </a>
+        <a href="/static/download/居家肢障者防災計畫書.pdf" id="plan-download" title="居家肢障者防災計畫書.pdf" download>
+          <div class="img-group">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/plan.svg" alt="">
+            <img class="lazyload" data-expand="250" src="/static/img/handicapped/download/cloud-download.svg" alt="">
+          </div>
+          <p class="text">居家肢障者防災計畫指引（附件）</p>
+        </a>
+      </div>
+
+    </div>
+  </main>
+  <div id="progress">
+
+    <div class="button-group">
+      <button type="button" title="往前" class="progress-prev ">
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/arrow-left.svg" alt="" />
+      </button>
+      <img class="lazyload" id="progress-wheelchair" data-expand="250" src="/static/img/wheelchair-person.svg" alt="" />
+      <button type="button" title="往後" class="progress-next">
+        <img class="lazyload" data-expand="250" src="/static/img/handicapped/arrow-right.svg" alt="" />
+      </button>
+    </div>
+    <div class="bar">
+      <div class="percent"></div>
+    </div>
+  </div>
+  <footer>
+    <!-- <div id="zero-project">
+      <img class="lazyload" data-expand="250" src="/static/img/zero-project.svg" alt="" />
+    </div> -->
+    <div class="copy-right">
+      <span>Copyright © 2022 國家災害防救科技中心 All rights reserved</span>
+    </div>
+  </footer>
+</body>
+
+</html>
