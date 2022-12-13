@@ -1,34 +1,5 @@
 import gsap from "gsap";
-function query(data) {
-  return Object.keys(data).length;
-}
-$.getJSON("./js/resource.json", function (data) {
-  var mainlength = query(data);
-  for (var i = 0; i < mainlength; i++) {
-    var maincontent = $(".main-" + (i + 1)).children();
-    var documentFragment = $(document.createDocumentFragment());
-    var ListData = data["main" + (i + 1)];
-    for (var j = 0; j < ListData.length; j++) {
-      var a = $(
-        "<a href='./static/download/" +
-          ListData[j]["fileName"] +
-          "' title='" +
-          ListData[j]["fileName"] +
-          "' download></a>",
-      );
-      var imag = $(
-        "<div class='img-group'> <img src='./static/img/resource/" +
-          ListData[j]["Image"] +
-          "' alt=''></div>",
-      );
-      var content = ListData[j]["content"];
-      a.append(imag);
-      a.append(content);
-      documentFragment.append(a);
-    }
-    maincontent.append(documentFragment);
-  }
-});
+
 const main_1 = document.querySelector(".main-1");
 const main_2 = document.querySelector(".main-2");
 const main_3 = document.querySelector(".main-3");
