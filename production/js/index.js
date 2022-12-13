@@ -82,7 +82,7 @@ const dynamicVideoWidth = () => {
   let videoGroup = document.querySelector(".video-group");
   let tabGroup = document.querySelector(".tab-group");
   let main = document.querySelector("main");
-  setInterval(() => {
+  
     main.style.width = window.innerWidth;
     let tabsLeft = document
       .getElementById("physically-handicapped")
@@ -92,14 +92,14 @@ const dynamicVideoWidth = () => {
       ((window.innerWidth - tabsLeft) / window.innerWidth) * 100
     }%`;
     videoGroup.style.width = `${(tabsLeft / window.innerWidth) * 100}%`;
-  }, 0.1);
+  
 };
 // mobile height
 const dynamicMobileHeight = () => {
   let nav = document.querySelector(".navbar");
   let footer = document.querySelector("footer");
   let video = document.querySelector(".video-group");
-  setInterval(() => {
+  
     document.querySelector(".mobile-tabs").style.height = `${
       ((window.innerHeight -
         nav.clientHeight -
@@ -108,8 +108,11 @@ const dynamicMobileHeight = () => {
         window.innerHeight) *
       100
     }%`;
-  }, 0.1);
 };
+window.addEventListener("resize", () => {
+  dynamicMobileHeight();
+  dynamicVideoWidth();
+})
 // mobile height
 // 載入
 if (document.readyState === "loading") {

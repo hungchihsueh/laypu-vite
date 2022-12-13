@@ -4,10 +4,8 @@ import legacy from "@vitejs/plugin-legacy";
 import { splitVendorChunkPlugin } from "vite";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 
-import { compression } from "vite-plugin-compression2";
 export default defineConfig({
   plugins: [
-    compression(),
     ViteMinifyPlugin({}),
     splitVendorChunkPlugin(),
 

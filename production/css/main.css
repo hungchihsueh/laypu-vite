@@ -152,11 +152,13 @@ p {
 
   100% {}
 }
-@media all and (max-width:480px){
-  .cursor{
+
+@media all and (max-width:480px) {
+  .cursor {
     display: none !important;
   }
 }
+
 /* cursor */
 /* top navbar */
 #go-to-main {
@@ -326,6 +328,10 @@ footer {
 }
 
 footer #zero-project {
+  min-width: 100px;
+  width: 7vw;
+  max-width: 200px;
+  aspect-ratio: 1;
   position: absolute;
   left: 0;
   bottom: 90%;
@@ -333,13 +339,13 @@ footer #zero-project {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  padding: 1%;
+  padding: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 0px 20px 20px 0px;
 }
 
 footer #zero-project img {
-  width: 10vmin;
+  width: 100%;
 }
 
 footer .copy-right {
