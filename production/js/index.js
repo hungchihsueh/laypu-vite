@@ -13,28 +13,39 @@ let burgerBtn = document.getElementById("main-nav");
 let theNav = document.getElementById("the-nav");
 const mainBurgerEvent = () => {
   burgerBtn.addEventListener("click", (e) => {
+    console.log("burger")
     e.stopPropagation();
-    console.log("clicked");
-    if (theNav.style.display != "block") {
+    e.preventDefault();
+
+    if (!theNavOpen) {
       let tl = gsap.timeline();
       tl.to(theNav, { display: "block", opacity: 0, duration: 0 });
       tl.to(theNav, { opacity: 1, duration: 0.1 });
       burgerBtn.setAttribute("aria-expended", "true");
-    } else {
+
+        theNavOpen = true;
+
+      return
+    }
+    else {
       let tl = gsap.timeline();
       tl.to(theNav, { opacity: 0, duration: 0.1 });
       tl.to(theNav, { display: "none", duration: 0 });
       burgerBtn.setAttribute("aria-expended", "false");
+      theNavOpen = false;
+            return;
     }
-    theNavOpen = true;
-  });
+   
+  },false);
 };
 window.addEventListener("click", (e) => {
+   console.log("window");
   if (theNavOpen && theNav.style.display == "block" && e.target != burgerBtn) {
+  
     theNavOpen = false;
-    let tl = gsap.timeline();
-    tl.to(theNav, { opacity: 0, duration: 0.1 });
-    tl.to(theNav, { display: "none", duration: 0 });
+    let tl2 = gsap.timeline();
+    tl2.to(theNav, { opacity: 0, duration: 0.1 });
+    tl2.to(theNav, { display: "none", duration: 0 });
     // theNav.style.display = "none";
   }
 });
@@ -144,21 +155,25 @@ if (document.readyState === "loading") {
   mainBurgerEvent();
 }
 documentHeight();
-
 let navItems = theNav.querySelectorAll("a");
-setInterval(() => {
-  // console.log(document.activeElement,navItems[0],navItems[1],navItems[2])
-  if (
-    theNavOpen &&
-    theNav.style.display == "block" &&
-    document.activeElement != burgerBtn &&
-    document.activeElement != navItems[0] &&
-    document.activeElement != navItems[1] &&
-    document.activeElement != navItems[2]
-  ) {
-    theNavOpen = false;
-    let tl = gsap.timeline();
-    tl.to(theNav, { opacity: 0, duration: 0.1 });
-    tl.to(theNav, { display: "none", duration: 0 });
-  }
-}, 0);
+document.addEventListener(
+  "focusin",
+  function () {
+    if (
+      theNavOpen &&
+      theNav.style.display == "block" &&
+      document.activeElement != burgerBtn &&
+      document.activeElement != navItems[0] &&
+      document.activeElement != navItems[1] &&
+      document.activeElement != navItems[2]
+    ) {
+      theNavOpen = false;
+      let tl = gsap.timeline();
+      tl.to(theNav, { opacity: 0, duration: 0.1 });
+      tl.to(theNav, { display: "none", duration: 0 });
+    }
+    console.log("focused: ", document.activeElement);
+  },
+  true,
+);
+

@@ -1,8 +1,5 @@
 import gsap from "gsap";
-import PREPARE_SVG from "../static/img/handicapped/prepare.svg"
-import PREPARE_WEBP from "../static/img/handicapped/prepare.webp"
-import RESPONSE_SVG from "../static/img/handicapped/response.svg"
-import RESPONSE_WEBP from "../static/img/handicapped/response.webp"
+
 // 滑鼠效果
 const parallax = (e) => {
   let groups = document.querySelectorAll(".section-group");
@@ -2022,12 +2019,23 @@ if (document.readyState === "loading") {
 }
 documentHeight();
 let navItems = theNav.querySelectorAll("a");
-setInterval(() => {
-  // console.log(document.activeElement,navItems[0],navItems[1],navItems[2])
-  if (theNavOpen && theNav.style.display == "block" && document.activeElement !=burgerBtn && document.activeElement !=navItems[0]&& document.activeElement !=navItems[1]&& document.activeElement !=navItems[2]) {
-    theNavOpen = false;
-    let tl = gsap.timeline();
-    tl.to(theNav, { opacity: 0, duration: 0.1 });
-    tl.to(theNav, { display: "none", duration: 0 });
-  }
-},0);
+document.addEventListener(
+  "focusin",
+  function () {
+    if (
+      theNavOpen &&
+      theNav.style.display == "block" &&
+      document.activeElement != burgerBtn &&
+      document.activeElement != navItems[0] &&
+      document.activeElement != navItems[1] &&
+      document.activeElement != navItems[2]
+    ) {
+      theNavOpen = false;
+      let tl = gsap.timeline();
+      tl.to(theNav, { opacity: 0, duration: 0.1 });
+      tl.to(theNav, { display: "none", duration: 0 });
+    }
+    console.log("focused: ", document.activeElement);
+  },
+  true,
+);

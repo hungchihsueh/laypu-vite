@@ -497,3 +497,25 @@ if (document.readyState === "loading") {
   documentHeight();
 }
 documentHeight();
+
+let navItems = theNav.querySelectorAll("a");
+document.addEventListener(
+  "focusin",
+  function () {
+    if (
+      theNavOpen &&
+      theNav.style.display == "block" &&
+      document.activeElement != burgerBtn &&
+      document.activeElement != navItems[0] &&
+      document.activeElement != navItems[1] &&
+      document.activeElement != navItems[2]
+    ) {
+      theNavOpen = false;
+      let tl = gsap.timeline();
+      tl.to(theNav, { opacity: 0, duration: 0.1 });
+      tl.to(theNav, { display: "none", duration: 0 });
+    }
+    console.log("focused: ", document.activeElement);
+  },
+  true,
+);
