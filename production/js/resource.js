@@ -398,10 +398,12 @@ const mainBurgerEvent = () => {
       let tl = gsap.timeline();
       tl.to(theNav, { display: "block", opacity: 0, duration: 0 });
       tl.to(theNav, { opacity: 1, duration: 0.1 });
+       burgerBtn.setAttribute("aria-expended", "true");
     } else {
       let tl = gsap.timeline();
       tl.to(theNav, { opacity: 0, duration: 0.1 });
       tl.to(theNav, { display: "none", duration: 0 });
+       burgerBtn.setAttribute("aria-expended", "false");
     }
     theNavOpen = true;
   });

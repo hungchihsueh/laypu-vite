@@ -19,7 +19,7 @@
     <link rel="preload" as="font" href="/static/font/jf-openhuninn-1.1.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/resource.css" />
-    <script type="module" src="../js/gsap/gsap.min.js" defer></script>
+    <!-- <script type="module" src="../js/gsap/gsap.min.js" defer></script> -->
     <script type="module" src="../js/resource.js" defer></script>
     <!-- <script src="./js/lazylize.js" defer></script> -->
     <style>
@@ -58,8 +58,8 @@
         <a href="#main-content" class="sr-only sr-only-focusable" title="跳到主要內容區塊" id="go-to-main">跳到主要內容區塊</a>
         <nav class="navbar">
             <div class="left">
-                <button title="選單" type="button" class="nav_burger" id="main-nav"><img class="lazyload"
-                        src="/static/img/navbar-burger.svg" alt="" /></button>
+                <button title="選單" type="button" class="nav_burger" id="main-nav" aria-label="選單"
+                    aria-expanded="false"><img class="lazyload" src="/static/img/navbar-burger.svg" alt="" /></button>
                 <h1>
                     <a title="防災無障礙首頁" href="../index.html" class="logo" accesskey="h"><img class="lazyload"
                             src="/static/img/logo.svg" alt="" />防災無障礙</a>
