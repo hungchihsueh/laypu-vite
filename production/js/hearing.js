@@ -423,7 +423,7 @@ response.addEventListener("click", async () => {
   sideBar.style.top = `${topDistence}px`;
   sidebarList.innerHTML = "";
   let newList = "";
-  state.sectionsTitle[0].forEach((title, i) => {
+  state.sectionsTitle[state.activeTab].forEach((title, i) => {
     let new_template = sidebarTemplate;
     new_template = new_template.replace("{title}", title);
     newList += new_template;
@@ -572,7 +572,7 @@ recover.addEventListener("click", async () => {
   sideBar.style.top = `${topDistence}px`;
   sidebarList.innerHTML = "";
   let newList = "";
-  state.sectionsTitle[0].forEach((title, i) => {
+  state.sectionsTitle[state.activeTab].forEach((title, i) => {
     let new_template = sidebarTemplate;
     new_template = new_template.replace("{title}", title);
     newList += new_template;
@@ -721,7 +721,7 @@ help.addEventListener("click", async () => {
   sideBar.style.top = `${topDistence}px`;
   sidebarList.innerHTML = "";
   let newList = "";
-  state.sectionsTitle[0].forEach((title, i) => {
+  state.sectionsTitle[state.activeTab].forEach((title, i) => {
     let new_template = sidebarTemplate;
     new_template = new_template.replace("{title}", title);
     newList += new_template;
@@ -861,6 +861,7 @@ doc.addEventListener("click", async () => {
 
 // 切換tab
 let clickedRecent = false;
+let tabclicked = false;
 
 tabs.forEach((tab, i) =>
   tab.addEventListener("click", (e) => {

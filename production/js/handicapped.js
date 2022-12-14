@@ -222,7 +222,6 @@ prepare.addEventListener("click", async () => {
   tl.to("main", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   tl.to(".navbar", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   tl.to("footer", { left: "100%", opacity: 0, duration: 0.8 }, "-=.8");
-  tl.to("#zero-project", { left: "-100%", duration: 0.3 }, "-=.8");
   await tl.to(
     main_1,
     {
@@ -241,11 +240,6 @@ prepare.addEventListener("click", async () => {
     { backgroundColor: "#F1EAA8", color: "#1e6e67", duration: 0.5 },
     "-=1"
   );
-  // tl.to(
-  //   ".section-tabs",
-  //   { backgroundColor: "#F1EAA8", color: "#1e6e67", duration: 0.5 },
-  //   "-=1"
-  // );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
@@ -256,9 +250,6 @@ prepare.addEventListener("click", async () => {
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
     "-=1"
   );
-
-  // tl.to("#progress", { backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8", duration: .3 },
-  //   "-=1")
   // sidebar
   sideBar.style.display = "block";
   let topDistence = await state.main[state.activeTab].getBoundingClientRect()
