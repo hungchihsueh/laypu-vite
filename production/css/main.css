@@ -327,14 +327,23 @@ footer {
   left: 0;
 }
 
-footer #zero-project {
+.zero-project {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#zero-project {
   min-width: 100px;
   width: 7vw;
   max-width: 200px;
   aspect-ratio: 1;
   position: absolute;
   left: 0;
-  bottom: 90%;
+  bottom: 10%;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,7 +353,11 @@ footer #zero-project {
   border-radius: 0px 20px 20px 0px;
 }
 
-footer #zero-project img {
+.zero-project img {
+  width: 30%;
+}
+
+#zero-project img {
   width: 100%;
 }
 
