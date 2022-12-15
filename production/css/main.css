@@ -97,13 +97,24 @@ p {
   margin-bottom: 5px;
 }
 
+.cursor .icon .line {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 1%;
+  width: 1px;
+  height: 10px;
+  background-color: #1E6E67;
+  border-radius: 999px;
+}
+
 .cursor .icon .dot {
   position: absolute;
   left: 50%;
   top: 10%;
   transform: translate(-50%, 0);
   width: 7px;
-  height: 7px;
+  height: 14px;
   border-radius: 7px;
   background-color: #1E6E67;
   opacity: 0;
@@ -134,19 +145,19 @@ p {
 
   50% {
     opacity: 1;
-    top: 80%;
+    top: 60%;
     transform: translate(-50%, 10%);
   }
 
   60% {
     opacity: 1;
-    top: 80%;
+    top: 60%;
     transform: translate(-50%, -5%);
   }
 
   63% {
     opacity: 0;
-    top: 80%;
+    top: 60%;
     transform: translate(-50%, -5%);
   }
 
