@@ -89,9 +89,9 @@ p {
 
 .cursor .icon {
   position: relative;
-  width: 30px;
+  width: 35px;
   height: 50px;
-  border-radius: 999px;
+  border-radius: 85% 85% 30px 30px;
   border: 3px solid #1E6E67;
   background-color: #fff;
   margin-bottom: 5px;
@@ -135,19 +135,19 @@ p {
   50% {
     opacity: 1;
     top: 80%;
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 10%);
   }
 
   60% {
     opacity: 1;
     top: 80%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -5%);
   }
 
   63% {
     opacity: 0;
     top: 80%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -5%);
   }
 
   100% {}
