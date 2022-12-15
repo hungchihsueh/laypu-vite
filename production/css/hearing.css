@@ -17,6 +17,11 @@ body {
   background-color: #D9F4F1;
 }
 
+a.outer-link {
+  color: #005671;
+  text-decoration: none;
+}
+
 main {
   height: 100vh;
   height: var(--app-height);
