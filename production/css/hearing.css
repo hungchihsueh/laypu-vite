@@ -47,6 +47,11 @@ main {
   background-color: #005671;
 }
 
+.cursor {
+  top: -3%;
+  right: 0%;
+}
+
 #show-when-too-short {
   transform: translate(-50%, -50%);
   transition: all .3s;
@@ -534,7 +539,7 @@ footer .copy-right {
 #recover {
   position: absolute;
   right: -2%;
-  top: 50%;
+  top: 58%;
   width: 30%;
 }
 
@@ -1076,11 +1081,11 @@ footer .copy-right {
 
 
 .main-1 .bag .download-btn.db-1 {
-  left: 43%;
+  left: 40%;
 }
 
 .main-1 .bag .download-btn.db-2 {
-  left: 57%;
+  left: 60%;
 }
 
 .main-1 .medical .content {
@@ -1281,11 +1286,11 @@ footer .copy-right {
 }
 
 .main-1 .shelter .download-btn.db-1 {
-  left: 41%;
+  left: 38%;
 }
 
 .main-1 .shelter .download-btn.db-2 {
-  left: 59%;
+  left: 62%;
 }
 
 .main-1 .typhoon .content {
@@ -2450,11 +2455,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home .dialog.d-2 {
@@ -2624,11 +2629,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 40%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 60%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home img {
@@ -2647,11 +2652,11 @@ footer .copy-right {
   }
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-2 .info-1 .steps .step img {
@@ -2793,11 +2798,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home img {
@@ -3277,11 +3282,11 @@ footer .copy-right {
   }
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-1 .bag .dialog {
@@ -3312,11 +3317,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home .dialog.d-1 {
@@ -3476,11 +3481,11 @@ footer .copy-right {
   }
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-1 .bag .dialog {
@@ -3511,11 +3516,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-2 .while-earthquake .left {

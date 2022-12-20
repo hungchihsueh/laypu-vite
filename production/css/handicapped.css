@@ -110,7 +110,7 @@ main {
 
 #sidebar .list button {
   cursor: pointer;
-  margin-bottom: 9%;
+  margin-bottom: 3vh;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -1297,7 +1297,8 @@ main {
   align-items: flex-start;
   color: #1E6E67;
   font-weight: 500;
-  font-size: clamp(12px, 2.2vmin, 48px);
+  font-size: clamp(12px, 2vmin, 48px);
+  ;
   letter-spacing: 0.08em;
 }
 
@@ -5430,8 +5431,12 @@ main {
   }
 
   .main-2 .evacuate .dialog.d-3 {
-    left: 85%;
+    left: 70%;
     width: 23%;
+  }
+
+  .main-2 .report .sub-title {
+    width: 27%;
   }
 
   .main-2 .report img:nth-of-type(1) {
@@ -5439,18 +5444,22 @@ main {
   }
 
   .main-2 .report img:nth-of-type(2) {
-    bottom: 30%;
-    left: 49%;
-    width: 35%;
+    bottom: 43%;
+    left: 31%;
+    width: 18%;
   }
 
   .main-2 .report img:nth-of-type(3) {
-    left: 80%;
+    left: 47%;
   }
 
   .main-2 .report .dialog.d-2 {
-    left: 80%;
-    width: 25%;
+    left: 50%;
+    width: 20%;
+  }
+
+  .main-2 .phone {
+    margin-left: 0% !important;
   }
 
   .main-2 .phone img:nth-of-type(1) {
@@ -5464,6 +5473,12 @@ main {
 
   .main-3 .check .content .dialog {
     top: -10%;
+  }
+
+  .main-3 .help .content img {
+    height: 90%;
+    bottom: -5%;
+    left: 0%;
   }
 
   .main-4 .help-other img:first-of-type {
