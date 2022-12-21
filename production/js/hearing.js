@@ -1926,7 +1926,7 @@ const cursorAnimation = () => {
     } else {
       gsap.to(".cursor", { opacity: 0, display: "none" });
     }
-  }, 10);
+  }, 100);
   // document.addEventListener("mousemove", (e) => {
   //   gsap.to(".cursor", 0.3, {
   //     x: e.clientX+10, y: e.clientY+10, stagger: 0.3, ease: "none",

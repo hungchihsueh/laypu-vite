@@ -34,6 +34,15 @@ main {
     align-items: flex-start;
 }
 
+.the-title {
+    /* position: fixed;
+    left: 5%;
+    top: 18%; */
+    z-index: 1000;
+    color: green;
+    font-size: clamp(14px, 3vmin, 16px);
+}
+
 #show-when-too-short {
     transform: translate(-50%, -50%);
     transition: all .3s;
