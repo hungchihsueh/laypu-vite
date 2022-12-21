@@ -1596,7 +1596,7 @@ const ProgressEvent = () => {
         }
       });
       // console.log(main.scrollLeft + window.innerWidth,main.scrollWidth - 0.8)
-      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.3) {
+      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.8) {
         console.log("pnext!!!");
         pNext[0].click();
         // if (hitEnd) {

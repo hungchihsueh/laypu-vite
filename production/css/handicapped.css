@@ -247,7 +247,7 @@ main {
     width: 100%;
     transition: all .3s;
     background-color: transparent;
-    z-index: 1111;
+    z-index: 110;
   }
 
   .burger.active {
