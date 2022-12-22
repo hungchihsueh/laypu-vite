@@ -97,60 +97,15 @@ p {
   margin-bottom: 5px;
 }
 
-/* .cursor .icon .line {
+.cursor .icon .line {
   position: absolute;
   transform: translate(-50%, 0);
   left: 50%;
-  top: 0%;
-  width: 3px;
-  height: 30px;
+  top: 1%;
+  width: 1px;
+  height: 10px;
   background-color: #1E6E67;
   border-radius: 999px;
-  opacity: 0;
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-transform-origin: center;
-  transform-origin: center center;
-  animation: scrollLine 3s ease-in-out 0s infinite;
-} */
-
-@keyframes scrollLine {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-
-  3% {
-    opacity: 1;
-
-  }
-
-  6% {
-    opacity: 1;
-    transform: translate(-50%, 0%);
-  }
-
-  50% {
-    opacity: 1;
-    top: 10%;
-    transform: translate(-50%, 10%);
-  }
-
-  60% {
-    opacity: 1;
-    top: 10%;
-    transform: translate(-50%, -5%);
-  }
-
-  64% {
-    opacity: 0;
-    top: 10%;
-    transform: translate(-50%, -5%);
-  }
-
-  100% {}
 }
 
 .cursor .icon .dot {
@@ -200,7 +155,7 @@ p {
     transform: translate(-50%, -5%);
   }
 
-  66% {
+  63% {
     opacity: 0;
     top: 60%;
     transform: translate(-50%, -5%);

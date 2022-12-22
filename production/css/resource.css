@@ -34,15 +34,6 @@ main {
     align-items: flex-start;
 }
 
-.the-title {
-    /* position: fixed;
-    left: 5%;
-    top: 18%; */
-    z-index: 1000;
-    color: green;
-    font-size: clamp(14px, 3vmin, 16px);
-}
-
 #show-when-too-short {
     transform: translate(-50%, -50%);
     transition: all .3s;
@@ -216,13 +207,9 @@ main {
     overflow-y: hidden;
 }
 
-.main.main.main-4 {
-    padding-left: 5%;
-}
-
 .main .content {
     width: 100%;
-    height: fit-content;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -230,7 +217,6 @@ main {
 }
 
 .main.main-4 .content {
-    width: -moz-fit-content;
     width: fit-content;
     justify-content: flex-start;
     gap: 3%;

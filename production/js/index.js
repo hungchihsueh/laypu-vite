@@ -66,12 +66,12 @@ const setMainHeight = () => {
         window.innerHeight) *
       100
     }%`;
-  }, 100);
+  }, 0.1);
 };
 const setVideoOverlaycolor = () => {
   document.querySelector(".tab-group").addEventListener("mouseenter", () => {
     console.log(window.innerWidth);
-    document.querySelector("video").style.width = "100%";
+    document.querySelector("video").style.width = "100vw";
     document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0.5)";
     document.getElementById("overlay").style.opacity = "1";
     if (window.innerWidth > 900) {

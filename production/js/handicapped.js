@@ -1323,7 +1323,7 @@ setInterval(() => {
       state.step = i;
     }
   });
-}, 100);
+}, 1);
 
 state.main.forEach((main) => {
   main.addEventListener("mousemove", (e) => {
@@ -1961,7 +1961,7 @@ const cursorAnimation = () => {
     } else {
       gsap.to(".cursor", { opacity: 0, display: "none" });
     }
-  }, 100);
+  }, 10);
   // document.addEventListener("mousemove", (e) => {
   //   gsap.to("#cursor", 0.3, {
   //     x: e.clientX + 10,

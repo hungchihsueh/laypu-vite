@@ -1596,7 +1596,7 @@ const ProgressEvent = () => {
         }
       });
       // console.log(main.scrollLeft + window.innerWidth,main.scrollWidth - 0.8)
-      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.8) {
+      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.3) {
         console.log("pnext!!!");
         pNext[0].click();
         // if (hitEnd) {
@@ -1926,7 +1926,7 @@ const cursorAnimation = () => {
     } else {
       gsap.to(".cursor", { opacity: 0, display: "none" });
     }
-  }, 100);
+  }, 10);
   // document.addEventListener("mousemove", (e) => {
   //   gsap.to(".cursor", 0.3, {
   //     x: e.clientX+10, y: e.clientY+10, stagger: 0.3, ease: "none",
