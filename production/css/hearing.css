@@ -1047,7 +1047,8 @@ footer .copy-right {
 }
 
 .main-1 .bag .img-group-2 .img-grid .check-group>img {
-  width: 40%;
+  height: 10vh;
+  max-height: 80px;
 }
 
 .main-1 .bag .img-group-2 .img-grid .check-group>div {
@@ -1058,7 +1059,7 @@ footer .copy-right {
   align-items: flex-start;
   color: #005671;
   font-weight: 500;
-  font-size: clamp(12px, 2.2vmin, 48px);
+  font-size: clamp(12px, 2.2vmin, 18px);
   letter-spacing: 0.08em;
 }
 
@@ -1076,11 +1077,11 @@ footer .copy-right {
 
 
 .main-1 .bag .download-btn.db-1 {
-  left: 43%;
+  left: 40%;
 }
 
 .main-1 .bag .download-btn.db-2 {
-  left: 57%;
+  left: 60%;
 }
 
 .main-1 .medical .content {
@@ -1121,6 +1122,11 @@ footer .copy-right {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.main-1 .animal .img-group .check-group img {
+  height: 10vh;
+  max-height: 80px;
 }
 
 .main-1 .animal .img-group.g-2 .check-group:last-of-type {
@@ -1281,11 +1287,11 @@ footer .copy-right {
 }
 
 .main-1 .shelter .download-btn.db-1 {
-  left: 41%;
+  left: 38%;
 }
 
 .main-1 .shelter .download-btn.db-2 {
-  left: 59%;
+  left: 62%;
 }
 
 .main-1 .typhoon .content {
@@ -1544,8 +1550,9 @@ footer .copy-right {
 }
 
 .main-2 .while-earthquake .left .group img {
-  width: 150%;
-  left: 101%;
+  left: 180px;
+  height: 20vh;
+  max-height: 116px;
   bottom: 0%;
   position: absolute;
 }
@@ -1924,7 +1931,7 @@ footer .copy-right {
 }
 
 .main-4 .talk .right>div img {
-  width: 45%;
+  height: 20vh;
 }
 
 /* main-4 */
@@ -2450,11 +2457,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home .dialog.d-2 {
@@ -2624,11 +2631,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 40%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 60%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home img {
@@ -2642,16 +2649,16 @@ footer .copy-right {
     width: 20%;
   }
 
-  .main-1 .bag .img-group-2 {
+  /* .main-1 .bag .img-group-2 {
     bottom: 20%;
-  }
+  } */
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-2 .info-1 .steps .step img {
@@ -2688,7 +2695,7 @@ footer .copy-right {
   }
 
   .main-2 .while-earthquake .right {
-    top: -10%;
+    top: 0%;
   }
 
   .main-2 .report img {
@@ -2793,11 +2800,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home img {
@@ -3277,11 +3284,11 @@ footer .copy-right {
   }
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-1 .bag .dialog {
@@ -3312,11 +3319,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-1 .earthquake-home .dialog.d-1 {
@@ -3476,11 +3483,11 @@ footer .copy-right {
   }
 
   .main-1 .bag .download-btn.db-1 {
-    left: 41%;
+    left: 40%;
   }
 
   .main-1 .bag .download-btn.db-2 {
-    left: 59%;
+    left: 60%;
   }
 
   .main-1 .bag .dialog {
@@ -3511,11 +3518,11 @@ footer .copy-right {
   }
 
   .main-1 .shelter .download-btn.db-1 {
-    left: 41%;
+    left: 38%;
   }
 
   .main-1 .shelter .download-btn.db-2 {
-    left: 59%;
+    left: 62%;
   }
 
   .main-2 .while-earthquake .left {
@@ -3623,7 +3630,7 @@ footer .copy-right {
   }
 
   .main-4 .talk .left {
-    padding-top: 10%;
+    padding-top: 0%;
   }
 
   .main-5>a {
@@ -3689,5 +3696,97 @@ footer .copy-right {
 
   100% {
     transform: translateY(-5px);
+  }
+}
+
+/*---------------------------2022.12.19新增-----------------------------*/
+/* @media (max-width: 1100px) {
+  .main {
+    padding: 20% 0 0 30px;
+  }
+
+} */
+
+
+/* 橫向智慧手機到竪立平板電腦解析度 */
+@media all and (max-width: 767px) {
+  .main-img.woman {
+    height: 35vh;
+  }
+
+  .main-img.circle {
+    height: 50vh;
+    top: 45%;
+  }
+
+  #prepare {
+    left: 2%;
+    top: 5%;
+  }
+
+  /* 
+  #prepare img,
+  #response img,
+  #recover img {
+    height: 15vh;
+  } */
+
+  #document {
+    top: 5%;
+  }
+
+  /* #document img {
+    height: 8vh;
+  } */
+
+  #help {
+    top: 28%;
+    right: -5%;
+  }
+
+  #recover {
+    right: -5%;
+    bottom: 85px;
+  }
+
+  #dp {
+    top: 25%;
+  }
+
+  .main-img.woman {
+    top: 45%;
+  }
+}
+
+
+/* 橫向智慧手機及其他更小解析度 */
+@media (max-width: 480px) {}
+
+
+@media all and (max-height: 700px) {
+  .main:nth-child(even)>div::after {
+    bottom: -50px;
+  }
+
+  /* .download-btn {
+    bottom: -24px;
+  } */
+
+  /*災前準備*/
+  .main-1 .bag .img-group-2 .img-grid {
+    margin-top: 0;
+  }
+
+  .main-1 .bag .img-group-2 .img-grid .check-group>img {
+    height: 8vh;
+  }
+
+  .main-1 .typhoon .content {
+    margin-top: -50px;
+  }
+
+  /*災時應變*/
+  .main-2 .while-earthquake .right .group img {
+    width: 15vh;
   }
 }

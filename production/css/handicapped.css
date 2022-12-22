@@ -2276,7 +2276,7 @@ main {
 
 .main-4 .help-other .dialog.d-1 {
   width: 22%;
-  left: 40%;
+  left: 36%;
   bottom: 10%;
   height: auto;
 }
@@ -3637,9 +3637,9 @@ main {
     left: 59%;
   }
 
-  .shelter .dialog {
+  /* .shelter .dialog {
     font-size: 15px;
-  }
+  } */
 
   .shelter .dialog.d-1 img {
     position: absolute;
@@ -4411,7 +4411,7 @@ main {
   }
 
   .main-2 .phone img:nth-of-type(1) {
-    left: 5%;
+    left: 0%;
   }
 
   .main-4 .help-other .dialog.d-1 {
