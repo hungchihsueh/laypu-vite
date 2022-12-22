@@ -18,7 +18,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: {
-        app: resolve(__dirname, "index.html"),
+        app: resolve(__dirname, "/index.html"),
         physical: resolve(__dirname, "disability/physical.html"),
         hearing: resolve(__dirname, "disability/hearing.html"),
         resource: resolve(__dirname, "disability/resource.html"),
