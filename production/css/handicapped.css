@@ -247,7 +247,7 @@ main {
     width: 100%;
     transition: all .3s;
     background-color: transparent;
-    z-index: 1111;
+    z-index: 110;
   }
 
   .burger.active {
@@ -607,6 +607,7 @@ main {
   border-radius: 9999px;
   transition: all .3s;
   cursor: pointer;
+  margin: 0 10px;
 }
 
 .download-btn:hover,
@@ -622,7 +623,7 @@ main {
 #progress .bar {
   position: relative;
   z-index: 60;
-  height: 12px;
+  height: 6px;
   width: 100%;
   background: #fff;
   display: flex;
@@ -744,13 +745,14 @@ main {
 .main-5 .sub-title {
   align-self: flex-start;
   font-weight: 500;
-  font-size: clamp(12px, 2vmin, 48px);
+  font-size: clamp(12px, 2vmin, 18px);
   /* font-size: 1.5vmin; */
   line-height: 150%;
   letter-spacing: 0.08em;
   color: #1E6E67;
   z-index: 50;
   opacity: 0;
+  margin-bottom: 10px;
 }
 
 
@@ -797,8 +799,8 @@ main {
   width: clamp(36px, 5vmin, 45px);
   height: clamp(36px, 5vmin, 45px);
   position: absolute;
-  left: -30px;
-  top: -30px;
+  left: -18px;
+  top: -18px;
   /* padding: 3%; */
   background: #1E6E67;
   border-radius: 9999px;
@@ -1048,8 +1050,8 @@ main {
 
 #bag-1>img {
   z-index: 50;
-  height: 56%;
-  left: -2%;
+  height: 30vh;
+  left: -7%;
   bottom: -13%;
 }
 
@@ -1075,7 +1077,9 @@ main {
 }
 
 #bag-1 .img-group>div img {
-  height: 60%;
+  height: 15vh;
+  max-height: 95px;
+  padding-top: 20px;
 }
 
 #bag-1 .img-group>div>div {
@@ -1086,7 +1090,7 @@ main {
   align-items: flex-start;
   color: #1E6E67;
   font-weight: 500;
-  font-size: clamp(12px, 2.2vmin, 48px);
+  font-size: clamp(12px, 2.2vmin, 18px);
   /* line-height: 150%; */
   letter-spacing: 0.08em;
 }
@@ -1297,7 +1301,8 @@ main {
   align-items: flex-start;
   color: #1E6E67;
   font-weight: 500;
-  font-size: clamp(12px, 2.2vmin, 48px);
+  font-size: clamp(12px, 2vmin, 48px);
+  ;
   letter-spacing: 0.08em;
 }
 
@@ -1376,7 +1381,8 @@ main {
 
 #risk-1 img {
   left: 18%;
-  height: 70%
+  height: 40vh;
+  min-width: 800px;
 }
 
 #risk-1 .dialog {
@@ -1445,8 +1451,8 @@ main {
 }
 
 .shelter .group img:not(.shelter .dialog.d-1 img) {
-  left: 30%;
-  height: 95%;
+  left: 35%;
+  height: 50vh;
 }
 
 .shelter .dialog.d-1 {
@@ -1502,7 +1508,8 @@ main {
 
 .typhoon .content .group img {
   margin-bottom: 30%;
-  width: 60%;
+  height: 13vh;
+  max-width: 200px;
   position: relative;
   /* bottom: 30%; */
   -webkit-animation-duration: 3s;
@@ -1580,6 +1587,10 @@ main {
 
 }
 
+/* .main-1 .earthquake .ear_center {
+  height: 50vh;
+} */
+
 .main-1 .earthquake .img-group .closet {
   position: absolute;
   bottom: 0%;
@@ -1595,7 +1606,7 @@ main {
 }
 
 .main-1 .earthquake .main {
-  height: 92%;
+  height: 40vh;
 }
 
 .main-1 .earthquake .content .dialog.d-1 {
@@ -1726,6 +1737,7 @@ main {
 }
 
 .main-2 .info .content .steps>.step img {
+  height: 45vh;
   /* min-width: 170px; */
   /* width: 100%; */
 }
@@ -2379,7 +2391,7 @@ main {
   }
 
   .main-1 .earthquake .img-group {
-    bottom: -5%;
+    bottom: -1%;
   }
 
   #pl-1>img {
@@ -2387,6 +2399,7 @@ main {
     bottom: -35%;
   }
 
+  /* 
   #bag-1 .img-group {
     height: 85%;
   }
@@ -2394,7 +2407,7 @@ main {
   #bag-1>img {
     left: -5%;
     height: 50%;
-  }
+  } */
 }
 
 @media all and (min-width:2501px) {
@@ -2489,10 +2502,10 @@ main {
     margin-left: 10vw;
   }
 
-  .evacuate .group .dialog {
+  /* .evacuate .group .dialog {
     bottom: 60%;
     width: 23%;
-  }
+  } */
 
   #material-1>img:first-of-type {
     bottom: -46%;
@@ -2505,9 +2518,9 @@ main {
     bottom: -32%;
   }
 
-  #bag-1 .img-group {
+  /* #bag-1 .img-group {
     right: 0%;
-  }
+  } */
 
   #equip-1>img {
     height: 110%;
@@ -2616,13 +2629,13 @@ main {
     left: 33%;
   }
 
-  .medical .download-btn.db-1 {
+  /* .medical .download-btn.db-1 {
     left: 39%;
   }
 
   .medical .download-btn.db-2 {
     left: 61%;
-  }
+  } */
 
   .risk .content .img-group {
     left: 60%;
@@ -2635,10 +2648,11 @@ main {
     bottom: 50%;
   }
 
+  /* 
   #risk-1 img {
     left: 15%;
     height: 75%;
-  }
+  } */
 
   #risk-1 .dialog.d-4 {
     width: 20%;
@@ -2646,22 +2660,22 @@ main {
     bottom: 10%;
   }
 
-  .shelter .dialog.d-2 {
+  /* .shelter .dialog.d-2 {
     left: 80%;
-  }
+  } */
 
   .evacuate .group #evacuate-main {
     left: 30%;
   }
 
-  .shelter .dialog.d-2 {
+  /* .shelter .dialog.d-2 {
     bottom: 55%;
     left: 70%;
-  }
+  } */
 
-  .shelter .dialog.d-1 {
+  /* .shelter .dialog.d-1 {
     left: 5%;
-  }
+  } */
 
   .shelter .group img:not(.shelter .dialog.d-1 img) {
     left: 25%;
@@ -2675,7 +2689,7 @@ main {
     justify-content: center;
   }
 
-  .main-1 .earthquake .content .dialog.d-2 {
+  /* .main-1 .earthquake .content .dialog.d-2 {
     width: 9%;
     bottom: 18%;
   }
@@ -2694,16 +2708,16 @@ main {
     height: 70%;
     right: -30%;
     top: -110%;
-  }
+  } */
 
   .main-1 .earthquake .content .dialog.d-4 {
     left: 85%;
   }
 
-  .main-2 .info .content>.dialog {
+  /* .main-2 .info .content>.dialog {
     width: 43%;
     bottom: 90%;
-  }
+  } */
 
   .main-2 .evacuate .dialog.d-3 {
     bottom: 54%;
@@ -2743,9 +2757,9 @@ main {
     left: 32%;
   }
 
-  .main-2 .info .content>.dialog {
+  /* .main-2 .info .content>.dialog {
     bottom: 96%;
-  }
+  } */
 }
 
 @media all and (max-width:1440px) {
@@ -2783,9 +2797,9 @@ main {
     left: 13%;
   }
 
-  #bag-1 .img-group {
+  /* #bag-1 .img-group {
     width: 80%;
-  }
+  } */
 
   .main-1 .assistant-equipment {
     margin-left: 40vmin;
@@ -2809,7 +2823,7 @@ main {
     bottom: 89%;
   }
 
-  #risk-1 .dialog.d-3 {
+  /* #risk-1 .dialog.d-3 {
     left: 66%;
     width: 25%;
     bottom: 50%;
@@ -2817,18 +2831,18 @@ main {
 
   #risk-1 .dialog.d-4 {
     left: 71%;
-  }
+  } */
 
-  .evacuate .group .dialog {
+  /* .evacuate .group .dialog {
     left: 60%;
     bottom: 55%;
-  }
+  } */
 
-  .shelter .dialog.d-2 {
+  /* .shelter .dialog.d-2 {
     width: 22%;
     left: 72%;
     bottom: 50%;
-  }
+  } */
 
   /* .main-1 .earthquake .img-group {
     bottom: 0%;
@@ -2837,7 +2851,7 @@ main {
     justify-content: flex-start;
   }
 
-  .main-1 .earthquake .img-group {
+  /* .main-1 .earthquake .img-group {
     bottom: 3%;
   }
 
@@ -2849,7 +2863,7 @@ main {
     left: 80%;
     bottom: 40%;
     width: 16%;
-  }
+  } */
 
   .main-2 .earthquake .content .steps .dialog.d-2 {
     left: 215%;
@@ -2861,17 +2875,17 @@ main {
     bottom: 85%;
   }
 
-  .main-2 .info .content .steps>.step img {
+  /* .main-2 .info .content .steps>.step img {
     width: 85%;
-  }
+  } */
 
   .main-2 .earthquake .content .cover-head img {
     left: 20%;
   }
 
-  .main-2 .info .content>.dialog {
+  /* .main-2 .info .content>.dialog {
     bottom: 100%;
-  }
+  } */
 
   /* .main-2 .earthquake .content .cover-head {
     left: 35%;
@@ -2913,11 +2927,11 @@ main {
     height: 6px;
   }
 
-  #help {
+  /* #help {
     left: 17%;
     top: 59%;
     width: 21%;
-  }
+  } */
 
   #recover {
     top: 56%;
@@ -3660,7 +3674,7 @@ main {
   }
 
   .typhoon .content {
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
     gap: 3%;
   }
@@ -4008,7 +4022,7 @@ main {
   .main-2>div,
   .main-3>div,
   .main-4>div {
-    margin-left: 420px !important;
+    margin-left: 200px !important;
   }
 
   .main-1>div:first-of-type,
@@ -4647,7 +4661,7 @@ main {
   }
 
   .shelter .dialog.d-2 {
-    left: 60%;
+    left: 70%;
     bottom: 60%;
     width: 30%;
   }
@@ -6438,5 +6452,191 @@ main {
 
   .main-5 .content .img-group {
     margin-bottom: 10px;
+  }
+}
+
+/*---------------------------2022.12.19新增-----------------------------*/
+@media (max-width: 1100px) {
+  .main {
+    padding: 60px 0 0 30px;
+  }
+
+  #recover {
+    right: 5%;
+  }
+
+  #progress-wheelchair {
+    height: 20vh;
+    bottom: -150%;
+  }
+
+  .button-group {
+    width: 80px;
+  }
+
+  .button-group button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .main:nth-child(2n)>div::after {
+    bottom: -90px;
+  }
+
+  /* .download-btn {
+    bottom: -47px;
+  } */
+
+
+  /*災前準備*/
+  .backbag .sub-title {
+    width: 320px;
+    padding-right: 30px;
+  }
+
+  #bag-1 {
+    float: left;
+    display: block;
+  }
+
+  #bag-1 .dialog {
+    width: 220px;
+    top: 35px;
+    bottom: auto;
+    left: 60px;
+    float: left;
+  }
+
+  #bag-1 .img-group {
+    width: calc(100vw - 320px);
+    float: left;
+    position: relative;
+    grid-template-columns: repeat(4, 1.5fr) 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.55%;
+    top: -40px;
+    left: 300px;
+  }
+
+  #bag-1 .img-group>div img {
+    height: 10vh;
+  }
+
+  #bag-1>img {
+    z-index: 50;
+    height: 100%;
+    left: -10%;
+    bottom: -20%;
+    max-height: 180px;
+  }
+
+  #risk-1 .dialog.d-1 {
+    width: 320px;
+    height: auto;
+    /* top: -45%; */
+  }
+
+  #risk-1 .dialog.d-2 {
+    bottom: 5px;
+  }
+
+  #risk-1 .dialog.d-3 {
+    bottom: 60%;
+  }
+}
+
+
+/* 橫向智慧手機到竪立平板電腦解析度 */
+@media (max-width: 767px) {
+
+  #prepare img,
+  #response img,
+  #document img,
+  #help img,
+  #recover img {
+    max-width: 200px;
+    width: 80%;
+  }
+
+  #response img {
+    top: 90%;
+    right: 0;
+  }
+
+  #help {
+    left: 10%;
+    top: 65%;
+  }
+
+  #recover {
+    right: 0;
+  }
+
+}
+
+
+/* 橫向智慧手機及其他更小解析度 */
+@media (max-width: 480px) {
+  #prepare {
+    left: 0;
+    top: 17%;
+  }
+
+  #document {
+    left: 2%;
+    top: 35%;
+  }
+
+  #response {
+    right: -5%;
+    top: 15%;
+  }
+
+  #recover {
+    right: -10%;
+  }
+}
+
+
+@media (max-height: 700px) {
+
+  /*災前準備*/
+  .contact-net .content {
+    padding-top: 30px;
+  }
+
+  .plan .content {
+    padding-top: 35px;
+  }
+
+  #risk-1 .dialog.d-3,
+  #risk-1 .dialog.d-4 {
+    right: 10%;
+  }
+
+  .shelter .dialog.d-2 {
+    right: 10%;
+    top: 20px;
+  }
+
+  .evacuate .group .dialog {
+    right: 20%;
+  }
+
+  .earthquake .content .dialog.d-2 {
+    bottom: 20%;
+  }
+
+  .earthquake .content .dialog.d-4 {
+    right: 10%;
+  }
+
+  /*災時應變*/
+  .main-2 .info .content .steps {
+    bottom: auto;
+  }
+
+  .main-2 .info .content .steps>.step img {
+    height: 35vh;
   }
 }

@@ -168,14 +168,16 @@ h3 {
   margin-bottom: 20px;
   display: inline-block;
   border: solid #1E6E67 2px;
-  color: #1E6E67;
+  background: #1E6E67;
+  color: #fff;
   border-radius: 50px;
   text-decoration: none;
 }
 
 .sitemap_list_02 a:hover,
 .sitemap_list_02 a:focus {
-  background: #1E6E67;
+  background: #0c4540;
+  border-color: #0c4540;;
   color: #fff;
 }
 
