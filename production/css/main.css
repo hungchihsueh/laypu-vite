@@ -204,7 +204,8 @@ p {
 }
 
 .navbar .left .logo img {
-  margin-right: 10px;
+  margin: 10px;
+  width: 35px;
 }
 
 .navbar .left a {
@@ -329,7 +330,6 @@ footer {
   position: fixed;
   display: flex;
   align-items: flex-end;
-  height: 8vh;
   width: 100%;
   padding: 24px 46px;
   background-color: #fff;
