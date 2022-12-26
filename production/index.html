@@ -1,197 +1,319 @@
 <!DOCTYPE html>
 <html lang="zh-hant-tw" xml:lang="zh-hant-tw">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防災無障礙</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>防災無障礙</title>
+    <link rel="preconnect" href="./disability/hearing.html" />
+    <link rel="preconnect" href="./disability/resource.html" />
+    <link rel="preconnect" href="./disability/physical.html" />
+    <link rel="preconnect" href="./disability/sitemap.html" />
+    <link rel="preload" href="./static/main.mp4" as="video" type="video/mp4" />
+    <link
+      rel="preload"
+      as="font"
+      href="./static/font/GenJyuuGothic-Bold.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="./static/font/GenJyuuGothic-Heavy.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="./static/font/jf-openhuninn-1.1.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/index.css" />
 
-  <link rel="preconnect" href="./disability/hearing.html">
-  <link rel="preconnect" href="./disability/resource.html">
-  <link rel="preconnect" href="./disability/physical.html">
-  <link rel="preconnect" href="./disability/sitemap.html">
-  <link rel="preload" href="./static/main.mp4" as="video" type="video/mp4" />
-  <link rel="preload" as="font" href="./static/font/GenJyuuGothic-Bold.woff2" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" as="font" href="./static/font/GenJyuuGothic-Heavy.woff2" type="font/woff2"
-    crossorigin="anonymous">
-  <link rel="preload" as="font" href="./static/font/jf-openhuninn-1.1.woff2" type="font/woff2" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/index.css" />
+    <script type="module" src="./js/index.js" defer></script>
+    <script type="module" src="./js/lazylize.js" async=""></script>
+    <style>
+      @font-face {
+        font-family: "default";
+        src: url("./static/font/GenJyuuGothic-Heavy.woff2");
+        font-weight: 900;
+        font-style: normal;
+      }
 
-  <script type="module" src="./js/index.js" defer></script>
-  <script type="module" src="./js/lazylize.js" async=""></script>
-  <style>
-    @font-face {
-      font-family: "default";
-      src: url("./static/font/GenJyuuGothic-Heavy.woff2");
-      font-weight: 900;
-      font-style: normal
-    }
+      @font-face {
+        font-family: "default";
+        src: url("./static/font/jf-openhuninn-1.1.woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: "default";
-      src: url("./static/font/jf-openhuninn-1.1.woff2");
-      font-weight: 400;
-      font-style: normal
-    }
+      @font-face {
+        font-family: "default";
+        src: url("./static/font/jf-openhuninn-1.1.woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: "default";
-      src: url("./static/font/jf-openhuninn-1.1.woff2");
-      font-weight: 500;
-      font-style: normal
-    }
+      @font-face {
+        font-family: "default";
+        src: url("./static/font/GenJyuuGothic-Bold.woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: "default";
-      src: url("./static/font/GenJyuuGothic-Bold.woff2");
-      font-weight: 700;
-      font-style: normal
-    }
+      /* fade image in after load */
+      .lazyload,
+      .lazyloading {
+        opacity: 0;
+      }
 
-    /* fade image in after load */
-    .lazyload,
-    .lazyloading {
-      opacity: 0;
-    }
+      .lazyloaded {
+        opacity: 1;
+        transition: opacity 300ms;
+      }
+    </style>
+  </head>
 
-    .lazyloaded {
-      opacity: 1;
-      transition: opacity 300ms;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <a href="#main-content" class="sr-only sr-only-focusable" title="跳到主要內容區塊">跳到主要內容區塊</a>
-    <nav class="navbar">
-      <div class="left">
-        <button title="選單" type="button" class="nav_burger" id="main-nav" aria-label="選單" aria-expanded="false"><img
-            class="lazyload" src="./static/img/navbar-burger.svg" alt="" /></button>
-        <!-- 選單 -->
-        <div id="the-nav">
-          <ul>
-            <li>
-              <div>
-                <div class="arrow-right active"></div>
-                <div class="text">首頁</div>
-              </div>
-            </li>
-            <li>
-              <a href="./disability/physical.html" title="無障礙防災｜肢體障礙者">
-                <div class="arrow-right "></div>
-                <div class="text">肢體障礙者</div>
-              </a>
-            </li>
-            <li><a href="./disability/hearing.html" title="無障礙防災｜聽覺障礙者">
-                <div class="arrow-right"></div>
-                <div class="text">聽覺障礙者</div>
-              </a></li>
-            <li><a href="./disability/resource.html" title="無障礙防災｜相關資源">
-                <div class="arrow-right"></div>
-                <div class="text">相關資源</div>
-              </a></li>
-          </ul>
+  <body>
+    <header>
+      <a
+        href="#main-content"
+        class="sr-only sr-only-focusable"
+        title="跳到主要內容區塊"
+        >跳到主要內容區塊</a
+      >
+      <nav class="navbar">
+        <div class="left">
+          <button
+            title="選單"
+            type="button"
+            class="nav_burger"
+            id="main-nav"
+            aria-label="選單"
+            aria-expanded="false"
+          >
+            <img class="lazyload" src="./static/img/navbar-burger.svg" alt="" />
+          </button>
+          <!-- 選單 -->
+          <div id="the-nav">
+            <ul>
+              <li>
+                <div>
+                  <div class="arrow-right active"></div>
+                  <div class="text">首頁</div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="./disability/physical.html"
+                  title="無障礙防災｜肢體障礙者"
+                >
+                  <div class="arrow-right"></div>
+                  <div class="text">肢體障礙者</div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./disability/hearing.html"
+                  title="無障礙防災｜聽覺障礙者"
+                >
+                  <div class="arrow-right"></div>
+                  <div class="text">聽覺障礙者</div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./disability/resource.html"
+                  title="無障礙防災｜相關資源"
+                >
+                  <div class="arrow-right"></div>
+                  <div class="text">相關資源</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h1>
+            <a title="防災無障礙首頁" accesskey="h" href="#" class="logo"
+              ><img
+                class="lazyload"
+                src="/static/img/logo.svg"
+                alt=""
+              />防災無障礙</a
+            >
+          </h1>
         </div>
-        <h1>
-          <a title="防災無障礙首頁" accesskey="h" href="#" class="logo"><img class="lazyload" src="/static/img/logo.svg"
-              alt="" />防災無障礙</a>
-        </h1>
-      </div>
-      <div class="right">
-        <a href="#;return false;" title="上方選單區" accesskey="U" class="website-nav">:::</a>
-        <a href="./disability/sitemap.html" title="網站導覽" class="website-nav">網站導覽</a>
-      </div>
-    </nav>
-  </header>
-  <div id="show-when-too-short">
-    stop!!!
-  </div>
+        <div class="right">
+          <a
+            href="#;return false;"
+            title="上方選單區"
+            accesskey="U"
+            class="website-nav"
+            >:::</a
+          >
+          <a
+            href="./disability/sitemap.html"
+            title="網站導覽"
+            class="website-nav"
+            >網站導覽</a
+          >
+        </div>
+      </nav>
+    </header>
+    <div id="show-when-too-short">stop!!!</div>
 
-  <main>
-    <a href="#;return false;" title="主要內容區" accesskey="C" id="main-content">:::</a>
-    <div class="video-group">
-      <div id="overlay">
-        <img id="main-title" class="lazyload" src="./static/img/main-title.svg" alt="" />
+    <main>
+      <a
+        href="#;return false;"
+        title="主要內容區"
+        accesskey="C"
+        id="main-content"
+        >:::</a
+      >
+      <div class="video-group">
+        <div id="overlay">
+          <img
+            id="main-title"
+            class="lazyload"
+            src="./static/img/main-title.svg"
+            alt=""
+          />
+        </div>
+        <video
+          class="lazyload"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          title="以動畫的方式呈現出社區街道中有坐輪椅的肢體障礙者與持拐杖的年長者，場景從晴天轉變成颳風、下雨、淹水、土石流，以及地震時的狀況"
+        >
+          <source src="/static/main.mp4" type="video/mp4" />
+        </video>
       </div>
-      <video class="lazyload" autoplay muted loop playsinline preload="auto"
-        title="以動畫的方式呈現出社區街道中有坐輪椅的肢體障礙者與持拐杖的年長者，場景從晴天轉變成颳風、下雨、淹水、土石流，以及地震時的狀況">
-        <source src="./static/main.mp4" type="video/mp4">
-
-      </video>
-    </div>
-    <div class="mobile-tabs">
-      <a href="./disability/physical.html" title="防災無障礙｜肢體障礙者">
-        <div class="tab-title">肢體障礙者</div>
-      </a>
-      <a href="./disability/hearing.html" title="防災無障礙｜聽覺障礙者">
-        <div class="tab-title">聽覺障礙者</div>
-      </a>
-      <a href="./disability/resource.html" title="">
-        <div class="tab-title">相關資源</div>
-      </a>
-      <div class="zero-project">
-        <img class="lazyload" src="/static/zero project new_v1.png"
-          alt="本網站中的災害管理教材獲得聯合國支持的Zero Project Award 2023獎項" />
-      </div>
-    </div>
-    <div class="tab-group">
-      <a href="./disability/physical.html" id="physically-handicapped" title="防災無障礙｜肢體障礙者">
-        <div class="text-group">
+      <div class="mobile-tabs">
+        <a href="./disability/physical.html" title="防災無障礙｜肢體障礙者">
           <div class="tab-title">肢體障礙者</div>
-          <div>
-            <div class="pill"> Let's Go! <img class="lazyload" src="./static/img/right-arrow.svg" alt="" /></div>
-            <!-- <div class="go">
+        </a>
+        <a href="./disability/hearing.html" title="防災無障礙｜聽覺障礙者">
+          <div class="tab-title">聽覺障礙者</div>
+        </a>
+        <a href="./disability/resource.html" title="">
+          <div class="tab-title">相關資源</div>
+        </a>
+        <div class="zero-project">
+          <img
+            class="lazyload"
+            src="/static/zero project new_v1.png"
+            alt="本網站中的災害管理教材獲得聯合國支持的Zero Project Award 2023獎項"
+          />
+        </div>
+      </div>
+      <div class="tab-group">
+        <a
+          href="./disability/physical.html"
+          id="physically-handicapped"
+          title="防災無障礙｜肢體障礙者"
+        >
+          <div class="text-group">
+            <div class="tab-title">肢體障礙者</div>
+            <div>
+              <div class="pill">
+                Let's Go!
+                <img
+                  class="lazyload"
+                  src="./static/img/right-arrow.svg"
+                  alt=""
+                />
+              </div>
+              <!-- <div class="go">
               Let's Go! <img src="/static/img/right-arrow.svg" alt="" />
             </div> -->
+            </div>
           </div>
-        </div>
 
-        <img class="lazyload" id="wheelchairman" src="./static/img/wheelchair-person-loading.webp" alt="" />
-
-
-      </a>
-      <a href="./disability/hearing.html" id="hearing-impaired" title="聽覺障礙者">
-        <div class="text-group">
-          <div class="tab-title">聽覺障礙者</div>
-          <div>
-            <div class="pill"> Let's Go! <img class="lazyload" src="./static/img/right-arrow.svg" alt="" /></div>
-            <!-- <div class="go">
+          <img
+            class="lazyload"
+            id="wheelchairman"
+            src="./static/img/wheelchair-person-loading.webp"
+            alt=""
+          />
+        </a>
+        <a
+          href="./disability/hearing.html"
+          id="hearing-impaired"
+          title="聽覺障礙者"
+        >
+          <div class="text-group">
+            <div class="tab-title">聽覺障礙者</div>
+            <div>
+              <div class="pill">
+                Let's Go!
+                <img
+                  class="lazyload"
+                  src="./static/img/right-arrow.svg"
+                  alt=""
+                />
+              </div>
+              <!-- <div class="go">
               Let's Go! <img class="lazyload" src="/static/img/right-arrow.svg" alt="" />
             </div> -->
+            </div>
           </div>
-        </div>
-        <div class="img-group">
-          <img class="lazyload" id="hearing" src="./static/img/webp/home-hearing.webp" alt="" />
+          <div class="img-group">
+            <img
+              class="lazyload"
+              id="hearing"
+              src="./static/img/webp/home-hearing.webp"
+              alt=""
+            />
+          </div>
+        </a>
 
-        </div>
-      </a>
-
-      <a href="./disability/resource.html" id="relative-resource" title="無障礙防災｜相關資源">
-        <div class="text-group">
-          <div class="tab-title">相關資源</div>
-          <div>
-            <div class="pill"> Let's Go! <img class="lazyload" src="./static/img/right-arrow.svg" alt="" /></div>
-            <!-- <div class="go">
+        <a
+          href="./disability/resource.html"
+          id="relative-resource"
+          title="無障礙防災｜相關資源"
+        >
+          <div class="text-group">
+            <div class="tab-title">相關資源</div>
+            <div>
+              <div class="pill">
+                Let's Go!
+                <img
+                  class="lazyload"
+                  src="./static/img/right-arrow.svg"
+                  alt=""
+                />
+              </div>
+              <!-- <div class="go">
               Let's Go! <img src="/static/img/right-arrow.svg" alt="" />
             </div> -->
+            </div>
           </div>
+          <img
+            id="resource-main"
+            src="./static/img/webp/resource-main.webp"
+            alt=""
+          />
+        </a>
+        <div class="zero-project" id="zero-project">
+          <img
+            class="lazyload"
+            src="/static/zero-project.webp"
+            alt="本網站中的災害管理教材獲得聯合國支持的Zero Project Award 2023獎項"
+          />
         </div>
-        <img id="resource-main" src="./static/img/webp/resource-main.webp" alt="" />
-      </a>
-      <div class="zero-project" id="zero-project">
-        <img class="lazyload" src="/static/zero-project.webp" alt="本網站中的災害管理教材獲得聯合國支持的Zero Project Award 2023獎項" />
       </div>
-    </div>
-  </main>
-  <footer>
-
-    <div class="copy-right">
-      <span>Copyright © 2022 國家災害防救科技中心 All rights reserved</span>
-    </div>
-  </footer>
-</body>
-
+    </main>
+    <footer>
+      <div class="copy-right">
+        <span>Copyright © 2022 國家災害防救科技中心 All rights reserved</span>
+      </div>
+    </footer>
+  </body>
 </html>
