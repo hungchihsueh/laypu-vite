@@ -1111,7 +1111,9 @@ tabs.forEach((tab, i) =>
     setTimeout(() => {
       clickedRecent = false;
     }, 400);
+      state.fromPprev = false;
   }),
+  
 );
 burgerTabs.forEach((tab, i) =>
   tab.addEventListener("click", (e) => {

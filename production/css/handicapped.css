@@ -923,6 +923,7 @@ main {
 }
 
 #pl-2>img {
+  z-index: 50;
   height: 135%;
   left: -10%;
   bottom: -37%;
@@ -947,7 +948,7 @@ main {
   height: 35%;
   left: 33%;
   bottom: 0%;
-  z-index: 9999;
+  z-index: 51;
   -webkit-animation-duration: 10s;
   animation-duration: 10s;
   -webkit-animation-fill-mode: both;

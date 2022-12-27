@@ -16,10 +16,23 @@ main * {
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  will-change: auto;
+  z-index: 1;
 }
 
-img {
-  /* max-width: 100%; */
+body {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+  z-index: 1;
 }
 
 button {
