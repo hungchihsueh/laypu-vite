@@ -1368,7 +1368,7 @@ setInterval(() => {
       state.step = i;
     }
   });
-}, 1);
+}, 100);
 
 state.main.forEach((main) => {
   main.addEventListener("mousemove", (e) => {
@@ -1617,87 +1617,91 @@ const ProgressEvent = () => {
         //   }
         // }
       });
-    });
+    },{passive: true});
 
-    main.addEventListener("scroll", () => {
-      // state.isStopScroll = false;
-      // clearTimeout(isScrolling)
-      // isScrolling=setTimeout(() => {
-      //   state.isStopScroll=true
-      // }, 69);
-      // if (tabclicked) {
-      //   setTimeout(() => {
-      //     tabclicked=false
-      //   }, 300);
-      //   return
-      // }
-      // state.isScroll = true;
-      if (i == state.activeTab) {
-        progress.style.width = `${
-          (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
-        }%`;
-        // console.log(state.main[i].querySelectorAll(".content"))
-        let sections =
-          state.main[state.activeTab].querySelectorAll(".main>div");
-        if (state.step + 1 == sections.length) {
-          // chairMan.style.left = `95%`;
-          progress.style.width = "100%";
-        } else if (state.step == 0) {
-          progress.style.width = "0%";
-        } else {
-          // chairMan.style.left = `${
-          //   (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
-          // }%`;
-        }
-      }
-      let sections = main.querySelectorAll(".main>div");
-      Array.prototype.forEach.call(sections, (section, i) => {
-        let sectionToLeft = section.getBoundingClientRect().left;
-        if (
-          main.scrollLeft > sectionToLeft &&
-          sectionToLeft > 0 &&
-          sectionToLeft < window.innerWidth / 2
-        ) {
-          state.step = i;
-          if (state.activeTab == 0 && state.step <= 0) {
-            document.querySelector(".progress-prev").classList.add("disable");
+    main.addEventListener(
+      "scroll",
+      () => {
+        // state.isStopScroll = false;
+        // clearTimeout(isScrolling)
+        // isScrolling=setTimeout(() => {
+        //   state.isStopScroll=true
+        // }, 69);
+        // if (tabclicked) {
+        //   setTimeout(() => {
+        //     tabclicked=false
+        //   }, 300);
+        //   return
+        // }
+        // state.isScroll = true;
+        if (i == state.activeTab) {
+          progress.style.width = `${
+            (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
+          }%`;
+          // console.log(state.main[i].querySelectorAll(".content"))
+          let sections =
+            state.main[state.activeTab].querySelectorAll(".main>div");
+          if (state.step + 1 == sections.length) {
+            // chairMan.style.left = `95%`;
+            progress.style.width = "100%";
+          } else if (state.step == 0) {
+            progress.style.width = "0%";
           } else {
-            document
-              .querySelector(".progress-prev")
-              .classList.remove("disable");
+            // chairMan.style.left = `${
+            //   (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
+            // }%`;
           }
         }
-      });
-      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.5) {
-        pNext[0].click();
-        // if (hitEnd) {
-        //   pNext[0].click();
-        //   clearTimeout(endTimer);
-        //   endTimer = setTimeout(() => {
-        //     hitEnd = false;
-        //   }, 100);
-        // } else {
-        //   clearTimeout(endTimer);
-        //   endTimer = setTimeout(() => {
-        //     hitEnd = true;
-        //   }, 100);
-        // }
-      } else if (main.scrollLeft == 0) {
-        pPrev[0].click();
-        // if (hitStart) {
-        //   pPrev[0].click();
-        //   clearTimeout(startTimer);
-        //   startTimer = setTimeout(() => {
-        //     hitStart = false;
-        //   }, 100);
-        // } else {
-        //   clearTimeout(startTimer);
-        //   startTimer = setTimeout(() => {
-        //     hitStart = true;
-        //   }, 100);
-        // }
-      }
-    });
+        let sections = main.querySelectorAll(".main>div");
+        Array.prototype.forEach.call(sections, (section, i) => {
+          let sectionToLeft = section.getBoundingClientRect().left;
+          if (
+            main.scrollLeft > sectionToLeft &&
+            sectionToLeft > 0 &&
+            sectionToLeft < window.innerWidth / 2
+          ) {
+            state.step = i;
+            if (state.activeTab == 0 && state.step <= 0) {
+              document.querySelector(".progress-prev").classList.add("disable");
+            } else {
+              document
+                .querySelector(".progress-prev")
+                .classList.remove("disable");
+            }
+          }
+        });
+        if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.5) {
+          pNext[0].click();
+          // if (hitEnd) {
+          //   pNext[0].click();
+          //   clearTimeout(endTimer);
+          //   endTimer = setTimeout(() => {
+          //     hitEnd = false;
+          //   }, 100);
+          // } else {
+          //   clearTimeout(endTimer);
+          //   endTimer = setTimeout(() => {
+          //     hitEnd = true;
+          //   }, 100);
+          // }
+        } else if (main.scrollLeft == 0) {
+          pPrev[0].click();
+          // if (hitStart) {
+          //   pPrev[0].click();
+          //   clearTimeout(startTimer);
+          //   startTimer = setTimeout(() => {
+          //     hitStart = false;
+          //   }, 100);
+          // } else {
+          //   clearTimeout(startTimer);
+          //   startTimer = setTimeout(() => {
+          //     hitStart = true;
+          //   }, 100);
+          // }
+        }
+      },
+      { passive: true },
+    );
   });
   pPrev.forEach((p) => {
     p.addEventListener("click", () => {

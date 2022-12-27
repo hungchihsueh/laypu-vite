@@ -1461,219 +1461,227 @@ const ProgressEvent = () => {
     let hitStart = false;
     let endTimer;
     let startTimer;
-    main.addEventListener("wheel", async (e) => {
-      e.preventDefault();
-      // if (hitEnd || hitStart) {
-      //   return;
-      // } else {
-      if (e.deltaX != 0) {
-        if (e.deltaX < 0) {
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaX),
-            duration: 0.8,
-          });
-          // pPrev[0].click();
-          // isStopScroll = false;
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          // gsap.to(main,{scrollLeft:  main.scrollLeft += e.deltaX * 1.8,duration:0.2})
-        } else if (e.deltaX > 0) {
-          // isStopScroll = false;
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaX),
-            duration: 0.8,
-          });
+    main.addEventListener(
+      "wheel",
+      async (e) => {
+        e.preventDefault();
+        // if (hitEnd || hitStart) {
+        //   return;
+        // } else {
+        if (e.deltaX != 0) {
+          if (e.deltaX < 0) {
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaX),
+              duration: 0.8,
+            });
+            // pPrev[0].click();
+            // isStopScroll = false;
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            // gsap.to(main,{scrollLeft:  main.scrollLeft += e.deltaX * 1.8,duration:0.2})
+          } else if (e.deltaX > 0) {
+            // isStopScroll = false;
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaX),
+              duration: 0.8,
+            });
 
-          // pNext[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-        }
-      } else {
-        if (e.deltaY < 0) {
-          // isStopScroll = false;
-          // pPrev[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaY),
-            duration: 0.8,
-          });
-        } else if (e.deltaY > 0) {
-          // isStopScroll = false;
-          // pNext[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaY),
-            duration: 0.8,
-          });
-        }
-      }
-      // }
-
-      let units = main.querySelectorAll(".main>div");
-      Array.prototype.forEach.call(units, (unit, i) => {
-        // if (
-        //   main.getBoundingClientRect().left + window.innerWidth * 1 >
-        //   unit.getBoundingClientRect().left && unit.getBoundingClientRect().left  > window.innerWidth * 0.4
-        // ) {
-        //   state.step = i;
-        //   console.log(
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   );
-        //   if (
-        //     state.step + 1 >=
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   ) {
-        //     document.querySelector(".progress-next").classList.add("disable");
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //   }
-        //   if (state.step <= 0) {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //     document.querySelector(".progress-prev").classList.add("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   }
-        //   if (window.innerWidth > 1400) {
-        //     let leftAmount =
-        //     main.scrollLeft +
-        //     unit.getBoundingClientRect().left -
-        //     window.innerWidth * 0.03;
-        //     scrollSnap(main,leftAmount)
-        //   }
-        // } else if (
-        //   units[i-1]&&
-        //   main.getBoundingClientRect().left + window.innerWidth * 0.5>
-        //   units[i-1].getBoundingClientRect().left + unit.offsetWidth * 1&&units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 1>main.getBoundingClientRect().left + window.innerWidth * 0.1
-        // ) {
-        //   console.log("gobsck!", units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 0.9)
-        //   state.step = i-1;
-        //   if (
-        //     state.step + 1 >=
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   ) {
-        //     document.querySelector(".progress-next").classList.add("disable");
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //   }
-        //   if (state.step <= 0) {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //     document.querySelector(".progress-prev").classList.add("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   }
-        //   if (window.innerWidth > 1400) {
-        //     let leftAmount =
-        //     main.scrollLeft +
-        //     units[i-1].getBoundingClientRect().left -
-        //     window.innerWidth * 0.03;
-        //     scrollSnap(main,leftAmount)
-        //   }
-        // }
-      });
-    });
-
-    main.addEventListener("scroll", () => {
-      // state.isStopScroll = false;
-      // clearTimeout(isScrolling)
-      // isScrolling=setTimeout(() => {
-      //   state.isStopScroll=true
-      // }, 69);
-      if (i == state.activeTab) {
-        progress.style.width = `${
-          (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
-        }%`;
-        // console.log(state.main[i].querySelectorAll(".content"))
-        let sections =
-          state.main[state.activeTab].querySelectorAll(".main>div");
-        if (state.step + 1 == sections.length) {
-          // chairMan.style.left = `95%`;
-          progress.style.width = "100%";
-        } else if (state.step == 0) {
-          progress.style.width = "0%";
+            // pNext[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+          }
         } else {
-          // chairMan.style.left = `${
-          //   (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
-          // }%`;
-        }
-      }
-      let sections = main.querySelectorAll(".main>div");
-      Array.prototype.forEach.call(sections, (section, i) => {
-        let sectionToLeft = section.getBoundingClientRect().left;
-        if (
-          main.scrollLeft > sectionToLeft &&
-          sectionToLeft > 0 &&
-          sectionToLeft < window.innerWidth / 2
-        ) {
-          state.step = i;
-          if (state.activeTab == 0 && state.step <= 0) {
-            document.querySelector(".progress-prev").classList.add("disable");
-          } else {
-            document
-              .querySelector(".progress-prev")
-              .classList.remove("disable");
+          if (e.deltaY < 0) {
+            // isStopScroll = false;
+            // pPrev[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaY),
+              duration: 0.8,
+            });
+          } else if (e.deltaY > 0) {
+            // isStopScroll = false;
+            // pNext[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaY),
+              duration: 0.8,
+            });
           }
         }
-      });
-      // console.log(main.scrollLeft + window.innerWidth,main.scrollWidth - 0.8)
-      if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.3) {
-        console.log("pnext!!!");
-        pNext[0].click();
-        // if (hitEnd) {
-        //   pNext[0].click();
-        //   clearTimeout(endTimer);
-        //   endTimer = setTimeout(() => {
-        //     hitEnd = false;
-        //   }, 100);
-        // } else {
-        //   clearTimeout(endTimer);
-        //   endTimer = setTimeout(() => {
-        //     hitEnd = true;
-        //   }, 100);
         // }
-      } else if (main.scrollLeft == 0) {
-        pPrev[0].click();
-        // if (hitStart) {
-        //   pPrev[0].click();
-        //   clearTimeout(startTimer);
-        //   startTimer = setTimeout(() => {
-        //     hitStart = false;
-        //   }, 100);
-        // } else {
-        //   clearTimeout(startTimer);
-        //   startTimer = setTimeout(() => {
-        //     hitStart = true;
-        //   }, 100);
-        // }
-      }
-    });
+
+        let units = main.querySelectorAll(".main>div");
+        Array.prototype.forEach.call(units, (unit, i) => {
+          // if (
+          //   main.getBoundingClientRect().left + window.innerWidth * 1 >
+          //   unit.getBoundingClientRect().left && unit.getBoundingClientRect().left  > window.innerWidth * 0.4
+          // ) {
+          //   state.step = i;
+          //   console.log(
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   );
+          //   if (
+          //     state.step + 1 >=
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   ) {
+          //     document.querySelector(".progress-next").classList.add("disable");
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //   }
+          //   if (state.step <= 0) {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //     document.querySelector(".progress-prev").classList.add("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   }
+          //   if (window.innerWidth > 1400) {
+          //     let leftAmount =
+          //     main.scrollLeft +
+          //     unit.getBoundingClientRect().left -
+          //     window.innerWidth * 0.03;
+          //     scrollSnap(main,leftAmount)
+          //   }
+          // } else if (
+          //   units[i-1]&&
+          //   main.getBoundingClientRect().left + window.innerWidth * 0.5>
+          //   units[i-1].getBoundingClientRect().left + unit.offsetWidth * 1&&units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 1>main.getBoundingClientRect().left + window.innerWidth * 0.1
+          // ) {
+          //   console.log("gobsck!", units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 0.9)
+          //   state.step = i-1;
+          //   if (
+          //     state.step + 1 >=
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   ) {
+          //     document.querySelector(".progress-next").classList.add("disable");
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //   }
+          //   if (state.step <= 0) {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //     document.querySelector(".progress-prev").classList.add("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   }
+          //   if (window.innerWidth > 1400) {
+          //     let leftAmount =
+          //     main.scrollLeft +
+          //     units[i-1].getBoundingClientRect().left -
+          //     window.innerWidth * 0.03;
+          //     scrollSnap(main,leftAmount)
+          //   }
+          // }
+        });
+      },
+      { passive: true },
+    );
+
+    main.addEventListener(
+      "scroll",
+      () => {
+        // state.isStopScroll = false;
+        // clearTimeout(isScrolling)
+        // isScrolling=setTimeout(() => {
+        //   state.isStopScroll=true
+        // }, 69);
+        if (i == state.activeTab) {
+          progress.style.width = `${
+            (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
+          }%`;
+          // console.log(state.main[i].querySelectorAll(".content"))
+          let sections =
+            state.main[state.activeTab].querySelectorAll(".main>div");
+          if (state.step + 1 == sections.length) {
+            // chairMan.style.left = `95%`;
+            progress.style.width = "100%";
+          } else if (state.step == 0) {
+            progress.style.width = "0%";
+          } else {
+            // chairMan.style.left = `${
+            //   (main.scrollLeft / (main.scrollWidth - main.clientWidth)) * 100
+            // }%`;
+          }
+        }
+        let sections = main.querySelectorAll(".main>div");
+        Array.prototype.forEach.call(sections, (section, i) => {
+          let sectionToLeft = section.getBoundingClientRect().left;
+          if (
+            main.scrollLeft > sectionToLeft &&
+            sectionToLeft > 0 &&
+            sectionToLeft < window.innerWidth / 2
+          ) {
+            state.step = i;
+            if (state.activeTab == 0 && state.step <= 0) {
+              document.querySelector(".progress-prev").classList.add("disable");
+            } else {
+              document
+                .querySelector(".progress-prev")
+                .classList.remove("disable");
+            }
+          }
+        });
+        // console.log(main.scrollLeft + window.innerWidth,main.scrollWidth - 0.8)
+        if (main.scrollLeft + window.innerWidth >= main.scrollWidth - 0.3) {
+          console.log("pnext!!!");
+          pNext[0].click();
+          // if (hitEnd) {
+          //   pNext[0].click();
+          //   clearTimeout(endTimer);
+          //   endTimer = setTimeout(() => {
+          //     hitEnd = false;
+          //   }, 100);
+          // } else {
+          //   clearTimeout(endTimer);
+          //   endTimer = setTimeout(() => {
+          //     hitEnd = true;
+          //   }, 100);
+          // }
+        } else if (main.scrollLeft == 0) {
+          pPrev[0].click();
+          // if (hitStart) {
+          //   pPrev[0].click();
+          //   clearTimeout(startTimer);
+          //   startTimer = setTimeout(() => {
+          //     hitStart = false;
+          //   }, 100);
+          // } else {
+          //   clearTimeout(startTimer);
+          //   startTimer = setTimeout(() => {
+          //     hitStart = true;
+          //   }, 100);
+          // }
+        }
+      },
+      { passive: true },
+    );
   });
   pPrev.forEach((p) => {
     p.addEventListener("click", () => {
