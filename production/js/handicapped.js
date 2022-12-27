@@ -96,8 +96,8 @@ let sidebarRightBtn = sideBar.querySelector(".right-btn");
 sidebarRightBtn.addEventListener("click", (e) => {
   let sections = sidebarList.querySelectorAll(".list>button");
   Array.prototype.forEach.call(sections, (section, i) => {
-    section.setAttribute("tabindex","0")
-  })
+    section.setAttribute("tabindex", "0");
+  });
   console.log(sidebarRightBtn.classList.contains("active"));
   sideBar.classList.contains("active")
     ? sideBar.classList.remove("active")
@@ -211,7 +211,7 @@ prepare.addEventListener("click", async () => {
       transform: `translate(-50%,-50%)`,
       duration: 0.8,
     },
-    "-=1.5"
+    "-=1.5",
   );
   tl.to(response, { duration: 1, opacity: 0 }, "-=1");
   tl.to(doc, { duration: 1, opacity: 0 }, "-=1");
@@ -231,24 +231,24 @@ prepare.addEventListener("click", async () => {
       opacity: 1,
       duration: 0.8,
     },
-    "-=.8"
+    "-=.8",
   );
   tl.to(tabGroup, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(burger, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(
     tabs,
     { backgroundColor: "#F1EAA8", color: "#1e6e67", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     burgerTabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   // sidebar
   sideBar.style.display = "block";
@@ -275,8 +275,8 @@ prepare.addEventListener("click", async () => {
   Array.prototype.forEach.call(sections, (section, i) => {
     section.addEventListener("click", () => {
       Array.prototype.forEach.call(sections, (section, i) => {
-        section.setAttribute("tabindex","-1")
-      })
+        section.setAttribute("tabindex", "-1");
+      });
       Array.prototype.forEach.call(sections, (section, i) => {
         section.querySelector(".dot").classList.remove("active");
       });
@@ -364,7 +364,7 @@ response.addEventListener("click", async () => {
       transform: `translate(-50%,-50%)`,
       duration: 0.8,
     },
-    "-=1.5"
+    "-=1.5",
   );
   tl.to(prepare, { duration: 1, opacity: 0 }, "-=1");
   tl.to(doc, { duration: 1, opacity: 0 }, "-=1");
@@ -382,24 +382,24 @@ response.addEventListener("click", async () => {
       display: "flex",
       duration: 0.8,
     },
-    "-=.8"
+    "-=.8",
   );
   tl.to(tabGroup, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(burger, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(
     tabs,
     { backgroundColor: "#D9F4F1", color: "#1e6e67", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     burgerTabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   // sidebar
   sideBar.style.display = "block";
@@ -511,7 +511,7 @@ recover.addEventListener("click", async () => {
       transform: `translate(-50%,-50%)`,
       duration: 0.8,
     },
-    "-=1.5"
+    "-=1.5",
   );
   tl.to(doc, { duration: 1, opacity: 0 }, "-=1");
   tl.to(prepare, { duration: 1, opacity: 0 }, "-=1");
@@ -530,24 +530,24 @@ recover.addEventListener("click", async () => {
       display: "flex",
       duration: 0.8,
     },
-    "-=.8"
+    "-=.8",
   );
   tl.to(tabGroup, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(burger, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(
     tabs,
     { backgroundColor: "#F1EAA8", color: "#1e6e67", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     burgerTabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   // sidebar
   sideBar.style.display = "block";
@@ -659,7 +659,7 @@ help.addEventListener("click", async () => {
       transform: `translate(-50%,-50%)`,
       duration: 0.8,
     },
-    "-=1.5"
+    "-=1.5",
   );
   tl.to(prepare, { duration: 1, opacity: 0 }, "-=1");
   tl.to(doc, { duration: 1, opacity: 0 }, "-=1");
@@ -678,24 +678,24 @@ help.addEventListener("click", async () => {
       display: "flex",
       backgroundColor: "#D9F4F1",
     },
-    "-=.8"
+    "-=.8",
   );
   tl.to(tabGroup, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(burger, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(
     tabs,
     { backgroundColor: "#D9F4F1", color: "#1e6e67", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     burgerTabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   // sidebar
   sideBar.style.display = "block";
@@ -808,7 +808,7 @@ doc.addEventListener("click", async () => {
       transform: `translate(-50%,-50%)`,
       duration: 0.8,
     },
-    "-=1.5"
+    "-=1.5",
   );
   tl.to(prepare, { duration: 1, opacity: 0 }, "-=1");
   tl.to(help, { duration: 1, opacity: 0 }, "-=1");
@@ -827,24 +827,24 @@ doc.addEventListener("click", async () => {
       duration: 0.8,
       display: "flex",
     },
-    "-=.8"
+    "-=.8",
   );
   tl.to(tabGroup, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(burger, { display: "flex", opacity: 1, duration: 0.5 });
   tl.to(
     tabs,
     { backgroundColor: "#F1EAA8", color: "#1e6e67", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     tabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
   tl.to(
     burgerTabs[state.activeTab],
     { backgroundColor: "#1e6e67", color: "#fff", duration: 0.5 },
-    "-=1"
+    "-=1",
   );
 });
 
@@ -915,7 +915,7 @@ tabs.forEach((tab, i) =>
           color: "#1e6e67",
           duration: 0.05,
         },
-        "-=.5"
+        "-=.5",
       );
       tl.to(
         burgerTabs,
@@ -924,7 +924,7 @@ tabs.forEach((tab, i) =>
           color: "#1e6e67",
           duration: 0.05,
         },
-        "-=.5"
+        "-=.5",
       );
       tl.to(
         tabs[state.activeTab],
@@ -933,7 +933,7 @@ tabs.forEach((tab, i) =>
           color: "#fff",
           duration: 0.2,
         },
-        "-=.4"
+        "-=.4",
       );
       tl.to(
         burgerTabs[state.activeTab],
@@ -942,7 +942,7 @@ tabs.forEach((tab, i) =>
           color: "#fff",
           duration: 0.2,
         },
-        "-=.4"
+        "-=.4",
       );
       tl.to(
         "main",
@@ -950,7 +950,7 @@ tabs.forEach((tab, i) =>
           backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
           duration: 0.5,
         },
-        "-=0.75"
+        "-=0.75",
       );
       tl.to(
         ".navbar",
@@ -958,7 +958,7 @@ tabs.forEach((tab, i) =>
           backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
           duration: 0.5,
         },
-        "-=0.75"
+        "-=0.75",
       );
       // tl.to(main_1,{backgroundColor:state.activeTab%2==1?"#D9F4F1": "#F1EAA8",duration:.2},"-=0.25")
       switch (true) {
@@ -984,12 +984,12 @@ tabs.forEach((tab, i) =>
               duration: 0.5,
               display: "flex",
             },
-            "-=1"
+            "-=1",
           );
           tl.to(
             state.main[state.activeTab],
             { scrollLeft: 0, duration: 0 },
-            "-=.9"
+            "-=.9",
           );
 
           document.querySelector("#progress .bar .percent").style.width = "0%";
@@ -1014,12 +1014,12 @@ tabs.forEach((tab, i) =>
               duration: 0.5,
               display: "flex",
             },
-            "-=1"
+            "-=1",
           );
           tl.to(
             state.main[state.activeTab],
             { scrollLeft: 0, duration: 0 },
-            "-=.9"
+            "-=.9",
           );
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
@@ -1068,7 +1068,7 @@ tabs.forEach((tab, i) =>
     setTimeout(() => {
       clickedRecent = false;
     }, 400);
-  })
+  }),
 );
 burgerTabs.forEach((tab, i) =>
   tab.addEventListener("click", (e) => {
@@ -1131,7 +1131,7 @@ burgerTabs.forEach((tab, i) =>
           color: "#1e6e67",
           duration: 0.05,
         },
-        "-=.5"
+        "-=.5",
       );
       tl.to(
         tabs,
@@ -1140,7 +1140,7 @@ burgerTabs.forEach((tab, i) =>
           color: "#1e6e67",
           duration: 0.05,
         },
-        "-=.5"
+        "-=.5",
       );
       tl.to(
         burgerTabs[state.activeTab],
@@ -1149,7 +1149,7 @@ burgerTabs.forEach((tab, i) =>
           color: "#fff",
           duration: 0.2,
         },
-        "-=.4"
+        "-=.4",
       );
       tl.to(
         tabs[state.activeTab],
@@ -1158,7 +1158,7 @@ burgerTabs.forEach((tab, i) =>
           color: "#fff",
           duration: 0.2,
         },
-        "-=.4"
+        "-=.4",
       );
       tl.to(
         "main",
@@ -1166,7 +1166,7 @@ burgerTabs.forEach((tab, i) =>
           backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
           duration: 0.5,
         },
-        "-=0.75"
+        "-=0.75",
       );
       tl.to(
         ".navbar",
@@ -1174,7 +1174,7 @@ burgerTabs.forEach((tab, i) =>
           backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
           duration: 0.5,
         },
-        "-=0.75"
+        "-=0.75",
       );
       // tl.to(main_1,{backgroundColor:state.activeTab%2==1?"#D9F4F1": "#F1EAA8",duration:.2},"-=0.25")
       switch (true) {
@@ -1201,12 +1201,12 @@ burgerTabs.forEach((tab, i) =>
               duration: 0.5,
               display: "flex",
             },
-            "-=1.2"
+            "-=1.2",
           );
           tl.to(
             state.main[state.activeTab],
             { scrollLeft: 0, duration: 0 },
-            "-=.9"
+            "-=.9",
           );
           // state.main[state.activeTab].scrollTo({
           //   top: 0,
@@ -1237,12 +1237,12 @@ burgerTabs.forEach((tab, i) =>
               duration: 0.5,
               display: "flex",
             },
-            "-=1.2"
+            "-=1.2",
           );
           tl.to(
             state.main[state.activeTab],
             { scrollLeft: 0, duration: 0 },
-            "-=.9"
+            "-=.9",
           );
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
@@ -1291,7 +1291,7 @@ burgerTabs.forEach((tab, i) =>
     setTimeout(() => {
       clickedRecent = false;
     }, 400);
-  })
+  }),
 );
 // mouse on side activate scroll
 let mouseX;
@@ -1658,7 +1658,7 @@ const ProgressEvent = () => {
     p.addEventListener("click", () => {
       console.log(state.step);
       let sections = document.querySelectorAll(
-        `.main-${state.activeTab + 1}>div`
+        `.main-${state.activeTab + 1}>div`,
       );
       if (state.step < 0) {
         if (state.activeTab == 0) {
@@ -1702,7 +1702,7 @@ const ProgressEvent = () => {
             document.querySelector(".progress-prev").classList.add("disable");
           } else {
             let units = document.querySelectorAll(
-              `.main-${state.activeTab}>div`
+              `.main-${state.activeTab}>div`,
             );
             let uCount = units.length;
             console.log(uCount);
@@ -1775,7 +1775,7 @@ const ProgressEvent = () => {
     p.addEventListener("click", () => {
       console.log(state.step);
       let sections = document.querySelectorAll(
-        `.main-${state.activeTab + 1}>div`
+        `.main-${state.activeTab + 1}>div`,
       );
       console.log(sections);
       console.log(state.step);
@@ -1906,7 +1906,7 @@ document.addEventListener(
   function (e) {
     e.preventDefault();
   },
-  false
+  false,
 );
 
 // navbar漢堡
@@ -1917,7 +1917,7 @@ let navLinks = theNav.querySelectorAll("a");
 const mainBurgerEvent = () => {
   burgerBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    console.log("clicked");   
+    console.log("clicked");
     // Array.prototype.forEach.call(navLinks, (link,i) => {
     //   link.setAttribute("tabindex","1")
     // })
@@ -1926,12 +1926,12 @@ const mainBurgerEvent = () => {
       let tl = gsap.timeline();
       tl.to(theNav, { display: "block", opacity: 0, duration: 0 });
       tl.to(theNav, { opacity: 1, duration: 0.1 });
-       burgerBtn.setAttribute("aria-expended", "true");
+      burgerBtn.setAttribute("aria-expended", "true");
     } else {
       let tl = gsap.timeline();
       tl.to(theNav, { opacity: 0, duration: 0.1 });
       tl.to(theNav, { display: "none", duration: 0 });
-       burgerBtn.setAttribute("aria-expended", "false");
+      burgerBtn.setAttribute("aria-expended", "false");
     }
     theNavOpen = true;
   });
@@ -1939,7 +1939,7 @@ const mainBurgerEvent = () => {
 window.addEventListener("click", (e) => {
   if (theNavOpen && theNav.style.display == "block" && e.target != burgerBtn) {
     theNavOpen = false;
-   
+
     let tl = gsap.timeline();
     tl.to(theNav, { opacity: 0, duration: 0.1 });
     tl.to(theNav, { display: "none", duration: 0 });
@@ -1992,7 +1992,7 @@ if (document.readyState === "loading") {
       cursorAnimation();
       window.addEventListener("resize", documentHeight);
       documentHeight();
-    })
+    }),
   );
 } else {
   // `DOMContentLoaded` has already fired
