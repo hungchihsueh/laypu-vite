@@ -39,6 +39,7 @@ const main_4 = document.querySelector(".main-4");
 const main_5 = document.querySelector(".main-5");
 const progress = document.querySelector("#progress");
 const state = {
+  fromPprev: false,
   isStopScroll: true,
   preStep: -1,
   step: 0,
@@ -372,6 +373,7 @@ response.addEventListener("click", async () => {
   tl.to(recover, { duration: 1, opacity: 0 }, "-=1");
   tl.to(main_0, { left: "-100%", opacity: 0, duration: 0.8 });
   tl.to(".navbar", { backgroundColor: "#D9F4F1", duration: 0.8 }, "-=.8");
+  tl.to("footer", { left: "100%", opacity: 0, duration: 0.8 }, "-=.8");
   // tl.to("#progress", { backgroundColor: "#D9F4F1", duration: 0.8 }, "-=.8");
   await tl.to(
     main_2,
@@ -520,6 +522,7 @@ recover.addEventListener("click", async () => {
   tl.to(main_0, { left: "-100%", opacity: 0, duration: 0.8 });
   tl.to("main", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   tl.to(".navbar", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
+  tl.to("footer", { left: "100%", opacity: 0, duration: 0.8 }, "-=.8");
   // tl.to("#progress", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   await tl.to(
     main_3,
@@ -668,6 +671,7 @@ help.addEventListener("click", async () => {
   tl.to(main_0, { left: "-100%", opacity: 0, duration: 0.8 });
   tl.to("main", { backgroundColor: "#D9F4F1", duration: 0.8 }, "-=.8");
   tl.to(".navbar", { backgroundColor: "#D9F4F1", duration: 0.8 }, "-=.8");
+  tl.to("footer", { left: "100%", opacity: 0, duration: 0.8 }, "-=.8");
   // tl.to("#progress", { backgroundColor: "#D9F4F1", duration: 0.8 }, "-=.8");
   await tl.to(
     main_4,
@@ -817,6 +821,7 @@ doc.addEventListener("click", async () => {
   tl.to(main_0, { left: "-100%", opacity: 0, duration: 0.8 });
   tl.to("main", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   tl.to(".navbar", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
+  tl.to("footer", { left: "100%", opacity: 0, duration: 0.8 }, "-=.8");
   // tl.to("#progress", { backgroundColor: "#F1EAA8", duration: 0.8 }, "-=.8");
   tl.to(
     main_5,
@@ -852,7 +857,7 @@ doc.addEventListener("click", async () => {
 let clickedRecent = false;
 
 tabs.forEach((tab, i) =>
-  tab.addEventListener("click", (e) => {
+  tab.addEventListener("click", async (e) => {
     tabclicked = true;
     if (clickedRecent) {
       return;
@@ -974,23 +979,60 @@ tabs.forEach((tab, i) =>
             duration: 0.5,
           });
           state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
+          await tl.to(
             state.main[state.activeTab],
             {
               left: "0%",
               backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
               zIndex: 20,
-              opacity: 1,
-              duration: 0.5,
+              duration: state.fromPprev ? 0 : 0.5,
               display: "flex",
             },
             "-=1",
           );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+
+          if (state.fromPprev) {
+            console.log("fromPprev");
+            state.fromPprev = false;
+            let sections = document.querySelectorAll(
+              `.main-${state.activeTab + 1}>div`,
+            );
+            // console.log(sections);
+            state.step = sections.length - 1;
+            // console.log(state.step);
+            // console.log(sections[state.step]);
+            // console.log(sections[state.step].offsetLeft);
+            // console.log()
+            let leftAmount =
+              sections[state.step].offsetLeft - window.innerWidth * 0.05;
+
+            tl.to(
+              state.main[state.activeTab],
+              {
+                scrollLeft: leftAmount,
+                duration: 0,
+              },
+              "-=1",
+            );
+            tl.to("#progress .bar .percent",{
+              width:"100%",duration:0
+            })
+            tl.to(
+              state.main[state.activeTab],
+              { opacity: 1, duration: 0.3 },
+            );
+          } else {
+            state.step = 0;
+            await tl.to(
+              state.main[state.activeTab],
+              {
+                scrollLeft: 0,
+                opacity: 1,
+                // duration: 0
+              },
+              "",
+            );
+          }
 
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
@@ -1030,7 +1072,7 @@ tabs.forEach((tab, i) =>
     sideBar.style.display = "block";
     sidebarList.innerHTML = "";
     let newList = "";
-    console.log(state.sectionsTitle[state.activeTab], state.activeTab);
+    // console.log(state.sectionsTitle[state.activeTab], state.activeTab);
     if (state.activeTab == 4) {
       sideBar.style.display = "none";
     } else {
@@ -1711,6 +1753,7 @@ const ProgressEvent = () => {
               width: "0%",
               duration: 0,
             });
+            state.fromPprev = true;
             tabs[state.activeTab - 1].click();
             setTimeout(() => {
               gsap.to("#progress .bar .percent", {
@@ -1985,7 +2028,7 @@ if (document.readyState === "loading") {
         let lodingTl = gsap.timeline();
         lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
         lodingTl.to("#loading", { display: "none" });
-      }, 4000);
+      }, 0);
       clickSectionEvent();
       ProgressEvent();
       mainBurgerEvent();
@@ -2000,7 +2043,7 @@ if (document.readyState === "loading") {
     let lodingTl = gsap.timeline();
     lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
     lodingTl.to("#loading", { display: "none" });
-  }, 4000);
+  }, 0);
   clickSectionEvent();
   ProgressEvent();
   mainBurgerEvent();
