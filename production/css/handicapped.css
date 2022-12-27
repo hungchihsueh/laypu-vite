@@ -5,9 +5,10 @@
 ::-webkit-scrollbar {
   z-index: 9999;
 }
+
 main * {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  -webkit-transform-style: flat;
+  transform-style: flat;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -17,6 +18,7 @@ main * {
   will-change: auto;
   z-index: 1;
 }
+
 .cursor {
   /* background-color: #1E6E67; */
 }
