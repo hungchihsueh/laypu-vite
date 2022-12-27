@@ -3,12 +3,12 @@ import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import { splitVendorChunkPlugin } from "vite";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
-
+import { compression } from 'vite-plugin-compression2'
 export default defineConfig({
   plugins: [
     ViteMinifyPlugin({}),
     splitVendorChunkPlugin(),
-
+compression(),
     legacy({
       targets: ["defaults", "not IE 11"],
       modernPolyfills: true,
