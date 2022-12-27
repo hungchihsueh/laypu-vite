@@ -987,6 +987,7 @@ tabs.forEach((tab, i) =>
               zIndex: 20,
               duration: state.fromPprev ? 0 : 0.5,
               display: "flex",
+              opacity: state.fromPprev ? 0 : 1,
             },
             "-=1",
           );
@@ -2028,7 +2029,7 @@ if (document.readyState === "loading") {
         let lodingTl = gsap.timeline();
         lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
         lodingTl.to("#loading", { display: "none" });
-      }, 0);
+      }, 4000);
       clickSectionEvent();
       ProgressEvent();
       mainBurgerEvent();
@@ -2043,7 +2044,7 @@ if (document.readyState === "loading") {
     let lodingTl = gsap.timeline();
     lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
     lodingTl.to("#loading", { display: "none" });
-  }, 0);
+  }, 4000);
   clickSectionEvent();
   ProgressEvent();
   mainBurgerEvent();
