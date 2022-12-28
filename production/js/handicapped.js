@@ -1368,23 +1368,23 @@ setInterval(() => {
     );
 }, 100);
 
-state.main.forEach((main) => {
-  main.addEventListener("mousemove", (e) => {
-    mouseX = e.pageX;
-    // console.log(mouseX);
-  });
-  main.addEventListener("mouseleave", () => {
-    mouseX = window.innerWidth / 2;
-  });
-});
-var detectStopWheel = null;
-let isStopScroll = true;
-const scrollSnap = (target, val) => {
-  clearTimeout(detectStopWheel);
-  detectStopWheel = setTimeout(() => {
-    target.scrollTo({ left: val, behavior: "smooth" });
-  }, 200);
-};
+// state.main.forEach((main) => {
+//   main.addEventListener("mousemove", (e) => {
+//     mouseX = e.pageX;
+//     // console.log(mouseX);
+//   });
+//   main.addEventListener("mouseleave", () => {
+//     mouseX = window.innerWidth / 2;
+//   });
+// });
+// var detectStopWheel = null;
+// let isStopScroll = true;
+// const scrollSnap = (target, val) => {
+//   clearTimeout(detectStopWheel);
+//   detectStopWheel = setTimeout(() => {
+//     target.scrollTo({ left: val, behavior: "smooth" });
+//   }, 200);
+// };
 // progress button
 const pPrev = document.querySelectorAll(".progress-prev");
 const pNext = document.querySelectorAll(".progress-next");
