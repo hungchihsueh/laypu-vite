@@ -998,7 +998,7 @@ tabs.forEach((tab, i) =>
               backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
               zIndex: 20,
               duration: state.fromPprev ? 0 : 0.5,
-              opacity:state.fromPprev?0:1,
+              opacity: state.fromPprev ? 0 : 1,
               display: "flex",
             },
             "-=1",
@@ -1126,7 +1126,7 @@ tabs.forEach((tab, i) =>
     setTimeout(() => {
       clickedRecent = false;
     }, 400);
-     state.fromPprev = false;
+    state.fromPprev = false;
   }),
 );
 burgerTabs.forEach((tab, i) =>
@@ -1320,35 +1320,36 @@ burgerTabs.forEach((tab, i) =>
 let mouseX;
 let animationCalledArr = [];
 setInterval(() => {
-  let divs =
-    state.activeTab != -1 &&
-    state.main[state.activeTab].querySelectorAll(".main>div");
-  Array.prototype.forEach.call(divs, (div, i) => {
-    // console.log(animationCalledArr.includes(div));
-    if (
-      div.getBoundingClientRect().left > 0 &&
-      div.getBoundingClientRect().left < window.innerWidth * 0.8 &&
-      !animationCalledArr.includes(div)
-    ) {
-      animationCalledArr.push(div);
-      // console.log(animationCalledArr);
-      let title = div.querySelector(".title");
-      let subTitle = div.querySelector(".sub-title");
-      let content = div.querySelector(".content");
-      let tl = gsap.timeline();
-      // console.log(div.getBoundingClientRect().left)
-      // console.log("show!",i)
-      tl.to(title, { translateY: 50, duration: 0 });
-      tl.to(content, { translateY: 100, opacity: 0, duration: 0 });
-      tl.to(subTitle, { translateY: 50, duration: 0 });
-      tl.to(title, { translateY: 0, opacity: 1, duration: 0.5 });
-      tl.to(subTitle, { translateY: 0, opacity: 1, duration: 0.8 }, "-=.3");
-      tl.to(content, { opacity: 1, duration: 0.8 }, "-=.5");
-      tl.to(content, { translateY: 0, duration: 0.8 }, "-=1");
-      console.log(i);
-      state.step = i;
-    }
-  });
+  state.activeTab != -1 &&
+    Array.prototype.forEach.call(
+      state.main[state.activeTab].querySelectorAll(".main>div"),
+      (div, i) => {
+        // console.log(animationCalledArr.includes(div));
+        if (
+          div.getBoundingClientRect().left > 0 &&
+          div.getBoundingClientRect().left < window.innerWidth * 0.8 &&
+          !animationCalledArr.includes(div)
+        ) {
+          animationCalledArr.push(div);
+          // console.log(animationCalledArr);
+          let title = div.querySelector(".title");
+          let subTitle = div.querySelector(".sub-title");
+          let content = div.querySelector(".content");
+          let tl = gsap.timeline();
+          // console.log(div.getBoundingClientRect().left)
+          // console.log("show!",i)
+          tl.to(title, { translateY: 50, duration: 0 });
+          tl.to(content, { translateY: 100, opacity: 0, duration: 0 });
+          tl.to(subTitle, { translateY: 50, duration: 0 });
+          tl.to(title, { translateY: 0, opacity: 1, duration: 0.5 });
+          tl.to(subTitle, { translateY: 0, opacity: 1, duration: 0.8 }, "-=.3");
+          tl.to(content, { opacity: 1, duration: 0.8 }, "-=.5");
+          tl.to(content, { translateY: 0, duration: 0.8 }, "-=1");
+          console.log(i);
+          state.step = i;
+        }
+      },
+    );
 }, 100);
 
 state.main.forEach((main) => {
@@ -1679,6 +1680,12 @@ const ProgressEvent = () => {
           //   }, 100);
           // }
         }
+        // scroll hint
+        if (state.activeTab != -1 && state.activeTab != 4 && state.step <= 0) {
+          gsap.to(".cursor", { opacity: 1, display: "flex" });
+        } else {
+          gsap.to(".cursor", { opacity: 0, display: "none" });
+        }
       },
       { passive: true },
     );
@@ -1985,7 +1992,7 @@ const cursorAnimation = () => {
     } else {
       gsap.to(".cursor", { opacity: 0, display: "none" });
     }
-  }, 10);
+  }, 500);
   // document.addEventListener("mousemove", (e) => {
   //   gsap.to(".cursor", 0.3, {
   //     x: e.clientX+10, y: e.clientY+10, stagger: 0.3, ease: "none",
@@ -2012,7 +2019,7 @@ if (document.readyState === "loading") {
       clickSectionEvent();
       ProgressEvent();
       mainBurgerEvent();
-      cursorAnimation();
+      // cursorAnimation();
       window.addEventListener("resize", documentHeight);
       documentHeight();
     }),
@@ -2027,7 +2034,7 @@ if (document.readyState === "loading") {
   clickSectionEvent();
   ProgressEvent();
   mainBurgerEvent();
-  cursorAnimation();
+  // cursorAnimation();
   window.addEventListener("resize", documentHeight);
   documentHeight();
 }

@@ -1015,13 +1015,11 @@ tabs.forEach((tab, i) =>
               },
               "-=1",
             );
-            tl.to("#progress .bar .percent",{
-              width:"100%",duration:0
-            })
-            tl.to(
-              state.main[state.activeTab],
-              { opacity: 1, duration: 0.3 },
-            );
+            tl.to("#progress .bar .percent", {
+              width: "100%",
+              duration: 0,
+            });
+            tl.to(state.main[state.activeTab], { opacity: 1, duration: 0.3 });
           } else {
             state.step = 0;
             await tl.to(
@@ -1111,9 +1109,8 @@ tabs.forEach((tab, i) =>
     setTimeout(() => {
       clickedRecent = false;
     }, 400);
-      state.fromPprev = false;
+    state.fromPprev = false;
   }),
-  
 );
 burgerTabs.forEach((tab, i) =>
   tab.addEventListener("click", (e) => {
@@ -1342,32 +1339,33 @@ burgerTabs.forEach((tab, i) =>
 let mouseX;
 let animationCalledArr = [];
 setInterval(() => {
-  let divs =
-    state.activeTab != -1 &&
-    state.main[state.activeTab].querySelectorAll(".main>div");
-  Array.prototype.forEach.call(divs, (div, i) => {
-    // console.log(animationCalledArr.includes(div));
-    if (
-      div.getBoundingClientRect().left > 0 &&
-      div.getBoundingClientRect().left < window.innerWidth * 0.8 &&
-      !animationCalledArr.includes(div)
-    ) {
-      animationCalledArr.push(div);
-      console.log(animationCalledArr);
-      let title = div.querySelector(".title");
-      let subTitle = div.querySelector(".sub-title");
-      let content = div.querySelector(".content");
-      let tl = gsap.timeline();
-      tl.to(title, { translateY: 50, duration: 0 });
-      tl.to(content, { translateY: 100, opacity: 0, duration: 0 });
-      tl.to(subTitle, { translateY: 50, duration: 0 });
-      tl.to(title, { translateY: 0, opacity: 1, duration: 0.5 });
-      tl.to(subTitle, { translateY: 0, opacity: 1, duration: 0.8 }, "-=.3");
-      tl.to(content, { opacity: 1, duration: 0.8 }, "-=.5");
-      tl.to(content, { translateY: 0, duration: 0.8 }, "-=1");
-      state.step = i;
-    }
-  });
+  state.activeTab != -1 &&
+    Array.prototype.forEach.call(
+      state.main[state.activeTab].querySelectorAll(".main>div"),
+      (div, i) => {
+        // console.log(animationCalledArr.includes(div));
+        if (
+          div.getBoundingClientRect().left > 0 &&
+          div.getBoundingClientRect().left < window.innerWidth * 0.8 &&
+          !animationCalledArr.includes(div)
+        ) {
+          animationCalledArr.push(div);
+          console.log(animationCalledArr);
+          let title = div.querySelector(".title");
+          let subTitle = div.querySelector(".sub-title");
+          let content = div.querySelector(".content");
+          let tl = gsap.timeline();
+          tl.to(title, { translateY: 50, duration: 0 });
+          tl.to(content, { translateY: 100, opacity: 0, duration: 0 });
+          tl.to(subTitle, { translateY: 50, duration: 0 });
+          tl.to(title, { translateY: 0, opacity: 1, duration: 0.5 });
+          tl.to(subTitle, { translateY: 0, opacity: 1, duration: 0.8 }, "-=.3");
+          tl.to(content, { opacity: 1, duration: 0.8 }, "-=.5");
+          tl.to(content, { translateY: 0, duration: 0.8 }, "-=1");
+          state.step = i;
+        }
+      },
+    );
 }, 100);
 
 state.main.forEach((main) => {
@@ -1480,144 +1478,148 @@ const ProgressEvent = () => {
     let hitStart = false;
     let endTimer;
     let startTimer;
-    main.addEventListener("wheel", async (e) => {
-      e.preventDefault();
-      // if (hitEnd || hitStart) {
-      //   return;
-      // } else {
-      if (e.deltaX != 0) {
-        if (e.deltaX < 0) {
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaX),
-            duration: 0.8,
-          });
-          // pPrev[0].click();
-          // isStopScroll = false;
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          // gsap.to(main,{scrollLeft:  main.scrollLeft += e.deltaX * 1.8,duration:0.2})
-        } else if (e.deltaX > 0) {
-          // isStopScroll = false;
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaX),
-            duration: 0.8,
-          });
+    main.addEventListener(
+      "wheel",
+      async (e) => {
+        e.preventDefault();
+        // if (hitEnd || hitStart) {
+        //   return;
+        // } else {
+        if (e.deltaX != 0) {
+          if (e.deltaX < 0) {
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaX),
+              duration: 0.8,
+            });
+            // pPrev[0].click();
+            // isStopScroll = false;
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            // gsap.to(main,{scrollLeft:  main.scrollLeft += e.deltaX * 1.8,duration:0.2})
+          } else if (e.deltaX > 0) {
+            // isStopScroll = false;
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaX),
+              duration: 0.8,
+            });
 
-          // pNext[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
+            // pNext[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+          }
+        } else {
+          if (e.deltaY < 0) {
+            // isStopScroll = false;
+            // pPrev[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaY),
+              duration: 0.8,
+            });
+          } else if (e.deltaY > 0) {
+            // isStopScroll = false;
+            // pNext[0].click();
+            // clearTimeout(detectStopWheel);
+            // detectStopWheel = setTimeout(() => {
+            //   isStopScroll = true;
+            // }, 1000);
+            gsap.quickTo(main, {
+              scrollTo: (main.scrollLeft += e.deltaY),
+              duration: 0.8,
+            });
+          }
         }
-      } else {
-        if (e.deltaY < 0) {
-          // isStopScroll = false;
-          // pPrev[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaY),
-            duration: 0.8,
-          });
-        } else if (e.deltaY > 0) {
-          // isStopScroll = false;
-          // pNext[0].click();
-          // clearTimeout(detectStopWheel);
-          // detectStopWheel = setTimeout(() => {
-          //   isStopScroll = true;
-          // }, 1000);
-          gsap.quickTo(main, {
-            scrollTo: (main.scrollLeft += e.deltaY),
-            duration: 0.8,
-          });
-        }
-      }
-      // }
-
-      let units = main.querySelectorAll(".main>div");
-      Array.prototype.forEach.call(units, (unit, i) => {
-        // if (
-        //   main.getBoundingClientRect().left + window.innerWidth * 1 >
-        //   unit.getBoundingClientRect().left && unit.getBoundingClientRect().left  > window.innerWidth * 0.4
-        // ) {
-        //   state.step = i;
-        //   console.log(
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   );
-        //   if (
-        //     state.step + 1 >=
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   ) {
-        //     document.querySelector(".progress-next").classList.add("disable");
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //   }
-        //   if (state.step <= 0) {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //     document.querySelector(".progress-prev").classList.add("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   }
-        //   if (window.innerWidth > 1400) {
-        //     let leftAmount =
-        //     main.scrollLeft +
-        //     unit.getBoundingClientRect().left -
-        //     window.innerWidth * 0.03;
-        //     scrollSnap(main,leftAmount)
-        //   }
-        // } else if (
-        //   units[i-1]&&
-        //   main.getBoundingClientRect().left + window.innerWidth * 0.5>
-        //   units[i-1].getBoundingClientRect().left + unit.offsetWidth * 1&&units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 1>main.getBoundingClientRect().left + window.innerWidth * 0.1
-        // ) {
-        //   console.log("gobsck!", units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 0.9)
-        //   state.step = i-1;
-        //   if (
-        //     state.step + 1 >=
-        //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
-        //   ) {
-        //     document.querySelector(".progress-next").classList.add("disable");
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //   }
-        //   if (state.step <= 0) {
-        //     document
-        //       .querySelector(".progress-next")
-        //       .classList.remove("disable");
-        //     document.querySelector(".progress-prev").classList.add("disable");
-        //   } else {
-        //     document
-        //       .querySelector(".progress-prev")
-        //       .classList.remove("disable");
-        //   }
-        //   if (window.innerWidth > 1400) {
-        //     let leftAmount =
-        //     main.scrollLeft +
-        //     units[i-1].getBoundingClientRect().left -
-        //     window.innerWidth * 0.03;
-        //     scrollSnap(main,leftAmount)
-        //   }
         // }
-      });
-    },{passive: true});
+
+        let units = main.querySelectorAll(".main>div");
+        Array.prototype.forEach.call(units, (unit, i) => {
+          // if (
+          //   main.getBoundingClientRect().left + window.innerWidth * 1 >
+          //   unit.getBoundingClientRect().left && unit.getBoundingClientRect().left  > window.innerWidth * 0.4
+          // ) {
+          //   state.step = i;
+          //   console.log(
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   );
+          //   if (
+          //     state.step + 1 >=
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   ) {
+          //     document.querySelector(".progress-next").classList.add("disable");
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //   }
+          //   if (state.step <= 0) {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //     document.querySelector(".progress-prev").classList.add("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   }
+          //   if (window.innerWidth > 1400) {
+          //     let leftAmount =
+          //     main.scrollLeft +
+          //     unit.getBoundingClientRect().left -
+          //     window.innerWidth * 0.03;
+          //     scrollSnap(main,leftAmount)
+          //   }
+          // } else if (
+          //   units[i-1]&&
+          //   main.getBoundingClientRect().left + window.innerWidth * 0.5>
+          //   units[i-1].getBoundingClientRect().left + unit.offsetWidth * 1&&units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 1>main.getBoundingClientRect().left + window.innerWidth * 0.1
+          // ) {
+          //   console.log("gobsck!", units[i-1].getBoundingClientRect().left + units[i-1].offsetWidth * 0.9)
+          //   state.step = i-1;
+          //   if (
+          //     state.step + 1 >=
+          //     document.querySelectorAll(`.main-${state.activeTab + 1}>div`).length
+          //   ) {
+          //     document.querySelector(".progress-next").classList.add("disable");
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //   }
+          //   if (state.step <= 0) {
+          //     document
+          //       .querySelector(".progress-next")
+          //       .classList.remove("disable");
+          //     document.querySelector(".progress-prev").classList.add("disable");
+          //   } else {
+          //     document
+          //       .querySelector(".progress-prev")
+          //       .classList.remove("disable");
+          //   }
+          //   if (window.innerWidth > 1400) {
+          //     let leftAmount =
+          //     main.scrollLeft +
+          //     units[i-1].getBoundingClientRect().left -
+          //     window.innerWidth * 0.03;
+          //     scrollSnap(main,leftAmount)
+          //   }
+          // }
+        });
+      },
+      { passive: true },
+    );
 
     main.addEventListener(
       "scroll",
@@ -1698,6 +1700,13 @@ const ProgressEvent = () => {
           //     hitStart = true;
           //   }, 100);
           // }
+        }
+
+        // scroll hint
+        if (state.activeTab != -1 && state.activeTab != 4 && state.step <= 0) {
+          gsap.to(".cursor", { opacity: 1, display: "flex" });
+        } else {
+          gsap.to(".cursor", { opacity: 0, display: "none" });
         }
       },
       { passive: true },
@@ -2011,7 +2020,7 @@ const cursorAnimation = () => {
     } else {
       gsap.to(".cursor", { opacity: 0, display: "none" });
     }
-  }, 10);
+  }, 500);
   // document.addEventListener("mousemove", (e) => {
   //   gsap.to("#cursor", 0.3, {
   //     x: e.clientX + 10,
@@ -2039,7 +2048,7 @@ if (document.readyState === "loading") {
       clickSectionEvent();
       ProgressEvent();
       mainBurgerEvent();
-      cursorAnimation();
+      // cursorAnimation();
       window.addEventListener("resize", documentHeight);
       documentHeight();
     }),
@@ -2054,7 +2063,7 @@ if (document.readyState === "loading") {
   clickSectionEvent();
   ProgressEvent();
   mainBurgerEvent();
-  cursorAnimation();
+  // cursorAnimation();
   window.addEventListener("resize", documentHeight);
   documentHeight();
 }
