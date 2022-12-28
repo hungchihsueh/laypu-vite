@@ -387,39 +387,39 @@ main {
 
 @keyframes rotation {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(-50%, -50%) rotate(0deg);
   }
 
 
   50% {
-    transform: translate(-50%, -50%) rotate(180deg);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(-50%, -50%) rotate(180deg);
   }
 
 
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(-50%, -50%) rotate(360deg);
   }
 }
 
 @keyframes dimond {
   0% {
-    transform: translate(0%, 0%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
   }
 
   25% {
-    transform: translate(5%, 5%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(5%, 5%);
   }
 
   50% {
-    transform: translate(0%, 10%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 10%);
   }
 
   75% {
-    transform: translate(-5%, 5%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(-5%, 5%);
   }
 
   100% {
-    transform: translate(0%, 0%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
   }
 }
 
@@ -3669,45 +3669,45 @@ footer .copy-right {
 
 @keyframes swing {
   0% {
-    transform: rotate(30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
   }
 
   50% {
-    transform: rotate(-30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(-30deg);
   }
 
   100% {
-    transform: rotate(30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
   }
 }
 
 
 @keyframes swing-sm {
   0% {
-    transform: rotate(10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
   }
 
   50% {
-    transform: rotate(-10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(-10deg);
   }
 
   100% {
-    transform: rotate(10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
   }
 }
 
 
 @keyframes updown {
   0% {
-    transform: translateY(-5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
 
   50% {
-    transform: translateY(5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(5px);
   }
 
   100% {
-    transform: translateY(-5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
 }
 
