@@ -15,7 +15,7 @@ main * {
   transform: translate3d(0, 0, 0);
   -webkit-perspective: 1000;
   perspective: 1000;
-  will-change: auto;
+  /* will-change: auto; */
   z-index: 1;
 }
 
@@ -328,19 +328,19 @@ main {
 
 @keyframes dimond {
   0% {
-    transform: translate(0%, 0%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
   }
 
   25% {
-    transform: translate(5%, 5%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(5%, 5%);
   }
 
   50% {
-    transform: translate(0%, 10%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 10%);
   }
 
   75% {
-    transform: translate(-5%, 5%);
+    transform: translateZ(0) translate3d(0, 0, 0) translate(-5%, 5%);
   }
 
   100% {
@@ -1012,15 +1012,15 @@ main {
 
 @keyframes swing-sm {
   0% {
-    transform: rotate(10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
   }
 
   50% {
-    transform: rotate(-10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(-10deg);
   }
 
   100% {
-    transform: rotate(10deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
   }
 }
 
@@ -1549,15 +1549,15 @@ main {
 
 @keyframes updown {
   0% {
-    transform: translateY(-5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
 
   50% {
-    transform: translateY(5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(5px);
   }
 
   100% {
-    transform: translateY(-5px);
+    transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
 
 }
