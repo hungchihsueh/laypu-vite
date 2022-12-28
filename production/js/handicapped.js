@@ -2044,7 +2044,7 @@ if (document.readyState === "loading") {
         let lodingTl = gsap.timeline();
         lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
         lodingTl.to("#loading", { display: "none" });
-      }, 4000);
+      }, 4500);
       clickSectionEvent();
       ProgressEvent();
       mainBurgerEvent();
@@ -2059,7 +2059,7 @@ if (document.readyState === "loading") {
     let lodingTl = gsap.timeline();
     lodingTl.to("#loading", { opacity: 0, duration: 0.3 });
     lodingTl.to("#loading", { display: "none" });
-  }, 4000);
+  }, 4500);
   clickSectionEvent();
   ProgressEvent();
   mainBurgerEvent();
