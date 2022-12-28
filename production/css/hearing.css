@@ -618,6 +618,7 @@ footer .copy-right {
 
 .button-group.top {
   display: none;
+  width: -moz-fit-content;
   width: fit-content;
   position: fixed;
   z-index: 5000;
@@ -1753,9 +1754,7 @@ footer .copy-right {
   width: 40%;
 }
 
-.main-3 .check .left .text {
-  /* width: 50%; */
-}
+
 
 .main-3 .check .left .text::before {
   content: "";
@@ -3659,9 +3658,9 @@ footer .copy-right {
   }
 }
 
-@media all and (max-width:400px) and (max-height:835px) {
+/* @media all and (max-width:400px) and (max-height:835px) {
   .main-1 .bag .dialog
-}
+} */
 
 @media all and (max-width:350px) and (max-height:580px) {}
 

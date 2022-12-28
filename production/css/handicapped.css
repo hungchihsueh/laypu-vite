@@ -19,9 +19,9 @@ main * {
   z-index: 1;
 }
 
-.cursor {
-  /* background-color: #1E6E67; */
-}
+/* .cursor {
+  background-color: #1E6E67;
+} */
 
 .scroll-indicator {
   background-color: #005671;
@@ -550,6 +550,7 @@ main {
 
 .button-group.top {
   display: none;
+  width: -moz-fit-content;
   width: fit-content;
   position: fixed;
   z-index: 5000;
@@ -1124,9 +1125,9 @@ main {
   background-color: #1E6E67;
 }
 
-.assistant-equipment {
-  /* margin-left: 500px !important; */
-}
+/* .assistant-equipment {
+  margin-left: 500px !important;
+} */
 
 .assistant-equipment .sub-title {
   width: 60%;
@@ -1331,9 +1332,9 @@ main {
   border-radius: 15%;
 }
 
-#pet-name>div {
-  /* align-self: flex-start; */
-}
+/* #pet-name>div {
+  align-self: flex-start;
+} */
 
 .risk .content .img-group {
   width: 30%;
@@ -1478,7 +1479,7 @@ main {
 }
 
 .shelter .dialog.d-1 img {
-  scale: -1 1;
+  transform: scale(-1, 1);
   position: absolute;
   left: -35%;
   top: -60%;
@@ -1835,9 +1836,9 @@ main {
   z-index: 99;
 }
 
-.main-2 .no-power {
-  /* margin-left: 400px; */
-}
+/* .main-2 .no-power {
+  margin-left: 400px;
+} */
 
 .main-2 .no-power .content {
 
@@ -1987,13 +1988,6 @@ main {
   bottom: 10%;
   z-index: 50;
 }
-
-.main-2 .phone {
-  /* margin-left: 180px; */
-}
-
-
-.main-2 .phone .content {}
 
 .main-2 .phone .content>* {
   position: absolute;
@@ -3739,9 +3733,6 @@ main {
     margin-right: 2%;
   }
 
-  .main-2 .info .content .steps>.step img {
-    /* height: 90%; */
-  }
 
   .main-2 .info .content .steps {
     height: 85%;
@@ -4339,9 +4330,6 @@ main {
     margin-bottom: 8%;
   }
 
-  .main-2 .info .content .steps>.step img {
-    /* height: 90%; */
-  }
 
   .main-2 .earthquake {
     margin-left: 10vw;
@@ -5415,9 +5403,7 @@ main {
     height: 50%;
   }
 
-  .main-2 .info .content .steps>.step img {
-    /* height: 60%; */
-  }
+
 
   .main-2 .earthquake .content .cover-head {
     height: 60%;
