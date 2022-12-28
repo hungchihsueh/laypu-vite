@@ -945,15 +945,15 @@ main {
 
 @keyframes swing {
   0% {
-    transform: rotate(30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
   }
 
   50% {
-    transform: rotate(-30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(-30deg);
   }
 
   100% {
-    transform: rotate(30deg);
+    transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
   }
 }
 
