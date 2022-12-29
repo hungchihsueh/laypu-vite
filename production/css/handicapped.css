@@ -6,6 +6,7 @@
   z-index: 9999;
 }
 
+/* chris修改 */
 main * {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -20,9 +21,8 @@ main * {
   z-index: 1;
 }
 
-/* .cursor {
-  background-color: #1E6E67;
-} */
+/* chris修改 */
+
 
 .scroll-indicator {
   background-color: #005671;
@@ -326,7 +326,7 @@ main {
 }
 
 
-
+/* chris 修改 */
 @keyframes dimond {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
@@ -944,7 +944,7 @@ main {
   bottom: -37%;
 }
 
-
+/* chris 修改 */
 @keyframes swing {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
@@ -1011,6 +1011,7 @@ main {
   animation: swing-sm 6s ease-in-out 0s infinite;
 }
 
+/* chris 修改 */
 @keyframes swing-sm {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
@@ -1548,6 +1549,7 @@ main {
   top: -25px;
 }
 
+/* chris 修改 */
 @keyframes updown {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
@@ -1560,9 +1562,9 @@ main {
   100% {
     transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
-
 }
 
+/* chris 修改 */
 #ty-2 img {
   animation-delay: 200ms;
 }

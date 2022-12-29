@@ -12,7 +12,7 @@
 }
 
 
-
+/* chris修改 */
 body {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -23,11 +23,10 @@ body {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-
-  /* will-change: auto; */
   z-index: 1;
 }
 
+/* chris修改 */
 button {
   border: none;
   background-color: transparent;

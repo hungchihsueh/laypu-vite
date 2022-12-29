@@ -6,6 +6,7 @@
   z-index: 9999;
 }
 
+/* chris修改 */
 main * {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -16,10 +17,11 @@ main * {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-
-  /* will-change: auto; */
   z-index: 1;
 }
+
+/* chris修改 */
+
 
 body {
   height: 100vh;
@@ -386,7 +388,7 @@ main {
   animation: rotation 10s linear 0s infinite;
 }
 
-
+/* chris 修改 */
 @keyframes rotation {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) translate(-50%, -50%) rotate(0deg);
@@ -403,6 +405,7 @@ main {
   }
 }
 
+/* chris 修改 */
 @keyframes dimond {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
@@ -424,6 +427,9 @@ main {
     transform: translateZ(0) translate3d(0, 0, 0) translate(0%, 0%);
   }
 }
+
+/* chris 修改 */
+
 
 footer .copy-right {
   color: #005671;
@@ -3668,7 +3674,7 @@ footer .copy-right {
 
 /* @media */
 
-
+/* chris 修改 */
 @keyframes swing {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) rotate(30deg);
@@ -3683,7 +3689,7 @@ footer .copy-right {
   }
 }
 
-
+/* chris 修改 */
 @keyframes swing-sm {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) rotate(10deg);
@@ -3698,7 +3704,7 @@ footer .copy-right {
   }
 }
 
-
+/* chris 修改 */
 @keyframes updown {
   0% {
     transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
@@ -3712,6 +3718,8 @@ footer .copy-right {
     transform: translateZ(0) translate3d(0, 0, 0) translateY(-5px);
   }
 }
+
+/* chris 修改 */
 
 /*---------------------------2022.12.19新增-----------------------------*/
 /* @media (max-width: 1100px) {
