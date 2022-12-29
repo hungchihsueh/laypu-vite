@@ -107,11 +107,11 @@ sidebarRightBtn.addEventListener("click", (e) => {
 // sidebar event
 // hover 切換src
 let imgArr = [
-  "prepare.svg",
-  "response.svg",
-  "document.svg",
-  "help.svg",
-  "recover.svg",
+  "prepare.webp",
+  "response.webp",
+  "document.webp",
+  "help.webp",
+  "recover.webp",
 ];
 let gifArr = [
   "prepare.webp",
