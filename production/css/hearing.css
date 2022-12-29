@@ -60,6 +60,12 @@ main {
   border-color: #005671;
 }
 
+.cursor img {
+  position: relative;
+  height: 20px !important;
+  filter: hue-rotate(25deg) saturate(143%) brightness(80%);
+}
+
 .cursor .icon .dot {
   background-color: #005671;
 }
