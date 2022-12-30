@@ -411,7 +411,7 @@ footer {
 }
 
 #zero-project {
-  min-width: 100px;
+  min-width: 80px;
   width: 7vw;
   max-width: 200px;
   aspect-ratio: 1;
@@ -425,7 +425,7 @@ footer {
   background-color: #fff;
   padding: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 15px 15px 0px;
 }
 
 .zero-project img {
