@@ -82,8 +82,8 @@ p {
 /* cursor */
 .cursor {
   position: absolute;
-  top: 0;
-  right: 5%;
+  top: -5%;
+  right: 0;
   padding: 10px 15px;
   display: flex;
   flex-direction: column;

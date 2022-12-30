@@ -118,7 +118,8 @@ main {
   /* min-height: 70vh; */
   display: none;
   width: 25%;
-  height: fit-content;
+  height: calc(100vh - 79px) !important;
+  /* height: fit-content; */
   /* height: calc(var(--app-height) * 0.7);
     min-height: 70vh;
     min-height: -webkit-fill-available;
@@ -154,7 +155,7 @@ main {
 }
 
 #sidebar .list {
-  padding: 10% 5%;
+  padding:  5%;
   width: 100%;
   height: 100%;
   display: flex;
@@ -165,7 +166,7 @@ main {
 
 #sidebar .list button {
   cursor: pointer;
-  margin-bottom: 7%;
+  margin-bottom: 6%;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -308,7 +309,7 @@ main {
     width: 100%;
     transition: all .3s;
     background-color: transparent;
-    z-index: 1111;
+    z-index: 111;
   }
 
   .burger.active {
@@ -842,7 +843,7 @@ footer .copy-right {
 .main-5 .sub-title {
   align-self: flex-start;
   font-weight: 500;
-  font-size: clamp(12px, 2vmin, 48px);
+  font-size: clamp(12px, 2vmin, 18px);
   /* font-size: 1.5vmin; */
   line-height: 150%;
   letter-spacing: 0.08em;
@@ -880,7 +881,7 @@ footer .copy-right {
   background: #FFFFFF;
   border: 2px solid #005671;
   font-weight: 500;
-  font-size: clamp(12px, 2vmin, 48px);
+  font-size: clamp(12px, 2vmin, 18px);
   line-height: 150%;
   letter-spacing: 0.08em;
   color: #005671;
@@ -892,11 +893,11 @@ footer .copy-right {
 
 .dialog .num {
   /* aspect-ratio: 1; */
-  width: clamp(36px, 5vmin, 45px);
-  height: clamp(36px, 5vmin, 45px);
+  width: 36px;
+  height: 36px;
   position: absolute;
-  left: -25px;
-  top: -25px;
+  left: -20px;
+  top: -20px;
   /* padding: 3%; */
   background: #005671;
   border-radius: 9999px;
@@ -916,10 +917,12 @@ footer .copy-right {
 .contact-net .content {
   justify-content: center;
   gap: 5%;
+  /* width: 1200px; */
 }
 
 .main-1 .contact-net img {
   height: 120%;
+  z-index: 0;
 }
 
 .main-1 .contact-net .dialog.d-1 {
@@ -1058,12 +1061,13 @@ footer .copy-right {
   grid-template-columns: repeat(4, 1fr) 1.3fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 1%;
+  margin-top: 10px;
 }
 
 .main-1 .bag .img-group-2 .img-grid .check-group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -1071,12 +1075,12 @@ footer .copy-right {
 #help-card,
 #cable {
   position: relative;
-  top: 10%;
+  /* top: 10%; */
 }
 
 .main-1 .bag .img-group-2 .img-grid .check-group>img {
   height: 10vh;
-  max-height: 80px;
+  max-height: 70px;
 }
 
 .main-1 .bag .img-group-2 .img-grid .check-group>div {
@@ -1095,8 +1099,8 @@ footer .copy-right {
   display: inline-block;
   aspect-ratio: 1;
   margin-right: 5px;
-  width: clamp(12px, 2.2vmin, 48px);
-  height: clamp(12px, 2.2vmin, 48px);
+  width: clamp(12px, 2.2vmin, 18px);
+  height: clamp(12px, 2.2vmin, 18px);
   appearance: none;
   border: 2px #005671 solid;
   border-radius: 15%;
@@ -1185,7 +1189,7 @@ footer .copy-right {
   align-items: flex-start;
   color: #005671;
   font-weight: 500;
-  font-size: clamp(12px, 2.2vmin, 48px);
+  font-size: clamp(12px, 2.2vmin, 18px);
   letter-spacing: 0.08em;
 }
 
@@ -1193,8 +1197,8 @@ footer .copy-right {
   display: inline-block;
   aspect-ratio: 1;
   margin-right: 5px;
-  width: clamp(12px, 2.2vmin, 48px);
-  height: clamp(12px, 2.2vmin, 48px);
+  width: clamp(12px, 2.2vmin, 18px);
+  height: clamp(12px, 2.2vmin, 18px);
   appearance: none;
   border: 2px #005671 solid;
   border-radius: 15%;
@@ -1460,7 +1464,7 @@ footer .copy-right {
 
 .main-2 .info-1 .content .steps h4 {
   white-space: nowrap;
-  font-size: clamp(16px, 2vmin, 48px);
+  font-size: clamp(16px, 2vmin, 18px);
   color: #005671;
   margin-bottom: 3%;
 }
@@ -1957,7 +1961,7 @@ footer .copy-right {
 }
 
 .main-4 .talk .right>div img {
-  height: 20vh;
+  height: 15vh;
 }
 
 /* main-4 */
@@ -2168,7 +2172,7 @@ footer .copy-right {
 
   .main-3 .check .left,
   .main-3 .check .right {
-    font-size: clamp(12px, 2vmin, 48px);
+    font-size: clamp(12px, 2vmin, 18px);
   }
 
   .main-4 .communication .g-2,
