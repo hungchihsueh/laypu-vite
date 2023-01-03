@@ -1220,6 +1220,7 @@ main {
 
 #medical-1>div .dialog {
   position: relative;
+  z-index: 0;
 
 }
 
@@ -1227,6 +1228,7 @@ main {
   width: 100%;
   left: 20%;
   bottom: 100%;
+  z-index: 2;
 }
 
 #medical-1>div.g-1 img {
@@ -5807,7 +5809,7 @@ main {
   #recover {
     right: 5%;
     top: 55%;
-    width: 30%;
+    width: 35%;
   }
 
   #the-nav div.arrow-right.active {
@@ -6582,13 +6584,14 @@ main {
 /* 橫向智慧手機及其他更小解析度 */
 @media (max-width: 480px) {
   #prepare {
-    left: 0;
+    left: 5%;
     top: 17%;
   }
 
   #document {
-    left: 2%;
-    top: 35%;
+    left: 8%;
+    top: 45%;
+    width: 25%;
   }
 
   #response {
@@ -6596,9 +6599,9 @@ main {
     top: 15%;
   }
 
-  #recover {
+  /* #recover {
     right: -10%;
-  }
+  } */
 }
 
 
