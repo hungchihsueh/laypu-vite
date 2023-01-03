@@ -1558,6 +1558,7 @@ footer .copy-right {
   width: 100%;
   justify-content: flex-start;
   align-items: center;
+  gap: 3.5%;
 }
 
 .main-2 .while-earthquake .dialog {
@@ -3386,7 +3387,7 @@ footer .copy-right {
   }
 
   .main-2 .info-1 .steps {
-    width: 30%;
+    /* width: 30%; */
     height: 100%;
     position: relative;
     top: 10%;
@@ -3417,7 +3418,7 @@ footer .copy-right {
   }
 
   .main-2 .while-earthquake .right {
-    top: -5%;
+    top: 10%;
   }
 
   .main-2 .no-power img {
@@ -3450,6 +3451,11 @@ footer .copy-right {
     left: 8%;
   }
 
+  .main-2 .report img {
+    height: 100%;
+    bottom: 0%;
+  }
+
   .main-3 .help .content img {
     height: 110%;
     bottom: -5%;
@@ -3459,6 +3465,14 @@ footer .copy-right {
 
   .main-3 .help .dialog {
     left: 10%;
+  }
+
+  .main-4 .talk .left {
+    padding-top: 0% !important;
+  }
+
+  .main-4 .talk .right {
+    bottom: 13%;
   }
 
   .main-4 .talk .dialog {
