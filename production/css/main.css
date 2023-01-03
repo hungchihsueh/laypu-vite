@@ -477,8 +477,8 @@ footer #bottom-nav {
 
 
 /* focus */
-a:focus {
-  /* box-shadow: inset 2px 2px #00b0f0; */
+/* a:focus {
+  box-shadow: inset 2px 2px #00b0f0;
   border: 2px solid #00b0f0;
   outline: 0px solid #00b0f0 !important;
   text-decoration: none;
@@ -486,4 +486,4 @@ a:focus {
 
 button:focus {
   outline: 2px solid #00b0f0;
-}
+} */
