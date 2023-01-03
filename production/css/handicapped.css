@@ -5863,6 +5863,10 @@ main {
     top: -20px;
   }
 
+  .contact-net .content {
+    gap: 8%;
+  }
+
   #pl-1>img {
     bottom: -25%;
   }
@@ -5877,7 +5881,8 @@ main {
   }
 
   #material-1 .dialog.d-2 {
-    bottom: 50%;
+    bottom: 70%;
+    left: 40%;
   }
 
   #material-1 {
@@ -5895,7 +5900,7 @@ main {
 
   #bag-1>img {
     height: 80%;
-    left: 0%;
+    left: -5% !important;
     bottom: -36%;
   }
 
@@ -5968,12 +5973,12 @@ main {
 
   #medical-1>div.g-1 img {
     width: 20%;
-    left: 59%;
-    top: 25%;
+    /* left: 59%;
+    top: 25%; */
   }
 
   #medical-1>div.g-2 img {
-    left: 63%;
+    /* left: 63%; */
     width: 11%;
   }
 
@@ -5995,14 +6000,14 @@ main {
 
   .evacuate .group .dialog {
     left: 169%;
-    bottom: 55%;
+    /* bottom: 55%; */
     width: 50%;
   }
 
   .shelter .dialog.d-2 {
     width: 20%;
     left: 64%;
-    bottom: 40%;
+    bottom: 80%;
   }
 
   .typhoon .content .group {
