@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import $ from "jquery";
 function query (data) {
   return Object.keys(data).length;
 }

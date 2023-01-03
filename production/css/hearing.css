@@ -1587,7 +1587,7 @@ footer .copy-right {
 }
 
 .main-2 .while-earthquake .left .group img {
-  left: 180px;
+  left: 155px;
   height: 20vh;
   max-height: 116px;
   bottom: 0%;
@@ -2940,9 +2940,10 @@ footer .copy-right {
     column-gap: 5%;
   }
 
+  /* 
   .main-3 .check .left>div:nth-child(even)::before {
     bottom: 12.5%;
-  }
+  } */
 
   .main-3 .check .dialog {
     left: 66%;
@@ -3295,6 +3296,7 @@ footer .copy-right {
   .main-3>div,
   .main-4>div {
     height: 72%;
+    margin-left: 20vw;
   }
 
   .main-1 .contact-net img {
@@ -3408,6 +3410,10 @@ footer .copy-right {
 
   .main-2 .info-2 .dialog.d-2 {
     bottom: 15%;
+  }
+
+  .main-2 .info-2 .dialog.d-5 {
+    width: 30%;
   }
 
   .main-2 .while-earthquake .right {
