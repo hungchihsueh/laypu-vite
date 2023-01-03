@@ -1542,7 +1542,7 @@ main {
 
 .main-1 .typhoon .content .group .dialog {
   padding: 8%;
-  width: 90%;
+  /* width: 90%; */
   position: relative;
 }
 
@@ -4175,7 +4175,7 @@ main {
   }
 
   #medical-1 {
-    height: 90%;
+    height: 120%;
   }
 
   .medical .download-btn.db-1 {
@@ -4240,13 +4240,13 @@ main {
     justify-content: center;
   }
 
-  #animal-1 .img-group>div img {
-    width: 50%;
-  }
+  /* #animal-1 .img-group>div img {
+    width: 35%;
+  } */
 
   #pet-name img,
   #pet-pic img {
-    width: 40% !important;
+    width: 30% !important;
   }
 
   #risk-1 {
@@ -6098,7 +6098,7 @@ main {
   }
 
   .main-4 .require .dialog.d-2 {
-    bottom: 27%;
+    bottom: 20%;
   }
 
   .main-5 {
@@ -6151,8 +6151,8 @@ main {
   }
 
   #equip-1>img {
-    left: 22%;
-    height: 150%;
+    left: 25%;
+    height: 220%;
   }
 
   #risk-1 .dialog.d-1 {
@@ -6169,7 +6169,8 @@ main {
   }
 
   .shelter .group img:not(.shelter .dialog.d-1 img) {
-    left: 22%;
+    left: 26%;
+    height: 120%;
   }
 
   .shelter .dialog.d-2 {
@@ -6184,7 +6185,7 @@ main {
 
   .main-1 .earthquake .img-group {
     width: 50%;
-    height: 80%;
+    height: 100%;
     bottom: 10%;
   }
 
@@ -6199,7 +6200,7 @@ main {
 
   .main-1 .earthquake .content .dialog.d-2 {
     left: 28%;
-    bottom: 20%;
+    bottom: 28%;
     width: 12%;
   }
 
@@ -6239,6 +6240,20 @@ main {
     height: 100%;
     bottom: 8%;
   } */
+  .main-2 .report img:nth-of-type(2) {
+    bottom: 10%;
+    left: 40%;
+    width: 35%;
+  }
+
+  .main-2 .report img:nth-of-type(3) {
+    left: 65%;
+  }
+
+  .main-2 .report .dialog.d-2 {
+    left: 66%;
+    width: 25%;
+  }
 
   .main-2 .info .content>.dialog {
     bottom: 98%;
@@ -6537,13 +6552,13 @@ main {
   }
 
   #risk-1 .dialog.d-1 {
-    width: 320px;
+    width: 38%;
     height: auto;
     /* top: -45%; */
   }
 
   #risk-1 .dialog.d-2 {
-    bottom: 5px;
+    /* bottom: 5px; */
   }
 
   #risk-1 .dialog.d-3 {
