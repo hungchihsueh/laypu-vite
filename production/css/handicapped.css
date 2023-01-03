@@ -1481,7 +1481,7 @@ main {
 }
 
 .shelter .dialog.d-1 img {
-  transform: scale(-1, 1);
+  scale: -1 1;
   position: absolute;
   left: -35%;
   top: -60%;
@@ -3227,12 +3227,12 @@ main {
 
   #help {
     left: 20%;
-    top: 55%;
+    top: 53%;
     width: 25%;
   }
 
   #recover {
-    top: 50%;
+    top: 43%;
     width: 25%;
   }
 
@@ -4042,14 +4042,15 @@ main {
 
   footer {
     position: fixed;
+    z-index: 1;
     bottom: 0%;
     left: 0%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 10vh;
+    /* height: 10vh; */
     width: 100%;
-    padding: 5%;
+    padding: 1%;
     background-color: #fff;
     position: fixed;
     bottom: 0;
