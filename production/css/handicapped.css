@@ -6613,7 +6613,8 @@ main {
   }
 
   #help {
-    left: 10%;
+    width: 30%;
+    left: 20%;
     top: 65%;
   }
 
