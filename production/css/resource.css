@@ -214,6 +214,7 @@ main {
     overflow-x: scroll;
     /* overflow: overlay; */
     overflow-y: hidden;
+    padding: 0 3vw;
 }
 
 .main.main.main-4 {
@@ -221,12 +222,13 @@ main {
 }
 
 .main .content {
-    width: 100%;
+    width: 150%;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 5%;
+    gap: 1%;
+
 }
 
 .main.main-4 .content {
@@ -303,7 +305,7 @@ main {
 }
 
 .main a .img-group img:first-of-type {
-    height: 50vh;
+    height: 45vmin;
 }
 
 /* .main .img-group img:last-of-type {
@@ -328,9 +330,9 @@ main {
 
 
 /*---------------------------2022.12.19新增-----------------------------*/
-@media (max-width: 1100px) { 
-.main{
-    padding: 40px 0 0 30px;
-}
+@media (max-width: 1100px) {
+    .main {
+        padding: 40px 0 0 30px;
+    }
 
 }
