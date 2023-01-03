@@ -1699,7 +1699,7 @@ main {
 .main-2 .info .content>.dialog {
   padding: 1%;
   width: 46%;
-  bottom: 100%;
+  bottom: 105%;
   left: 40%;
 }
 
@@ -2556,7 +2556,7 @@ main {
   .main-1 .earthquake .content .dialog.d-2 {
     width: 13%;
     left: 27%;
-    bottom: 2%;
+    bottom: 20%;
   }
 
   .main-2 .info .content {
@@ -2781,7 +2781,7 @@ main {
   .main-2>div,
   .main-3>div,
   .main-4>div {
-    margin-left: 10vmin;
+    margin-left: 20vmin;
   }
 
   .main-1 .plan .content {

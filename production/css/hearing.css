@@ -438,7 +438,7 @@ main {
 /* chris 修改 */
 
 footer {
-  padding: 3%;
+  padding: 1.5%;
 }
 
 footer .copy-right {
@@ -2249,11 +2249,11 @@ footer .copy-right {
 
   .main-1 .bag .img-group-2 {
     position: relative;
-    bottom: 10%;
+    bottom: 15%;
   }
 
   .main-1 .bag .dialog {
-    margin-bottom: 5%;
+    margin-bottom: 20px;
     width: 90%;
   }
 
@@ -2412,7 +2412,7 @@ footer .copy-right {
   }
 
   .main-1 .plan .dialog.d-2 {
-    bottom: 40%;
+    /* bottom: 40%; */
   }
 
   .main-1 .plan .dialog.d-5 {
