@@ -447,7 +447,7 @@ main {
 #response>.pill {
   position: relative;
   right: 5%;
-  top: 5vw;
+  top: 4vw;
 }
 
 #document {
@@ -1756,9 +1756,9 @@ main {
 }
 
 .main-2 .info .content .steps>.step img {
-  /* height: 45vh; */
+  height: 45vh;
   min-width: 170px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .main-2 .earthquake .content {
