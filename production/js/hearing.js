@@ -123,10 +123,10 @@ let gifArr = [
 let imgs = document.querySelectorAll(".main-0 button img");
 imgs.forEach((img, i) => {
   img.addEventListener("mouseenter", () => {
-    img.src = `/static/img/hearing/webp/${gifArr[i]}`;
+    img.src = `./static/img/hearing/webp/${gifArr[i]}`;
   });
   img.addEventListener("mouseleave", () => {
-    img.src = `/static/img/hearing/main-page/${imgArr[i]}`;
+    img.src = `./static/img/hearing/main-page/${imgArr[i]}`;
   });
 });
 

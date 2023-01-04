@@ -123,10 +123,10 @@ let gifArr = [
 let imgs = document.querySelectorAll(".main-0 button img");
 imgs.forEach((img, i) => {
   img.addEventListener("mouseenter", () => {
-    img.src = `/static/img/handicapped/${gifArr[i]}`;
+    img.src = `./static/img/handicapped/${gifArr[i]}`;
   });
   img.addEventListener("mouseleave", () => {
-    img.src = `/static/img/handicapped/${imgArr[i]}`;
+    img.src = `./static/img/handicapped/${imgArr[i]}`;
   });
 });
 

@@ -11,21 +11,21 @@
     <link
       rel="preload"
       as="font"
-      href="/static/font/GenJyuuGothic-Bold.woff2"
+      href="./static/font/GenJyuuGothic-Bold.woff2"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       as="font"
-      href="/static/font/GenJyuuGothic-Heavy.woff2"
+      href="./static/font/GenJyuuGothic-Heavy.woff2"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       as="font"
-      href="/static/font/jf-openhuninn-1.1.woff2"
+      href="./static/font/jf-openhuninn-1.1.woff2"
       type="font/woff2"
       crossorigin="anonymous"
     />
@@ -39,38 +39,51 @@
     <style>
       @font-face {
         font-family: "default";
-        src: url("/static/font/GenJyuuGothic-Heavy.woff2");
+        src: url("./static/font/GenJyuuGothic-Heavy.woff2");
         font-weight: 900;
         font-style: normal;
       }
 
       @font-face {
         font-family: "default";
-        src: url("/static/font/jf-openhuninn-1.1.woff2");
+        src: url("./static/font/jf-openhuninn-1.1.woff2");
         font-weight: 500;
         font-style: normal;
       }
 
       @font-face {
         font-family: "default";
-        src: url("/static/font/GenJyuuGothic-Bold.woff2");
+        src: url("./static/font/GenJyuuGothic-Bold.woff2");
         font-weight: 700;
         font-style: normal;
       }
     </style>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P8DQ9DS');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-P8DQ9DS");
+    </script>
     <!-- End Google Tag Manager -->
   </head>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8DQ9DS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P8DQ9DS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
       <a
@@ -89,7 +102,7 @@
             aria-label="選單"
             aria-expanded="false"
           >
-            <img decoding="async" src="/static/img/navbar-burger.svg" alt="" />
+            <img decoding="async" src="./static/img/navbar-burger.svg" alt="" />
           </button>
           <!-- 選單 -->
           <div id="the-nav">
@@ -128,7 +141,7 @@
               accesskey="h"
               ><img
                 decoding="async"
-                src="/static/img/logo.svg"
+                src="./static/img/logo.svg"
                 alt=""
               />防災無障礙</a
             >

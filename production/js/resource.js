@@ -11,8 +11,8 @@ import gsap from "gsap";
 // var documentFragment = $(document.createDocumentFragment());
 // var ListData=data['main'+(i+1)];
 // for(var j=0;j<ListData.length;j++){
-// var a=$("<a href='./static/download/"+ListData[j]['fileName']+"' class='disability_d' title='"+ListData[j]['fileName']+"' download trackdownload></a>");
-// var imag=$("<div class='img-group'> <img src='./static/img/resource/"+ListData[j]['Image']+"' alt=''></div>");
+// var a=$("<a href='../static/download/"+ListData[j]['fileName']+"' class='disability_d' title='"+ListData[j]['fileName']+"' download trackdownload></a>");
+// var imag=$("<div class='img-group'> <img src='../static/img/resource/"+ListData[j]['Image']+"' alt=''></div>");
 // var content=ListData[j]['content'];
 // a.append(imag);
 // a.append(content);
