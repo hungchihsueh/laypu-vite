@@ -32,11 +32,13 @@ main * {
 }
 
 body {
-  height: calc(100vh - env(safe-area-inset-bottom));
-  height: var(--app-height);
+
   min-height: calc(100vh - env(safe-area-inset-bottom));
   min-height: var(--app-height);
   min-height: var(--app-height);
+  height: -webkit-fill-available;
+  height: calc(100vh - env(safe-area-inset-bottom));
+  height: var(--app-height);
   width: 100vw;
   overflow: hidden;
   background-color: #b5d8d4;
@@ -48,11 +50,13 @@ a.outer-link {
 }
 
 main {
-  height: calc(100vh - env(safe-area-inset-bottom));
-  height: var(--app-height);
+
   min-height: calc(100vh - env(safe-area-inset-bottom));
   min-height: -webkit-fill-available;
   min-height: fill-available;
+  height: -webkit-fill-available;
+  height: calc(100vh - env(safe-area-inset-bottom));
+  height: var(--app-height);
   width: 100vw;
   overflow-y: hidden;
   display: flex;
@@ -3400,11 +3404,13 @@ main {
 
 @media all and (max-width:1280px) {
   .main-0 {
-    height: calc(100vh - env(safe-area-inset-bottom));
-    height: var(--app-height);
+
     min-height: calc(100vh - env(safe-area-inset-bottom));
     min-height: -webkit-fill-available;
     min-height: fill-available;
+    height: -webkit-fill-available;
+    height: calc(100vh - env(safe-area-inset-bottom));
+    height: var(--app-height);
   }
 
   .main-1>div,
@@ -4998,7 +5004,9 @@ main {
   }
 
   #sidebar {
+    height: -webkit-fill-available;
     height: calc(100vh - env(safe-area-inset-bottom)) !important;
+    height: var(--app-height);
     width: 100%;
     left: -100%;
     border-radius: 0;
@@ -5188,7 +5196,9 @@ main {
     /* transform: translate(-50%, -50%); */
     background-color: #FFF;
     width: 100vw;
+    height: -webkit-fill-available;
     height: calc(100vh - env(safe-area-inset-bottom));
+    height: var(--app-height);
     opacity: 1;
     display: flex;
     justify-content: center;
