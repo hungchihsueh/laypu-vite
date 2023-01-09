@@ -5946,7 +5946,7 @@ main {
 
   #bag-1>img {
     height: 80%;
-    left: -5% !important;
+    left: -5%;
     bottom: -36%;
   }
 
@@ -6364,11 +6364,13 @@ main {
   }
 
   .main-4 .seperate .dialog {
-    left: 10%;
+    left: 5%;
+    width: 25%;
   }
 
   .main-4 .seperate img {
-    right: 20%;
+    right: 30%;
+    height: 110%;
   }
 
   .main-5 .content .img-group {
@@ -6711,10 +6713,10 @@ main {
     right: 10%;
   }
 
-  .shelter .dialog.d-2 {
+  /* .shelter .dialog.d-2 {
     right: 10%;
     top: 20px;
-  }
+  } */
 
   .evacuate .group .dialog {
     right: 20%;

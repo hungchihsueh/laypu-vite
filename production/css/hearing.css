@@ -1732,7 +1732,7 @@ footer .copy-right {
   left: 57%;
   bottom: 55%;
   width: 20%;
-  z-index: 5;
+  z-index: -1;
 }
 
 .main-2 .phone .dialog.d-3 {
@@ -3319,7 +3319,7 @@ footer .copy-right {
   .main-3>div,
   .main-4>div {
     height: 72%;
-    margin-left: 20vw;
+    margin-left: 25vw;
   }
 
   .main-1 .contact-net img {
@@ -3572,6 +3572,10 @@ footer .copy-right {
     margin-bottom: 0%;
   }
 
+  .main-1 .bag .dialog.d-2 {
+    bottom: 10%;
+  }
+
   .main-1 .risk .dialog.d-2 {
     bottom: 85%;
   }
@@ -3608,7 +3612,7 @@ footer .copy-right {
   }
 
   .main-2 .while-earthquake .right {
-    top: 5%;
+    top: 0%;
   }
 
   .main-1 .earthquake-home .dialog.d-1 {
@@ -3633,10 +3637,10 @@ footer .copy-right {
   }
 
   .main-2 .info-1 .steps {
-    width: 30%;
-    height: 100%;
+    /* width: 30%; */
+    height: 80%;
     position: relative;
-    top: 10%;
+    top: 0%;
   }
 
   .main-2 .info-1 .steps .step img {
