@@ -17,6 +17,7 @@ main * {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  background: transparent;
   /* will-change: auto; */
   z-index: 1;
 }
@@ -31,9 +32,9 @@ main * {
 }
 
 body {
-  height: 100vh;
+  height: calc(100vh - env(safe-area-inset-bottom));
   height: var(--app-height);
-  min-height: 100vh;
+  min-height: calc(100vh - env(safe-area-inset-bottom));
   min-height: var(--app-height);
   min-height: var(--app-height);
   width: 100vw;
@@ -47,9 +48,9 @@ a.outer-link {
 }
 
 main {
-  height: 100vh;
+  height: calc(100vh - env(safe-area-inset-bottom));
   height: var(--app-height);
-  min-height: 100vh;
+  min-height: calc(100vh - env(safe-area-inset-bottom));
   min-height: -webkit-fill-available;
   min-height: fill-available;
   width: 100vw;
@@ -3399,9 +3400,9 @@ main {
 
 @media all and (max-width:1280px) {
   .main-0 {
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-bottom));
     height: var(--app-height);
-    min-height: 100vh;
+    min-height: calc(100vh - env(safe-area-inset-bottom));
     min-height: -webkit-fill-available;
     min-height: fill-available;
   }
@@ -4997,7 +4998,7 @@ main {
   }
 
   #sidebar {
-    height: 100vh !important;
+    height: calc(100vh - env(safe-area-inset-bottom)) !important;
     width: 100%;
     left: -100%;
     border-radius: 0;
@@ -5187,7 +5188,7 @@ main {
     /* transform: translate(-50%, -50%); */
     background-color: #FFF;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-bottom));
     opacity: 1;
     display: flex;
     justify-content: center;
@@ -5235,6 +5236,7 @@ main {
     left: 50%;
     top: 45%;
     width: 30vmin;
+    z-index: 0;
   }
 
   #document {
@@ -6173,8 +6175,8 @@ main {
   }
 
   .main-5 .content>a {
-    width: 15vmax;
-    height: 20vh;
+    width: 22vmax;
+    /* height: 20vh; */
   }
 
   .main-5 .content .text {
