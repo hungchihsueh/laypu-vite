@@ -2971,6 +2971,10 @@ main {
     top: 43%;
   }
 
+  #sidebar .list button {
+    margin-bottom: 7%;
+  }
+
   #cn-3 .dialog {
     left: 5%;
   }
