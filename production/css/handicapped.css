@@ -2974,9 +2974,9 @@ main {
 
   #wheel-chair {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 25vmin;
-    top: 43%;
+    top: 50%;
   }
 
   #sidebar .list button {
@@ -5244,7 +5244,7 @@ main {
 
   #wheel-chair {
     left: 50%;
-    top: 45%;
+    top: 50%;
     width: 30vmin;
     z-index: 0;
   }
