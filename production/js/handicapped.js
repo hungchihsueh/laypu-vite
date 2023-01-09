@@ -161,7 +161,7 @@ prepare.addEventListener("click", async () => {
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -256,7 +256,7 @@ prepare.addEventListener("click", async () => {
   sideBar.style.display = "block";
   let topDistence = await state.main[state.activeTab].getBoundingClientRect()
     .top;
-  console.log(window.innerHeight, topDistence);
+  // console.log(window.innerHeight, topDistence);
   let sidbarHeight =
     (await state.main[state.activeTab]
       .querySelector(".main>div")
@@ -276,16 +276,14 @@ prepare.addEventListener("click", async () => {
   sections[state.step].querySelector(".dot").classList.add("active");
   Array.prototype.forEach.call(sections, (section, i) => {
     section.addEventListener("click", () => {
-      Array.prototype.forEach.call(sections, (section, i) => {
-        section.setAttribute("tabindex", "-1");
-      });
+
       Array.prototype.forEach.call(sections, (section, i) => {
         section.querySelector(".dot").classList.remove("active");
       });
       sideBar.classList.remove("active");
-      console.log(i, state.step);
+      // console.log(i, state.step);
       state.step = i;
-      console.log(i, state.step);
+      // console.log(i, state.step);
       section.querySelector(".dot").classList.add("active");
       let activeMain = state.main[state.activeTab];
       let activeSection = activeMain.querySelectorAll(".main>div")[i];
@@ -303,7 +301,7 @@ prepare.addEventListener("click", async () => {
 
 response.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
+  // console.log("hi");
   // document.querySelector(".progress-next").setAttribute("tabindex", "2");
   // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
   // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
@@ -452,7 +450,7 @@ response.addEventListener("click", async () => {
 
 recover.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
+  // console.log("hi");
   // document.querySelector(".progress-next").setAttribute("tabindex", "2");
   // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
   // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
@@ -472,7 +470,7 @@ recover.addEventListener("click", async () => {
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -583,9 +581,9 @@ recover.addEventListener("click", async () => {
         section.querySelector(".dot").classList.remove("active");
       });
       sideBar.classList.remove("active");
-      console.log(i, state.step);
+      // console.log(i, state.step);
       state.step = i;
-      console.log(i, state.step);
+      // console.log(i, state.step);
       section.querySelector(".dot").classList.add("active");
       let activeMain = state.main[state.activeTab];
       let activeSection = activeMain.querySelectorAll(".main>div")[i];
@@ -602,7 +600,7 @@ recover.addEventListener("click", async () => {
 
 help.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
+  // console.log("hi");
   // document.querySelector(".progress-next").setAttribute("tabindex", "2");
   // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
   // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
@@ -622,7 +620,7 @@ help.addEventListener("click", async () => {
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -719,7 +717,7 @@ help.addEventListener("click", async () => {
   sideBar.style.top = `${topDistence}px`;
   sidebarList.innerHTML = "";
   let newList = "";
-  state.sectionsTitle[0].forEach((title, i) => {
+  state.sectionsTitle[state.activeTab].forEach((title, i) => {
     let new_template = sidebarTemplate;
     new_template = new_template.replace("{title}", title);
     newList += new_template;
@@ -752,7 +750,7 @@ help.addEventListener("click", async () => {
 
 doc.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
+  // console.log("hi");
   // document.querySelector(".progress-next").setAttribute("tabindex", "2");
   // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
   // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
@@ -911,7 +909,7 @@ tabs.forEach((tab, i) =>
           gsap.to(main, { left: "100%", display: "none", duration: 0 });
         }
       });
-      console.log(beforeIndex, state.activeTab);
+      // console.log(beforeIndex, state.activeTab);
       tl.to("#progress", {
         // backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
         left: "0%",
@@ -1328,8 +1326,6 @@ burgerTabs.forEach((tab, i) =>
             behavior: "smooth",
           });
           document.querySelector("#progress .bar .percent").style.width = "0%";
-            document.querySelector("#progress .bar .percent").style.width =
-              "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
       }

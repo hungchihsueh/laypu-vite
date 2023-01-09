@@ -133,10 +133,10 @@ imgs.forEach((img, i) => {
 // 點擊動畫
 prepare.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
-  document.querySelector(".progress-next").setAttribute("tabindex", "2");
-  document.querySelector(".progress-prev").setAttribute("tabindex", "2");
-  document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
+  // console.log("hi");
+  // document.querySelector(".progress-next").setAttribute("tabindex", "2");
+  // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
+  // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
   // document.querySelector("#main-content").setAttribute("tabindex", "-1");
   document.querySelectorAll(".main-0 button").forEach((btn) => {
     btn.setAttribute("tabindex", "-1");
@@ -144,7 +144,7 @@ prepare.addEventListener("click", async () => {
   if (window.innerWidth <= 1200) {
     console.log("burger");
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "1");
+      tab.setAttribute("tabindex", "0");
     });
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
       tab.setAttribute("tabindex", "-1");
@@ -152,7 +152,7 @@ prepare.addEventListener("click", async () => {
   } else {
     console.log("normal");
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "1");
+      tab.setAttribute("tabindex", "0");
     });
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
       tab.setAttribute("tabindex", "-1");
@@ -161,7 +161,7 @@ prepare.addEventListener("click", async () => {
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -172,7 +172,7 @@ prepare.addEventListener("click", async () => {
     if (window.innerWidth <= 1200) {
       console.log("burger");
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "1");
+        tab.setAttribute("tabindex", "0");
       });
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
         tab.setAttribute("tabindex", "-1");
@@ -180,7 +180,7 @@ prepare.addEventListener("click", async () => {
     } else {
       console.log("normal");
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "1");
+        tab.setAttribute("tabindex", "0");
       });
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
         tab.setAttribute("tabindex", "-1");
@@ -265,7 +265,7 @@ prepare.addEventListener("click", async () => {
   sideBar.style.display = "block";
   let topDistence = await state.main[state.activeTab].getBoundingClientRect()
     .top;
-  console.log(window.innerHeight, topDistence);
+  // console.log(window.innerHeight, topDistence);
   let sidbarHeight =
     (await state.main[state.activeTab]
       .querySelector(".main>div")
@@ -289,9 +289,9 @@ prepare.addEventListener("click", async () => {
         section.querySelector(".dot").classList.remove("active");
       });
       sideBar.classList.remove("active");
-      console.log(i, state.step);
+      // console.log(i, state.step);
       state.step = i;
-      console.log(i, state.step);
+      // console.log(i, state.step);
       section.querySelector(".dot").classList.add("active");
       let activeMain = state.main[state.activeTab];
       let activeSection = activeMain.querySelectorAll(".main>div")[i];
@@ -309,21 +309,21 @@ prepare.addEventListener("click", async () => {
 
 response.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
-  document.querySelector(".progress-next").setAttribute("tabindex", "2");
-  document.querySelector(".progress-prev").setAttribute("tabindex", "2");
-  document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
+  // console.log("hi");
+  // document.querySelector(".progress-next").setAttribute("tabindex", "2");
+  // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
+  // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
   // document.querySelector("#main-content").setAttribute("tabindex", "-1");
   document.querySelectorAll(".main-0 button").forEach((btn) => {
     btn.setAttribute("tabindex", "-1");
   });
   if (window.innerWidth <= 1200) {
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   } else {
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   }
   window.addEventListener("resize", async () => {
@@ -339,11 +339,11 @@ response.addEventListener("click", async () => {
     sideBar.style.top = `${topDistence}px`;
     if (window.innerWidth <= 1200) {
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     } else {
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     }
   });
@@ -458,27 +458,27 @@ response.addEventListener("click", async () => {
 
 recover.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
-  document.querySelector(".progress-next").setAttribute("tabindex", "2");
-  document.querySelector(".progress-prev").setAttribute("tabindex", "2");
-  document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
+  // console.log("hi");
+  // document.querySelector(".progress-next").setAttribute("tabindex", "2");
+  // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
+  // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
   // document.querySelector("#main-content").setAttribute("tabindex", "-1");
   document.querySelectorAll(".main-0 button").forEach((btn) => {
     btn.setAttribute("tabindex", "-1");
   });
   if (window.innerWidth <= 1200) {
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   } else {
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   }
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -488,11 +488,11 @@ recover.addEventListener("click", async () => {
     sideBar.style.top = `${topDistence}px`;
     if (window.innerWidth <= 1200) {
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     } else {
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     }
   });
@@ -537,6 +537,7 @@ recover.addEventListener("click", async () => {
     main_3,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       backgroundColor: "#F2F2F2",
       opacity: 1,
       display: "flex",
@@ -589,9 +590,9 @@ recover.addEventListener("click", async () => {
         section.querySelector(".dot").classList.remove("active");
       });
       sideBar.classList.remove("active");
-      console.log(i, state.step);
+      // console.log(i, state.step);
       state.step = i;
-      console.log(i, state.step);
+      // console.log(i, state.step);
       section.querySelector(".dot").classList.add("active");
       let activeMain = state.main[state.activeTab];
       let activeSection = activeMain.querySelectorAll(".main>div")[i];
@@ -608,27 +609,27 @@ recover.addEventListener("click", async () => {
 
 help.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
-  document.querySelector(".progress-next").setAttribute("tabindex", "2");
-  document.querySelector(".progress-prev").setAttribute("tabindex", "2");
-  document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
+  // console.log("hi");
+  // document.querySelector(".progress-next").setAttribute("tabindex", "2");
+  // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
+  // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
   // document.querySelector("#main-content").setAttribute("tabindex", "-1");
   document.querySelectorAll(".main-0 button").forEach((btn) => {
     btn.setAttribute("tabindex", "-1");
   });
   if (window.innerWidth <= 1200) {
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   } else {
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   }
   window.addEventListener("resize", async () => {
     let topDistence = await state.main[state.activeTab].getBoundingClientRect()
       .top;
-    console.log(window.innerHeight, topDistence);
+    // console.log(window.innerHeight, topDistence);
     let sidbarHeight =
       (await state.main[state.activeTab]
         .querySelector(".main>div")
@@ -638,11 +639,11 @@ help.addEventListener("click", async () => {
     sideBar.style.top = `${topDistence}px`;
     if (window.innerWidth <= 1200) {
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     } else {
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     }
   });
@@ -687,6 +688,7 @@ help.addEventListener("click", async () => {
     main_4,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       opacity: 1,
       duration: 0.8,
       display: "flex",
@@ -758,21 +760,21 @@ help.addEventListener("click", async () => {
 
 doc.addEventListener("click", async () => {
   // tabindex
-  console.log("hi");
-  document.querySelector(".progress-next").setAttribute("tabindex", "2");
-  document.querySelector(".progress-prev").setAttribute("tabindex", "2");
-  document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
+  // console.log("hi");
+  // document.querySelector(".progress-next").setAttribute("tabindex", "2");
+  // document.querySelector(".progress-prev").setAttribute("tabindex", "2");
+  // document.querySelector("#go-to-main").setAttribute("tabindex", "-1");
   // document.querySelector("#main-content").setAttribute("tabindex", "-1");
   document.querySelectorAll(".main-0 button").forEach((btn) => {
     btn.setAttribute("tabindex", "-1");
   });
   if (window.innerWidth <= 1200) {
     document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   } else {
     document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-      tab.setAttribute("tabindex", "2");
+      tab.setAttribute("tabindex", "0");
     });
   }
   window.addEventListener("resize", async () => {
@@ -788,11 +790,11 @@ doc.addEventListener("click", async () => {
     sideBar.style.top = `${topDistence}px`;
     if (window.innerWidth <= 1200) {
       document.querySelectorAll(".section-tabs.burger  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     } else {
       document.querySelectorAll(".section-tabs.normal  .tab").forEach((tab) => {
-        tab.setAttribute("tabindex", "2");
+        tab.setAttribute("tabindex", "0");
       });
     }
   });
@@ -919,7 +921,7 @@ tabs.forEach((tab, i) =>
           gsap.to(main, { left: "100%", display: "none", duration: 0 });
         }
       });
-      console.log(beforeIndex, state.activeTab);
+      // console.log(beforeIndex, state.activeTab);
       tl.to("#progress", {
         // backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
         left: "0%",
@@ -984,17 +986,26 @@ tabs.forEach((tab, i) =>
           break;
         case state.activeTab < beforeIndex:
           console.log("<");
-          state.main[beforeIndex].scrollLeft = "0%";
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
+
           tl.to(state.main[beforeIndex], {
             left: "100%",
             opacity: 0,
             duration: 0.5,
           });
-          state.main[state.activeTab].scrollLeft = "0%";
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: window.innerWidth * 0.05,
+            // behavior: "smooth",
+          });
           await tl.to(
             state.main[state.activeTab],
             {
               left: "0%",
+              scrollLeft: window.innerWidth * 0.05,
               backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
               zIndex: 20,
               duration: state.fromPprev ? 0 : 0.5,
@@ -1034,20 +1045,11 @@ tabs.forEach((tab, i) =>
             tl.to(state.main[state.activeTab], { opacity: 1, duration: 0.3 });
           } else {
             state.step = 0;
-            await tl.to(
-              state.main[state.activeTab],
-              {
-                scrollLeft: 0,
-                opacity: 1,
-                // duration: 0
-              },
-
-              "",
-            );
-            // tl.to(state.main[state.activeTab], {
-            //   opacity: 1,
-            //   duration: 0.3,
-            // });
+            state.main[state.activeTab].scrollTo({
+              top: 0,
+              left: window.innerWidth * 0.05,
+              behavior: "smooth",
+            });
           }
 
           document.querySelector("#progress .bar .percent").style.width = "0%";
@@ -1055,30 +1057,37 @@ tabs.forEach((tab, i) =>
           break;
         case state.activeTab > beforeIndex:
           console.log(">");
-          state.main[beforeIndex].scrollLeft = "0%";
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
           tl.to(state.main[beforeIndex], {
             left: "-100%",
             opacity: 0,
             duration: 0.5,
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
-            state.main[state.activeTab],
-            {
-              left: "0%",
-              backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
-              zIndex: 20,
-              opacity: 1,
-              duration: 0.5,
-              display: "flex",
-            },
-            "-=1",
-          );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: window.innerWidth * 0.05,
+            //  behavior: "smooth",
+          });
+         await tl.to(
+           state.main[state.activeTab],
+           {
+             left: "0%",
+             scrollLeft: window.innerWidth * 0.05,
+             backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
+             zIndex: 20,
+             opacity: 1,
+             duration: 0.5,
+             display: "flex",
+           },
+           "-=1",
+         );state.step = 0; state.main[state.activeTab].scrollTo({
+           top: 0,
+           left: window.innerWidth * 0.05,
+           behavior: "smooth",
+         });
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
@@ -1115,7 +1124,8 @@ tabs.forEach((tab, i) =>
           let activeSection = activeMain.querySelectorAll(".main>div")[i];
           gsap.to(activeMain, {
             scrollLeft: (activeMain.scrollLeft +=
-              activeSection.getBoundingClientRect().left - 50),
+              activeSection.getBoundingClientRect().left -
+              window.innerWidth * 0.05),
             duration: 1,
           });
         });
@@ -1125,12 +1135,12 @@ tabs.forEach((tab, i) =>
 
     setTimeout(() => {
       clickedRecent = false;
-    }, 400);
+    }, 100);
     state.fromPprev = false;
   }),
 );
 burgerTabs.forEach((tab, i) =>
-  tab.addEventListener("click", (e) => {
+  tab.addEventListener("click", async(e) => {
     tabclicked = true;
     if (clickedRecent) {
       return;
@@ -1242,15 +1252,22 @@ burgerTabs.forEach((tab, i) =>
           break;
         case state.activeTab < beforeIndex:
           console.log("<");
-          state.main[beforeIndex].scrollLeft = "0%";
+           state.main[beforeIndex].scrollTo({
+             top: 0,
+             left: 0,
+           });
           tl.to(state.main[beforeIndex], {
             left: "100%",
             opacity: 0,
             duration: 0.5,
-            display: "none",
+            // display: "none",
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: 0,
+            // behavior: "smooth",
+          });
+         await tl.to(
             state.main[state.activeTab],
             {
               left: "0%",
@@ -1260,49 +1277,64 @@ burgerTabs.forEach((tab, i) =>
               duration: 0.5,
               display: "flex",
             },
-            "-=1.2",
+            "-=1",
           );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          // tl.to(
+          //   state.main[state.activeTab],
+          //   { scrollLeft: 0, duration: 0 },
+          //   "-=.9",
+          // );
           // state.main[state.activeTab].scrollTo({
           //   top: 0,
           //   left: 0,
           //   behavior:"auto",
           // });
-
+  state.step = 0;
+  state.main[state.activeTab].scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
         case state.activeTab > beforeIndex:
           console.log(">");
+           state.main[beforeIndex].scrollTo({
+             top: 0,
+             left: 0,
+           });
           tl.to(state.main[beforeIndex], {
             left: "-100%",
             opacity: 0,
             duration: 0.5,
-
-            display: "none",
+            // display: "none",
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
-            state.main[state.activeTab],
-            {
-              left: "0%",
-              backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
-              zIndex: 20,
-              opacity: 1,
-              duration: 0.5,
-              display: "flex",
-            },
-            "-=1.2",
-          );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          // state.main[state.activeTab].scrollLeft = "0%";
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: 0,
+            // behavior: "smooth",
+          });
+        await tl.to(
+          state.main[state.activeTab],
+          {
+            left: "0%",
+            scrollLeft: 0,
+            backgroundColor: state.activeTab % 2 == 1 ? "#D9F1FA" : "#F2F2F2",
+            zIndex: 20,
+            opacity: 1,
+            duration: 0.5,
+            display: "flex",
+          },
+          "-=1",
+        ); 
+        state.step = 0;
+        state.main[state.activeTab].scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
@@ -1313,7 +1345,7 @@ burgerTabs.forEach((tab, i) =>
 
     setTimeout(() => {
       clickedRecent = false;
-    }, 400);
+    }, 100);
   }),
 );
 // mouse on side activate scroll

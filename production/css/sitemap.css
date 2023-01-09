@@ -69,9 +69,10 @@ h3 {
   height: 100%;
 }
 
-.left button img {
+.left button {
   height: 24px;
   width: 24px;
+  cursor: pointer;
 }
 
 
