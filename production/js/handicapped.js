@@ -227,6 +227,7 @@ prepare.addEventListener("click", async () => {
     main_1,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       backgroundColor: "#F1EAA8",
       display: "flex",
       opacity: 1,
@@ -379,6 +380,7 @@ response.addEventListener("click", async () => {
     main_2,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       opacity: 1,
       backgroundColor: "#D9F4F1",
       display: "flex",
@@ -528,6 +530,7 @@ recover.addEventListener("click", async () => {
     main_3,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       backgroundColor: "#F1EAA8",
       opacity: 1,
       display: "flex",
@@ -677,6 +680,7 @@ help.addEventListener("click", async () => {
     main_4,
     {
       left: "0%",
+      scrollLeft: window.innerWidth * 0.05,
       opacity: 1,
       duration: 0.8,
       display: "flex",
@@ -972,17 +976,26 @@ tabs.forEach((tab, i) =>
           break;
         case state.activeTab < beforeIndex:
           console.log("<");
-          state.main[beforeIndex].scrollLeft = "0%";
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
           tl.to(state.main[beforeIndex], {
             left: "100%",
             opacity: 0,
             duration: 0.5,
           });
-          state.main[state.activeTab].scrollLeft = "0%";
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: window.innerWidth * 0.05,
+            // behavior: "smooth",
+          });
+          // state.main[state.activeTab].scrollLeft = "0%";
           await tl.to(
             state.main[state.activeTab],
             {
               left: "0%",
+              scrollLeft: window.innerWidth * 0.05,
               backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
               zIndex: 20,
               duration: state.fromPprev ? 0 : 0.5,
@@ -991,7 +1004,6 @@ tabs.forEach((tab, i) =>
             },
             "-=1",
           );
-
           if (state.fromPprev) {
             console.log("fromPprev");
             state.fromPprev = false;
@@ -1022,15 +1034,11 @@ tabs.forEach((tab, i) =>
             tl.to(state.main[state.activeTab], { opacity: 1, duration: 0.3 });
           } else {
             state.step = 0;
-            await tl.to(
-              state.main[state.activeTab],
-              {
-                scrollLeft: 0,
-                opacity: 1,
-                // duration: 0
-              },
-              "",
-            );
+            state.main[state.activeTab].scrollTo({
+              top: 0,
+              left: window.innerWidth * 0.05,
+              behavior: "smooth",
+            });
           }
 
           document.querySelector("#progress .bar .percent").style.width = "0%";
@@ -1038,17 +1046,25 @@ tabs.forEach((tab, i) =>
           break;
         case state.activeTab > beforeIndex:
           console.log(">");
-          state.main[beforeIndex].scrollLeft = "0%";
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
           tl.to(state.main[beforeIndex], {
             left: "-100%",
             opacity: 0,
             duration: 0.5,
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: window.innerWidth * 0.05,
+            //  behavior: "smooth",
+          });
+          await tl.to(
             state.main[state.activeTab],
             {
               left: "0%",
+              scrollLeft: window.innerWidth * 0.05,
               backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
               zIndex: 20,
               opacity: 1,
@@ -1057,16 +1073,18 @@ tabs.forEach((tab, i) =>
             },
             "-=1",
           );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          state.step = 0;
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: window.innerWidth * 0.05,
+            behavior: "smooth",
+          });
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
       }
     }
+
     // sidebar
     sideBar.style.display = "block";
     sidebarList.innerHTML = "";
@@ -1098,22 +1116,22 @@ tabs.forEach((tab, i) =>
           let activeSection = activeMain.querySelectorAll(".main>div")[i];
           gsap.to(activeMain, {
             scrollLeft: (activeMain.scrollLeft +=
-              activeSection.getBoundingClientRect().left - 50),
+              activeSection.getBoundingClientRect().left -
+              window.innerWidth * 0.05),
             duration: 1,
           });
         });
       });
       // sidebar
     }
-
     setTimeout(() => {
       clickedRecent = false;
-    }, 400);
+    }, 100);
     state.fromPprev = false;
   }),
 );
 burgerTabs.forEach((tab, i) =>
-  tab.addEventListener("click", (e) => {
+  tab.addEventListener("click", async (e) => {
     tabclicked = true;
     if (clickedRecent) {
       return;
@@ -1225,72 +1243,102 @@ burgerTabs.forEach((tab, i) =>
           break;
         case state.activeTab < beforeIndex:
           console.log("<");
-          state.main[beforeIndex].scrollLeft = "0%";
+
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
+
           tl.to(state.main[beforeIndex], {
             left: "100%",
             opacity: 0,
             duration: 0.5,
-            display: "none",
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
-            state.main[state.activeTab],
-            {
-              left: "0%",
-              backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
-              zIndex: 20,
-              opacity: 1,
-              duration: 0.5,
-              display: "flex",
-            },
-            "-=1.2",
-          );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: 0,
+            // behavior: "smooth",
+          });
+        await tl.to(
+          state.main[state.activeTab],
+          {
+            left: "0%",
+            scrollLeft:0,
+            backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
+            zIndex: 20,
+            opacity: 1,
+            duration: 0.5,
+            display: "flex",
+          },
+          "-=1",
+        );
+          //     state.main[state.activeTab].scrollLeft = window.innerWidth * 0.05;
+          // tl.to(
+          //   state.main[state.activeTab],
+          //   { scrollLeft: 0, duration: 0 },
+          //   "-=.9",
+          // );
           // state.main[state.activeTab].scrollTo({
           //   top: 0,
           //   left: 0,
           //   behavior:"auto",
           // });
-
+   state.step = 0;
+   state.main[state.activeTab].scrollTo({
+     top: 0,
+     left:0,
+     behavior: "smooth",
+   });
           document.querySelector("#progress .bar .percent").style.width = "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
         case state.activeTab > beforeIndex:
           console.log(">");
+          state.main[beforeIndex].scrollTo({
+            top: 0,
+            left: 0,
+          });
           tl.to(state.main[beforeIndex], {
             left: "-100%",
             opacity: 0,
             duration: 0.5,
-
-            display: "none",
           });
-          state.main[state.activeTab].scrollLeft = "0%";
-          tl.to(
-            state.main[state.activeTab],
-            {
-              left: "0%",
-              backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
-              zIndex: 20,
-              opacity: 1,
-              duration: 0.5,
-              display: "flex",
-            },
-            "-=1.2",
-          );
-          tl.to(
-            state.main[state.activeTab],
-            { scrollLeft: 0, duration: 0 },
-            "-=.9",
-          );
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left: 0,
+            // behavior: "smooth",
+          });
+        await tl.to(
+          state.main[state.activeTab],
+          {
+            left: "0%",
+            scrollLeft: 0,
+            backgroundColor: state.activeTab % 2 == 1 ? "#D9F4F1" : "#F1EAA8",
+            zIndex: 20,
+            opacity: 1,
+            duration: 0.5,
+            display: "flex",
+          },
+          "-=1",
+        );
+          state.step = 0;
+          state.main[state.activeTab].scrollTo({
+            top: 0,
+            left:0,
+            behavior: "smooth",
+          });
           document.querySelector("#progress .bar .percent").style.width = "0%";
+            document.querySelector("#progress .bar .percent").style.width =
+              "0%";
           // document.getElementById("progress-wheelchair").style.left = "0%";
           break;
       }
     }
+    // state.main[state.activeTab].scrollTo({
+    //   top: 0,
+    //   left: window.innerWidth * 0.05,
+    //   behavior: "smooth",
+    // });
     // 切換tab
     // sidebar
     sideBar.style.display = "block";
@@ -1332,7 +1380,8 @@ burgerTabs.forEach((tab, i) =>
 
     setTimeout(() => {
       clickedRecent = false;
-    }, 400);
+    }, 100);
+     state.fromPprev = false;
   }),
 );
 // mouse on side activate scroll
@@ -1618,7 +1667,7 @@ const ProgressEvent = () => {
           // }
         });
       },
-      { passive: true },
+      // { passive: true },
     );
 
     main.addEventListener(
@@ -1883,7 +1932,7 @@ const ProgressEvent = () => {
         console.log(sections[state.step].getBoundingClientRect().left);
         state.main[state.activeTab].scrollTo({
           top: 0,
-          left: sections[state.step].offsetLeft - window.innerWidth * 0.07,
+          left: sections[state.step].offsetLeft - window.innerWidth * 0.05,
           behavior: "smooth",
         });
         progress.style.width = `${((state.step + 1) / sections.length) * 100}%`;
@@ -2007,7 +2056,7 @@ window.addEventListener("click", (e) => {
   if (e.target != burgerSelector) {
     burger.classList.contains("active") && burger.classList.remove("active");
   }
-  if (e.target != sidebarRightBtn) {
+  if (e.target != sidebarRightBtn && e.target!=sidebarRightBtn.querySelector("img")) {
     sideBar.classList.remove("active");
   }
 });
