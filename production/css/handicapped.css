@@ -2787,6 +2787,15 @@ main {
     justify-content: flex-start;
   }
 
+  #help {
+    top: 55%;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
   #pl-2 .dialog {
     bottom: 55%;
     left: 50%;
@@ -2946,13 +2955,19 @@ main {
   } */
 
   #recover {
-    top: 56%;
-    width: 20%;
+    top: 50%;
+    width: 15%;
     right: 10%;
   }
 
+  #response {
+    top: 0%;
+  }
+
   #wheel-chair {
-    left: 41%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25vmin;
     top: 43%;
   }
 
