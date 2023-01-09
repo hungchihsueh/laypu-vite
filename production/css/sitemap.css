@@ -69,6 +69,12 @@ h3 {
   height: 100%;
 }
 
+.left button img {
+  height: 24px;
+  width: 24px;
+}
+
+
 
 
 .top-list .content {
@@ -177,7 +183,8 @@ h3 {
 .sitemap_list_02 a:hover,
 .sitemap_list_02 a:focus {
   background: #0c4540;
-  border-color: #0c4540;;
+  border-color: #0c4540;
+  ;
   color: #fff;
 }
 

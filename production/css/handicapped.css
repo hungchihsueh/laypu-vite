@@ -180,6 +180,7 @@ main {
   justify-content: space-between;
   align-items: center;
   opacity: 0;
+
 }
 
 .section-tabs.normal {
@@ -201,6 +202,7 @@ main {
   font-weight: bold;
   line-height: 150%;
   transition: all .3s;
+  cursor: pointer;
 }
 
 .section-tabs>.tab:hover,
@@ -225,6 +227,7 @@ main {
   min-height: 50px;
   border-radius: 0;
   width: 100vw;
+  cursor: pointer;
 }
 
 .burger>.selector {
@@ -1757,7 +1760,7 @@ main {
 
 .main-2 .info .content .steps>.step img {
   height: 45vh;
-  min-width: 170px;
+  /* min-width: 170px; */
   /* width: 100%; */
 }
 
