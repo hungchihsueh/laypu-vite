@@ -1813,7 +1813,7 @@ main {
 .main-2 .earthquake .content .steps img:not(.earthquake .content .dialog.d-2 img) {
   width: 100%;
   position: absolute;
-  left: 100%;
+  left: 105%;
   bottom: 50%;
   transform: translateY(50%);
   z-index: 9999;
@@ -3024,13 +3024,18 @@ main {
   }
 
   .main-4 .help-other .text {
-    bottom: 65%;
-    left: 6%;
+    bottom: 70%;
+    left: 14%;
+  }
+
+  .main-4 .help-other img:first-of-type {
+    left: 10%;
   }
 
   .main-4 .help-other img:last-of-type {
     right: 5%;
   }
+
 }
 
 @media all and (max-width:1370px) and (max-height:1030px) {

@@ -37,6 +37,7 @@ body {
 a.outer-link {
   color: #005671;
   text-decoration: none;
+  font-weight: 700;
 }
 
 main {
@@ -1458,6 +1459,8 @@ footer .copy-right {
 }
 
 .main-2 .info-1 .steps .step {
+  align-self: flex-start;
+  width: 100%;
   color: #005671;
   font-weight: 700;
   display: flex;
@@ -1468,6 +1471,9 @@ footer .copy-right {
 }
 
 .main-2 .info-1 .content .steps h4 {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
   white-space: nowrap;
   font-size: clamp(16px, 2vmin, 18px);
   color: #005671;
@@ -1588,9 +1594,9 @@ footer .copy-right {
 }
 
 .main-2 .while-earthquake .left .group img {
-  left: 155px;
+  left: 180px;
   height: 20vh;
-  max-height: 116px;
+  max-height: 126px;
   bottom: 0%;
   position: absolute;
 }
@@ -2382,6 +2388,8 @@ footer .copy-right {
   .main-4 .communication .g-2,
   .main-4 .communication .g-3 {
     justify-content: center;
+    position: relative;
+    bottom: 10%;
   }
 
   .main-4 .care .dialog.d-1 {
