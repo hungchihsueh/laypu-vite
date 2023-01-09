@@ -2010,7 +2010,7 @@ window.addEventListener("click", (e) => {
   if (e.target != burgerSelector) {
     burger.classList.contains("active") && burger.classList.remove("active");
   }
-  if (e.target != sidebarRightBtn) {
+  if (e.target != sidebarRightBtn && e.target != sidebarRightBtn.querySelector("img")) {
     sideBar.classList.remove("active");
   }
 });

@@ -3008,7 +3008,8 @@ main {
   }
 
   .main-1 .earthquake .img-group {
-    bottom: -4%;
+    bottom: 28%;
+    height: 70%;
   }
 
   .main-1 .earthquake .content .dialog.d-4 {
@@ -3147,13 +3148,13 @@ main {
   }
 
   .main-1 .earthquake .img-group {
-    bottom: 5%;
+    bottom: 25%;
   }
 
   .main-1 .earthquake .content .dialog.d-2 {
     width: 14%;
     left: 28%;
-    bottom: 15%;
+    bottom: 20%;
   }
 
   .main-1 .earthquake .content .dialog.d-2 img {
@@ -4336,7 +4337,7 @@ main {
   }
 
   .shelter .group img:not(.shelter .dialog.d-1 img) {
-    left: 35%;
+    /* left: 35%; */
     height: 100%;
   }
 
@@ -5231,9 +5232,9 @@ main {
   }
 
   #wheel-chair {
-    left: 38%;
-    top: 39%;
-    width: 25vmin;
+    left: 50%;
+    top: 45%;
+    width: 30vmin;
   }
 
   #document {
@@ -5956,7 +5957,7 @@ main {
   }
 
   #equip-1>img {
-    height: 200%;
+    height: 100%;
     left: 25%;
   }
 
@@ -6231,7 +6232,7 @@ main {
   .shelter .dialog.d-2 {
     width: 20%;
     left: 64%;
-    bottom: 40%;
+    bottom: 100%;
   }
 
   .main-1 .typhoon .content {
