@@ -57,7 +57,7 @@ main {
     display: flex;
 }
 
-/* #the-nav div.arrow-right.active {
+#the-nav div.arrow-right.active {
     border-left: 1.3vw solid #1e6e67;
 }
 
@@ -73,9 +73,9 @@ main {
 
 #the-nav {
     top: 7%;
-    left: 55%;
+    /* left: 55%; */
     padding: 2%;
-} */
+}
 
 .logo {
     filter: hue-rotate(25deg) saturate(143%) brightness(80%);
