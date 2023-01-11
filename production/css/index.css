@@ -548,16 +548,20 @@ main {
 }
 
 #the-nav div.arrow-right.active {
-  border-left: 0.6vw solid #1e6e67;
+  border-left: 1.3vw solid #1e6e67;
+}
+
+#the-nav li:hover div.arrow-right:not(.active) {
+  border-left: 1.3vw solid #1e6e6783;
 }
 
 #the-nav div.arrow-right {
   margin-right: 5%;
   width: 0;
   height: 0;
-  border-top: 0.6vw solid transparent;
-  border-bottom: 0.6vw solid transparent;
-  border-left: 0.6vw solid #1e6e6700;
+  border-top: 1.3vw solid transparent;
+  border-bottom: 1.3vw solid transparent;
+  border-left: 1.3vw solid #1e6e6700;
   transition: all .2s;
 }
 
