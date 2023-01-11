@@ -5862,6 +5862,10 @@ main {
     border-left: 1.3vw solid #1e6e67;
   }
 
+  #the-nav li:hover div.arrow-right:not(.active) {
+    border-left: 1.3vw solid #1e6e6783;
+  }
+
   #the-nav div.arrow-right {
     margin-right: 5%;
     width: 0;
