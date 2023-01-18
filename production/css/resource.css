@@ -221,7 +221,7 @@ main {
     padding: 0 3vw;
 }
 
-.main.main.main-4 {
+.main.main.main-5 {
     padding-left: 5%;
 }
 
@@ -235,7 +235,7 @@ main {
 
 }
 
-.main.main-4 .content {
+.main.main-5 .content {
     width: -moz-fit-content;
     width: fit-content;
     justify-content: flex-start;

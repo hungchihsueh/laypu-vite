@@ -4,10 +4,11 @@ const main_1 = document.querySelector(".main-1");
 const main_2 = document.querySelector(".main-2");
 const main_3 = document.querySelector(".main-3");
 const main_4 = document.querySelector(".main-4");
+const main_5 = document.querySelector(".main-5");
 const state = {
 	activeTab: 0,
-	tabName: ["綜合", "地震", "颱風豪雨", "核子事故"],
-	main: [main_4, main_1, main_2, main_3],
+	tabName: ["綜合", "地震", "颱風豪雨", "核子事故","國外文獻"],
+	main: [main_4, main_1, main_2, main_3,main_5],
 };
 // burger tabs event
 const burger = document.querySelector(".section-tabs.burger");
