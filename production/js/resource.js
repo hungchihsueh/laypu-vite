@@ -26,9 +26,9 @@ const main_2 = document.querySelector(".main-2");
 const main_3 = document.querySelector(".main-3");
 const main_4 = document.querySelector(".main-4");
 const state = {
-  activeTab: 0,
-  tabName: ["地震", "颱風豪雨", "核子事故", "綜合"],
-  main: [main_1, main_2, main_3, main_4],
+	activeTab: 0,
+	tabName: ["綜合", "地震", "颱風豪雨", "核子事故"],
+	main: [main_4, main_1, main_2, main_3],
 };
 // burger tabs event
 const burger = document.querySelector(".section-tabs.burger");
@@ -60,11 +60,6 @@ tabs.forEach((tab, i) =>
       let beforeIndex = state.activeTab;
       let tl = gsap.timeline();
       state.activeTab = [].indexOf.call(tabs, tab);
-      if (state.activeTab == 0) {
-        // document.querySelector(".progress-prev").classList.add("disable");
-      } else {
-        // document.querySelector(".progress-prev").classList.remove("disable");
-      }
       if (state.activeTab == tabs.length - 1) {
         // gsap.to("#progress", {
         //   bottom: "-100%",
@@ -85,9 +80,9 @@ tabs.forEach((tab, i) =>
       document.querySelector(".burger .selector .text").innerHTML =
         state.tabName[state.activeTab];
       state.main.forEach((main, i) => {
-        if (state.main.indexOf(main) < state.activeTab) {
+        if (i < state.activeTab) {
           gsap.to(main, { left: "-100%", display: "none", duration: 0 });
-        } else if (state.main.indexOf(main) > state.activeTab) {
+        } else if (i > state.activeTab) {
           gsap.to(main, { left: "100%", display: "none", duration: 0 });
         }
       });
@@ -399,6 +394,7 @@ const mainBurgerEvent = () => {
     }
     theNavOpen = true;
   });
+  // burgerBtn;[0].click()
 };
 window.addEventListener("click", (e) => {
   if (theNavOpen && theNav.style.display == "block" && e.target != burgerBtn) {
@@ -451,7 +447,7 @@ const start = () => {
     "-=.4",
   );
   gsap.to(
-    main_1,
+    main_4,
     {
       left: "0%",
       display: "flex",
@@ -518,25 +514,24 @@ if (document.readyState === "loading") {
   documentHeight();
 }
 documentHeight();
-
-let navItems = theNav.querySelectorAll("a");
-document.addEventListener(
-  "focusin",
-  function () {
-    if (
-      theNavOpen &&
-      theNav.style.display == "block" &&
-      document.activeElement != burgerBtn &&
-      document.activeElement != navItems[0] &&
-      document.activeElement != navItems[1] &&
-      document.activeElement != navItems[2]
-    ) {
-      theNavOpen = false;
-      let tl = gsap.timeline();
-      tl.to(theNav, { opacity: 0, duration: 0.1 });
-      tl.to(theNav, { display: "none", duration: 0 });
-    }
-    console.log("focused: ", document.activeElement);
-  },
-  true,
-);
+// let navItems = theNav.querySelectorAll("a");
+// document.addEventListener(
+//   "focusin",
+//   function () {
+//     if (
+//       theNavOpen &&
+//       theNav.style.display == "block" &&
+//       document.activeElement != burgerBtn &&
+//       document.activeElement != navItems[0] &&
+//       document.activeElement != navItems[1] &&
+//       document.activeElement != navItems[2]
+//     ) {
+//       theNavOpen = false;
+//       let tl = gsap.timeline();
+//       tl.to(theNav, { opacity: 0, duration: 0.1 });
+//       tl.to(theNav, { display: "none", duration: 0 });
+//     }
+//     console.log("focused: ", document.activeElement);
+//   },
+//   true,
+// );
