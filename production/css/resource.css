@@ -188,7 +188,7 @@ main {
     }
 
     .burger.active {
-        height: 250px;
+        height: 300px;
     }
 
     /* .burger:focus-within {
