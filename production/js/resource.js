@@ -1,47 +1,14 @@
 import gsap from "gsap";
-function query (data) {
-  return Object.keys(data).length;
-}
-$.getJSON("./js/resource.json", function(data) {
-var mainlength= query(data);
-var maincontent=$(".main-4").children();
-var documentFragment = $(document.createDocumentFragment());
-var ListData=data['main4'];
-for(var j=0;j<ListData.length;j++){
-var a=$("<a href='./static/download/"+ListData[j]['fileName']+"' class='disability_d' title='"+ListData[j]['fileName']+"' download trackdownload></a>");
-// var imag=$("<div class='img-group down_img'> <img src='./static/img/resource/"+ListData[j]['Image']+"' alt=''></div>");
-var imag=$("<div class='img-group down_img'><img class='img' src='./static/img/down_img.png' alt='' style='background-image: url(./static/img/"+ListData[j]['Image']+"); background-size: cover; background-position: top center;'><img class='icon' src='./static/img/cloud-download.svg' alt=''> </div>")
-var content=ListData[j]['content'];
-a.append(imag);
-a.append(content);
-documentFragment.append(a)
-}
-maincontent.append(documentFragment)
-for(var i=0;i<(mainlength-1);i++)
-{
-var maincontent=$(".main-"+(i+1)).children();
-var documentFragment = $(document.createDocumentFragment());
-var ListData=data['main'+(i+1)];
-for(var j=0;j<ListData.length;j++){
-var a=$("<a href='./static/download/"+ListData[j]['fileName']+"' class='disability_d' title='"+ListData[j]['fileName']+"' download trackdownload></a>");
-// var imag=$("<div class='img-group down_img'> <img src='./static/img/resource/"+ListData[j]['Image']+"' alt=''></div>");
-var imag=$("<div class='img-group down_img'><img class='img' src='./static/img/down_img.png' alt='' style='background-image: url(./static/img/"+ListData[j]['Image']+"); background-size: cover; background-position: top center;'><img class='icon' src='./static/img/cloud-download.svg' alt=''> </div>")
-var content=ListData[j]['content'];
-a.append(imag);
-a.append(content);
-documentFragment.append(a)
-}
-maincontent.append(documentFragment)
-}
-});
+
 const main_1 = document.querySelector(".main-1");
 const main_2 = document.querySelector(".main-2");
 const main_3 = document.querySelector(".main-3");
 const main_4 = document.querySelector(".main-4");
+const main_5 = document.querySelector(".main-5");
 const state = {
 	activeTab: 0,
-	tabName: ["綜合", "地震", "颱風豪雨", "核子事故"],
-	main: [main_4, main_1, main_2, main_3],
+	tabName: ["綜合", "地震", "颱風豪雨", "核子事故","國外文獻"],
+	main: [main_4, main_1, main_2, main_3,main_5],
 };
 // burger tabs event
 const burger = document.querySelector(".section-tabs.burger");
